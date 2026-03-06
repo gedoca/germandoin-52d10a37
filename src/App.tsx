@@ -10,19 +10,16 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/guadalajara" element={<Guadalajara />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <HashRouter>
+    <Routes>
+      {/* Importante: Si tus links son "#guadalajara", el HashRouter 
+         debería detectarlos automáticamente si la ruta es "/guadalajara".
+      */}
+      <Route path="/" element={<Index />} />
+      <Route path="/guadalajara" element={<Guadalajara />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </HashRouter>
 );
 
 export default App;
