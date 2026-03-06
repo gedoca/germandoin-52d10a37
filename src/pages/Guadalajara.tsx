@@ -13,8 +13,7 @@ import {
   Flower2,
   ArrowRight,
 } from "lucide-react";
-import SiteNavbar from "@/components/SiteNavbar";
-import SiteFooter from "@/components/SiteFooter";
+import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
 
 const FadeIn = ({
