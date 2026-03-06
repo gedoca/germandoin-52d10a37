@@ -1,22 +1,29 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Sobre mí", href: "#sobre-mi" },
-  { label: "Facetas", href: "#facetas" },
-  { label: "Retiros", href: "#retiros" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Perfil", to: "/perfil" },
+  { label: "Retiros", to: "/retiros" },
+  { label: "Agenda", to: "/agenda" },
+  { label: "Contacto", to: "/contacto" },
 ];
 
 const SiteNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <nav
@@ -25,20 +32,24 @@ const SiteNavbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between h-16">
-        <a href="#" className="font-display text-lg font-semibold text-foreground tracking-tight">
-          GDC
-        </a>
+        <Link to="/" className="font-display text-xl text-foreground tracking-tight">
+          Germán Doin
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`font-body text-sm transition-colors ${
+                location.pathname === link.to
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -56,14 +67,17 @@ const SiteNavbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-background border-t border-border px-6 py-4 space-y-3">
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`block font-body text-sm transition-colors ${
+                location.pathname === link.to
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
