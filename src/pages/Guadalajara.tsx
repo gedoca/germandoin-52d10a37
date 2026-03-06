@@ -101,7 +101,7 @@ const activities = [
 
 const Guadalajara = () => {
   return (
-    <>
+    <Layout>
       <main>
         {/* Hero */}
         <section className="relative min-h-[85vh] flex items-center bg-primary overflow-hidden">
@@ -405,7 +405,7 @@ const Guadalajara = () => {
           </FadeIn>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 
