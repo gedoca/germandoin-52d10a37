@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import germanPortrait from "@/assets/german-portrait.jpg";
+import retreatLandscape from "@/assets/retiro-paisaje-verde.jpg";
 
 const HeroSection = () => {
   return (
@@ -57,6 +58,24 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Floating landscape preview */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.6 }}
+        className="hidden lg:block absolute bottom-8 right-8 w-64 h-40 rounded-sm overflow-hidden shadow-2xl border border-border/30"
+      >
+        <img
+          src={retreatLandscape}
+          alt="Paisaje de retiro"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
+        <span className="absolute bottom-3 left-4 font-body text-xs text-primary-foreground/90 tracking-wide">
+          Próximos retiros →
+        </span>
+      </motion.div>
     </section>
   );
 };

@@ -3,6 +3,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, Users, Clock, MapPin, ArrowLeft, Quote, BookOpen, Eye, Lightbulb, Heart, Compass, MessageSquare } from "lucide-react";
+import desaprenderHero from "@/assets/desaprender-hero.jpg";
+import desaprenderGrupo1 from "@/assets/desaprender-grupo-1.jpg";
+import desaprenderGrupo2 from "@/assets/desaprender-grupo-2.jpg";
+import desaprenderDinamica from "@/assets/desaprender-dinamica.jpg";
+import retreatLandscape from "@/assets/retreat-landscape.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
@@ -46,11 +51,15 @@ const testimonials = [
 const Desaprender = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 bg-gradient-to-b from-card to-background">
-        <div className="max-w-5xl mx-auto">
+      {/* Hero with background image */}
+      <section className="relative pt-28 pb-20 lg:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={desaprenderHero} alt="DesAprender" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/65" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
           <FadeIn>
-            <Link to="/retiros" className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+            <Link to="/retiros" className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors mb-8">
               <ArrowLeft className="w-4 h-4" />
               Volver a Retiros
             </Link>
@@ -58,21 +67,37 @@ const Desaprender = () => {
           <FadeIn delay={0.1}>
             <div className="flex items-center gap-4 mb-4">
               <Sparkles className="w-6 h-6 text-accent" strokeWidth={1.5} />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+              <span className="font-body text-sm tracking-widest uppercase text-primary-foreground/70">
                 Formación vivencial
               </span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-2">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-primary-foreground mb-2">
               Des)<span className="italic text-accent">aprender</span>
             </h1>
-            <p className="font-display text-lg sm:text-xl text-muted-foreground mb-8">
+            <p className="font-display text-lg sm:text-xl text-primary-foreground/80 mb-8">
               Las 7 cualidades del acompañamiento del otro
             </p>
-            <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="font-body text-base lg:text-lg text-primary-foreground/70 max-w-3xl leading-relaxed">
               Una experiencia de formación grupal vivencial que aborda los desafíos del acompañamiento
               de infancias desde una perspectiva integral a través del cuerpo, las emociones y las ideas.
               Más de 500 participantes en 7 países.
             </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Galería fotográfica */}
+      <section className="py-12 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              <div className="aspect-[4/3] overflow-hidden rounded-sm col-span-2">
+                <img src={desaprenderGrupo1} alt="Grupo DesAprender" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderDinamica} alt="Dinámica vivencial" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -106,11 +131,14 @@ const Desaprender = () => {
                   del cuerpo, para que afloren las emociones y nos permitan arribar a pensamientos e ideas
                   que integren la experiencia.
                 </p>
-                <p className="font-body text-muted-foreground leading-relaxed">
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
                   Diferentes ejercicios traídos de las educaciones alternativas, la psicología social,
                   la psicoterapia gestáltica y la danza movimiento terapia nos acompañan en el
                   descubrimiento de estas cualidades.
                 </p>
+                <div className="aspect-[16/10] overflow-hidden rounded-sm">
+                  <img src={desaprenderGrupo2} alt="Participantes DesAprender" className="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -184,6 +212,12 @@ const Desaprender = () => {
             </FadeIn>
           </div>
         </div>
+      </section>
+
+      {/* Imagen paisaje */}
+      <section className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+        <img src={retreatLandscape} alt="Paisaje del retiro" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
       </section>
 
       {/* Equipo */}

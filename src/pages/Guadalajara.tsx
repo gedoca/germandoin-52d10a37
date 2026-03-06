@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
+import retiroGrupoCampo from "@/assets/retiro-grupo-campo.jpg";
 
 const FadeIn = ({
   children,
@@ -103,10 +104,15 @@ const Guadalajara = () => {
   return (
     <Layout>
       <main>
-        {/* Hero */}
-        <section className="relative min-h-[85vh] flex items-center bg-primary overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--accent)/0.3),transparent_60%)]" />
+        {/* Hero with background image */}
+        <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={retiroGrupoCampo}
+              alt="Encuentro grupal en Guadalajara"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-foreground/70" />
           </div>
           <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-16 py-32 text-center">
             <motion.div
@@ -185,7 +191,6 @@ const Guadalajara = () => {
                         : "border-border bg-card hover:border-accent/40"
                     }`}
                   >
-                    {/* Top bar */}
                     <div
                       className={`h-2 ${
                         activity.featured ? "bg-accent" : "bg-accent/40"
@@ -212,7 +217,6 @@ const Guadalajara = () => {
                         {activity.title}
                       </h3>
 
-                      {/* Meta */}
                       <div className="space-y-2 mb-6">
                         <div className="flex items-center gap-2 text-muted-foreground font-body text-sm">
                           <Calendar className="w-4 h-4 text-accent" />
@@ -228,7 +232,6 @@ const Guadalajara = () => {
                         </div>
                       </div>
 
-                      {/* Highlights */}
                       {activity.highlights.length > 0 && (
                         <ul className="space-y-2 mb-6">
                           {activity.highlights.map((h, j) => (
@@ -243,14 +246,12 @@ const Guadalajara = () => {
                         </ul>
                       )}
 
-                      {/* Description for featured */}
                       {activity.description && (
                         <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
                           {activity.description}
                         </p>
                       )}
 
-                      {/* Methodology */}
                       {activity.methodology && (
                         <div className="mb-6">
                           <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-3">
@@ -273,7 +274,6 @@ const Guadalajara = () => {
                         </div>
                       )}
 
-                      {/* Itinerary */}
                       {activity.itinerary && (
                         <div className="mb-6">
                           <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-3">
@@ -297,7 +297,6 @@ const Guadalajara = () => {
                         </div>
                       )}
 
-                      {/* CTA */}
                       <div className="mt-auto pt-4">
                         <a
                           href="#contacto"
