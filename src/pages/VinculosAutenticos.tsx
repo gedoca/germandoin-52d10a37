@@ -3,6 +3,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves, MessageSquare } from "lucide-react";
+import vinculosHero from "@/assets/vinculos-hero.jpg";
+import germanCintia from "@/assets/german-cintia-vinculos.jpg";
+import retiroParejaEncuentro from "@/assets/retiro-pareja-encuentro.jpg";
+import retiroManosCirculo from "@/assets/retiro-manos-circulo.jpg";
+import retiroMovimiento from "@/assets/retiro-movimiento-corporal.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
@@ -64,11 +69,15 @@ const methodology = [
 const VinculosAutenticos = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 bg-gradient-to-b from-card to-background">
-        <div className="max-w-5xl mx-auto">
+      {/* Hero with background image */}
+      <section className="relative pt-28 pb-20 lg:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={vinculosHero} alt="Vínculos Auténticos" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/65" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
           <FadeIn>
-            <Link to="/retiros" className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+            <Link to="/retiros" className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors mb-8">
               <ArrowLeft className="w-4 h-4" />
               Volver a Retiros
             </Link>
@@ -76,17 +85,17 @@ const VinculosAutenticos = () => {
           <FadeIn delay={0.1}>
             <div className="flex items-center gap-4 mb-4">
               <HeartHandshake className="w-6 h-6 text-accent" strokeWidth={1.5} />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+              <span className="font-body text-sm tracking-widest uppercase text-primary-foreground/70">
                 Retiro vivencial
               </span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-2">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-primary-foreground mb-2">
               Vínculos <span className="italic text-accent">Auténticos</span>
             </h1>
-            <p className="font-display text-lg sm:text-xl text-muted-foreground mb-4">
+            <p className="font-display text-lg sm:text-xl text-primary-foreground/80 mb-4">
               Inteligencia vincular aplicada
             </p>
-            <div className="flex flex-wrap items-center gap-4 mb-8 font-body text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-4 mb-8 font-body text-sm text-primary-foreground/70">
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-accent" /> 3 días · 2 noches
               </span>
@@ -94,7 +103,7 @@ const VinculosAutenticos = () => {
                 <Users className="w-4 h-4 text-accent" /> Grupo reducido (6-8 personas)
               </span>
             </div>
-            <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="font-body text-base lg:text-lg text-primary-foreground/70 max-w-3xl leading-relaxed">
               Una propuesta de exploración personal y colectiva para quienes buscan ir más allá del
               autoconocimiento individual y entrar en la experiencia transformadora del encuentro humano.
               Co-facilitado por Germán Doin y{" "}
@@ -102,6 +111,25 @@ const VinculosAutenticos = () => {
                 Cintia Alegre
               </a>.
             </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Galería fotográfica */}
+      <section className="py-12 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              <div className="aspect-[3/4] overflow-hidden rounded-sm col-span-2">
+                <img src={germanCintia} alt="Germán y Cintia facilitando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={retiroParejaEncuentro} alt="Dinámica de encuentro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={retiroManosCirculo} alt="Manos en círculo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -129,14 +157,19 @@ const VinculosAutenticos = () => {
                   y espejo, un campo vivo que revela tanto nuestras heridas como nuestras potencialidades.
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-sm p-8">
-                <Quote className="w-8 h-8 text-accent/30 mb-4" strokeWidth={1} />
-                <p className="font-display text-lg italic text-foreground leading-relaxed mb-4">
-                  "El vínculo es un espacio que no se puede controlar. Vincularse implica dejar amorosamente
-                  e inteligentemente de ser sujeto u objeto, abrirse por completo a la información
-                  transformadora que fluye."
-                </p>
-                <p className="font-body text-sm text-accent font-medium">Eugenio Carutti</p>
+              <div>
+                <div className="bg-card border border-border rounded-sm p-8 mb-6">
+                  <Quote className="w-8 h-8 text-accent/30 mb-4" strokeWidth={1} />
+                  <p className="font-display text-lg italic text-foreground leading-relaxed mb-4">
+                    "El vínculo es un espacio que no se puede controlar. Vincularse implica dejar amorosamente
+                    e inteligentemente de ser sujeto u objeto, abrirse por completo a la información
+                    transformadora que fluye."
+                  </p>
+                  <p className="font-body text-sm text-accent font-medium">Eugenio Carutti</p>
+                </div>
+                <div className="aspect-[16/9] overflow-hidden rounded-sm">
+                  <img src={retiroMovimiento} alt="Trabajo corporal vincular" className="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </FadeIn>

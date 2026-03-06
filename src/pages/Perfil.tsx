@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe } from "lucide-react";
 import germanPortrait from "@/assets/german-portrait.jpg";
+import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
+import germanSpeaking from "@/assets/german-speaking.jpg";
 
 const timelineEvents = [
   { year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
@@ -127,6 +129,30 @@ const Perfil = () => {
                     transformar los vínculos humanos desde la conciencia.
                   </p>
                 </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Galería de trabajo */}
+      <section className="py-12 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="aspect-[16/9] overflow-hidden rounded-sm">
+                <img
+                  src={germanFacilitando}
+                  alt="Germán facilitando un retiro"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="aspect-[16/9] overflow-hidden rounded-sm">
+                <img
+                  src={germanSpeaking}
+                  alt="Germán hablando en un evento"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
             </div>
           </FadeIn>

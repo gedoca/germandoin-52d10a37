@@ -3,6 +3,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon, MessageSquare } from "lucide-react";
+import viajeHero from "@/assets/viaje-hero.jpg";
+import viajeFuego from "@/assets/viaje-sanador-fuego.jpg";
+import viajeNoche from "@/assets/viaje-sanador-noche.jpg";
+import viajeCirculo from "@/assets/viaje-sanador-circulo.jpg";
+import viajeAmbiente from "@/assets/viaje-sanador-ambiente.jpg";
+import retiroCojines from "@/assets/retiro-cojines-ambiente.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
@@ -66,11 +72,15 @@ const testimonials = [
 const ViajeSanador = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 bg-gradient-to-b from-card to-background">
-        <div className="max-w-5xl mx-auto">
+      {/* Hero with background image */}
+      <section className="relative pt-28 pb-20 lg:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={viajeHero} alt="Viaje Sanador" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/65" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
           <FadeIn>
-            <Link to="/retiros" className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+            <Link to="/retiros" className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors mb-8">
               <ArrowLeft className="w-4 h-4" />
               Volver a Retiros
             </Link>
@@ -78,23 +88,48 @@ const ViajeSanador = () => {
           <FadeIn delay={0.1}>
             <div className="flex items-center gap-4 mb-4">
               <Compass className="w-6 h-6 text-accent" strokeWidth={1.5} />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+              <span className="font-body text-sm tracking-widest uppercase text-primary-foreground/70">
                 Retiro vivencial
               </span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-2">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-primary-foreground mb-2">
               Viaje <span className="italic text-accent">Sanador</span>
             </h1>
-            <p className="font-display text-lg sm:text-xl text-muted-foreground mb-8">
+            <p className="font-display text-lg sm:text-xl text-primary-foreground/80 mb-8">
               Retiro de autoconocimiento y estados ampliados de consciencia
             </p>
-            <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="font-body text-base lg:text-lg text-primary-foreground/70 max-w-3xl leading-relaxed">
               Un retiro vivencial donde nos sumergimos en una experiencia de trabajo personal profundo.
               En un contexto grupal de buscadores de conciencia y bienestar, proponemos actividades
               de introspección inspiradas en la gestalt, el mindfulness y el movimiento psicocorporal,
               con la intención de profundizar en quiénes somos y potenciar la oportunidad de
               autoconocimiento y sanación.
             </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Galería fotográfica */}
+      <section className="py-12 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              <div className="aspect-square overflow-hidden rounded-sm col-span-2 row-span-2">
+                <img src={viajeFuego} alt="Ceremonia de fuego" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={viajeNoche} alt="Ritual nocturno" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={viajeCirculo} alt="Círculo grupal" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={viajeAmbiente} alt="Ambiente del retiro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={retiroCojines} alt="Espacio de trabajo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
