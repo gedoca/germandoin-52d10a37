@@ -242,25 +242,50 @@ const Perfil = () => {
         </div>
       </section>
 
-      {/* Social media placeholder */}
+      {/* YouTube Shorts */}
       <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-4">
-              Últimas <span className="italic text-accent">publicaciones</span>
-            </h2>
-            <p className="font-body text-sm text-muted-foreground mb-8">
-              Contenido reciente de Instagram y YouTube
-            </p>
+            <div className="text-center mb-10">
+              <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-4">
+                Últimas <span className="italic text-accent">publicaciones</span>
+              </h2>
+              <p className="font-body text-sm text-muted-foreground">
+                Videos cortos de @edprohibida en YouTube
+              </p>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-square bg-muted rounded-sm flex items-center justify-center"
-                >
-                  <span className="font-body text-xs text-muted-foreground">Reel / Short {i}</span>
-                </div>
-              ))}
+              {[
+                "https://youtube.com/shorts/nLTgWdXFpzg",
+                "https://youtube.com/shorts/zDCFR8sVnKY",
+                "https://youtube.com/shorts/RDlJt40i2LU",
+                "https://youtube.com/shorts/7ry5s7KRJWM",
+              ].map((url, i) => {
+                const embedUrl = url.replace("youtube.com/shorts/", "youtube.com/embed/");
+                return (
+                  <div key={i} className="aspect-[9/16] rounded-sm overflow-hidden bg-muted">
+                    <iframe
+                      src={embedUrl}
+                      title={`YouTube Short ${i + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                      loading="lazy"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <a
+                href="https://www.youtube.com/@edprohibida/shorts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Ver más en @edprohibida
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </FadeIn>
         </div>
