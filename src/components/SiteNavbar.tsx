@@ -14,8 +14,11 @@ const retreatLinks = [
   { label: "Vínculos Auténticos", to: "/vinculos-autenticos" },
 ];
 
-const secondaryLinks = [
+const destinoLinks = [
   { label: "Guadalajara", to: "/guadalajara" },
+];
+
+const secondaryLinks = [
   { label: "Cursos", to: "/cursos" },
   { label: "Travesía Vincular", to: "/travesia-vincular" },
 ];
@@ -24,8 +27,10 @@ const SiteNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [retreatsOpen, setRetreatsOpen] = useState(false);
+  const [destinosOpen, setDestinosOpen] = useState(false);
   const location = useLocation();
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const retreatRef = useRef<HTMLDivElement>(null);
+  const destinoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -36,14 +41,17 @@ const SiteNavbar = () => {
   useEffect(() => {
     setMobileOpen(false);
     setRetreatsOpen(false);
+    setDestinosOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (retreatRef.current && !retreatRef.current.contains(e.target as Node)) {
         setRetreatsOpen(false);
+      }
+      if (destinoRef.current && !destinoRef.current.contains(e.target as Node)) {
+        setDestinosOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -51,12 +59,18 @@ const SiteNavbar = () => {
   }, []);
 
   const isRetreatActive = retreatLinks.some((l) => location.pathname === l.to) || location.pathname === "/retiros";
+  const isDestinoActive = destinoLinks.some((l) => location.pathname === l.to);
 
   const linkClass = (to: string) =>
     `font-body text-sm transition-colors ${
       location.pathname === to
         ? "text-foreground font-medium"
         : "text-muted-foreground hover:text-foreground"
+    }`;
+
+  const dropdownBtnClass = (active: boolean) =>
+    `inline-flex items-center gap-1 font-body text-sm transition-colors ${
+      active ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
     }`;
 
   return (
@@ -79,14 +93,10 @@ const SiteNavbar = () => {
           ))}
 
           {/* Retiros dropdown */}
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative" ref={retreatRef}>
             <button
-              onClick={() => setRetreatsOpen(!retreatsOpen)}
-              className={`inline-flex items-center gap-1 font-body text-sm transition-colors ${
-                isRetreatActive
-                  ? "text-foreground font-medium"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              onClick={() => { setRetreatsOpen(!retreatsOpen); setDestinosOpen(false); }}
+              className={dropdownBtnClass(isRetreatActive)}
             >
               Retiros
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${retreatsOpen ? "rotate-180" : ""}`} />
@@ -101,6 +111,34 @@ const SiteNavbar = () => {
                 </Link>
                 <div className="h-px bg-border my-1" />
                 {retreatLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`block px-4 py-2 font-body text-sm transition-colors ${
+                      location.pathname === link.to
+                        ? "text-foreground font-medium bg-muted/30"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Destinos dropdown */}
+          <div className="relative" ref={destinoRef}>
+            <button
+              onClick={() => { setDestinosOpen(!destinosOpen); setRetreatsOpen(false); }}
+              className={dropdownBtnClass(isDestinoActive)}
+            >
+              Destinos
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${destinosOpen ? "rotate-180" : ""}`} />
+            </button>
+            {destinosOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-background border border-border rounded-sm shadow-lg py-2">
+                {destinoLinks.map((link) => (
                   <Link
                     key={link.to}
                     to={link.to}
@@ -147,11 +185,7 @@ const SiteNavbar = () => {
           <div className="py-2">
             <button
               onClick={() => setRetreatsOpen(!retreatsOpen)}
-              className={`inline-flex items-center gap-1 w-full font-body text-sm transition-colors ${
-                isRetreatActive
-                  ? "text-foreground font-medium"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`${dropdownBtnClass(isRetreatActive)} w-full`}
             >
               Retiros
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${retreatsOpen ? "rotate-180" : ""}`} />
@@ -162,6 +196,26 @@ const SiteNavbar = () => {
                   Ver todos
                 </Link>
                 {retreatLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Destinos section */}
+          <div className="py-2">
+            <button
+              onClick={() => setDestinosOpen(!destinosOpen)}
+              className={`${dropdownBtnClass(isDestinoActive)} w-full`}
+            >
+              Destinos
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${destinosOpen ? "rotate-180" : ""}`} />
+            </button>
+            {destinosOpen && (
+              <div className="pl-4 mt-1 space-y-1 border-l border-accent/30">
+                {destinoLinks.map((link) => (
                   <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
                     {link.label}
                   </Link>

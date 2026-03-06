@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon, MessageSquare } from "lucide-react";
+import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
+import NextEditionSection from "@/components/NextEditionSection";
 import viajeHero from "@/assets/viaje-hero.jpg";
 import viajeFuego from "@/assets/viaje-sanador-fuego.jpg";
 import viajeNoche from "@/assets/viaje-sanador-noche.jpg";
@@ -263,40 +264,16 @@ const ViajeSanador = () => {
         </div>
       </section>
 
-      {/* Próxima edición + CTA */}
+      {/* Próxima edición */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px w-12 bg-accent" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próxima edición</span>
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próximas ediciones</span>
               <div className="h-px w-12 bg-accent" />
             </div>
-            <div className="p-10 border border-border rounded-sm bg-card mb-8">
-              <h2 className="font-display text-2xl text-foreground mb-3">
-                Consultá fechas y lugares disponibles
-              </h2>
-              <p className="font-body text-sm text-muted-foreground mb-4">
-                Consultá la agenda para ver las próximas ediciones o escribinos directamente por WhatsApp.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to="/agenda"
-                  className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  Ver agenda
-                </Link>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  Más información
-                </a>
-              </div>
-            </div>
+            <NextEditionSection slug="viaje-sanador" />
           </FadeIn>
         </div>
       </section>

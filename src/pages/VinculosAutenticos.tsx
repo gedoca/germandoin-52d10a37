@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves, MessageSquare } from "lucide-react";
+import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves } from "lucide-react";
+import NextEditionSection from "@/components/NextEditionSection";
 import vinculosHero from "@/assets/vinculos-hero.jpg";
 import germanCintia from "@/assets/german-cintia-vinculos.jpg";
 import retiroParejaEncuentro from "@/assets/retiro-pareja-encuentro.jpg";
@@ -310,28 +311,13 @@ const VinculosAutenticos = () => {
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="p-8 border border-accent/40 rounded-sm bg-card h-full flex flex-col items-center justify-center text-center">
-                <h3 className="font-display text-2xl text-foreground mb-4">Próxima edición</h3>
-                <p className="font-body text-sm text-muted-foreground mb-6 max-w-sm">
-                  Consultá la agenda para ver las próximas ediciones o escribinos directamente para recibir información sobre fechas, lugar e inversión.
-                </p>
-                <div className="flex flex-col gap-3 w-full max-w-xs">
-                  <Link
-                    to="/agenda"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    Ver agenda
-                  </Link>
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-                  >
-                    <MessageSquare className="w-4 h-4" />
-                    Más información
-                  </a>
+              <div className="p-8 border border-accent/40 rounded-sm bg-card h-full">
+                <div className="flex items-center justify-center gap-4 mb-6">
+                  <div className="h-px w-8 bg-accent" />
+                  <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próxima edición</span>
+                  <div className="h-px w-8 bg-accent" />
                 </div>
+                <NextEditionSection slug="vinculos-autenticos" />
               </div>
             </FadeIn>
           </div>
