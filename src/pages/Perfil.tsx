@@ -1,23 +1,76 @@
 import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe } from "lucide-react";
 import germanPortrait from "@/assets/german-portrait.jpg";
 
 const timelineEvents = [
-  { year: "2009", text: "Comienza la investigación de modelos educativos alternativos" },
-  { year: "2012", text: "Dirige y produce el documental 'La Educación Prohibida'" },
-  { year: "2013", text: "Funda Reevo – Red de Educación Alternativa" },
+  { year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
+  { year: "2012", text: "Dirige y produce La Educación Prohibida, documental visto por millones de personas" },
+  { year: "2013", text: "Funda Reevo – Red de Educación Alternativa, plataforma colaborativa internacional" },
   { year: "2015", text: "Diseña la Semana de las Educaciones Alternativas en Bogotá" },
-  { year: "2019", text: "Funda Proyecto C (2019–2023)" },
-  { year: "2022", text: "Especialización en psicoterapia gestalt-transpersonal (SAT & Aramí)" },
+  { year: "2019", text: "Funda Proyecto C – laboratorio de transformación educativa (2019–2023)" },
+  { year: "2022", text: "Especialización en psicoterapia gestalt-transpersonal (Programa SAT & Aramí)" },
+  { year: "2024", text: "Inicia Travesía Vincular junto a Cintia Alegre" },
   { year: "2025", text: "Mentor en ARKA – Escuela de Formación Transpersonal de Colombia" },
-  { year: "2025", text: "Crea El Año del Salto" },
+  { year: "2025", text: "Crea El Año del Salto – programa de transformación personal" },
+];
+
+const projects = [
+  {
+    icon: Sparkles,
+    title: "ARKA",
+    role: "Mentor desde 2025",
+    description: "Escuela de Formación Transpersonal de Colombia. Un espacio de formación profunda que integra psicoterapia, autoconocimiento y espiritualidad.",
+    url: "https://www.escuelaarka.com",
+    urlLabel: "Visitar ARKA",
+  },
+  {
+    icon: ArrowRight,
+    title: "El Año del Salto",
+    role: "Creador",
+    description: "Un programa de transformación personal que invita a dar el salto hacia una vida más auténtica y alineada con el propósito.",
+    url: "https://www.elaniodelsalto.com",
+    urlLabel: "Visitar El Año del Salto",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Travesía Vincular",
+    role: "Co-creador con Cintia Alegre",
+    description: "Proyecto que explora los vínculos humanos como territorio de transformación. Retiros, escritura y prácticas para relaciones más genuinas.",
+    internalLink: "/travesia-vincular",
+    urlLabel: "Ver Travesía Vincular",
+  },
+  {
+    icon: Film,
+    title: "La Educación Prohibida",
+    role: "Director y Productor (2012)",
+    description: "Documental que cuestiona la escuela moderna y explora modelos educativos alternativos. Más de 20 millones de vistas en YouTube.",
+    url: "https://www.youtube.com/watch?v=-1Y9OqSJKCc",
+    urlLabel: "Ver documental",
+  },
+  {
+    icon: Globe,
+    title: "Reevo",
+    role: "Fundador (2013)",
+    description: "Red de Educación Alternativa. Plataforma colaborativa que conectó experiencias educativas transformadoras en toda Iberoamérica.",
+    url: "https://reevo.org",
+    urlLabel: "Visitar Reevo",
+  },
+  {
+    icon: BookOpen,
+    title: "Cursos DesAprender Online",
+    role: "Creador",
+    description: "La experiencia formativa de DesAprender en formato online, accesible desde cualquier lugar del mundo.",
+    internalLink: "/cursos",
+    urlLabel: "Ver cursos",
+  },
 ];
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
   return (
     <motion.div
       ref={ref}
@@ -70,8 +123,6 @@ const Perfil = () => {
                   <p>
                     Especializado en psicoterapia gestalt-transpersonal a través del Programa SAT y
                     Aramí, con formación en Eneagrama desde la perspectiva de Claudio Naranjo.
-                  </p>
-                  <p>
                     Su trabajo integra comunicación, educación y terapia en una visión que busca
                     transformar los vínculos humanos desde la conciencia.
                   </p>
@@ -82,55 +133,52 @@ const Perfil = () => {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Proyectos destacados */}
       <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                Proyectos y colaboraciones
+              </span>
+            </div>
             <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-12">
               Proyectos <span className="italic text-accent">destacados</span>
             </h2>
           </FadeIn>
-          <div className="grid md:grid-cols-2 gap-8">
-            <FadeIn delay={0.1}>
-              <div className="bg-background border border-border rounded-sm p-8 hover:border-accent/40 transition-colors">
-                <h3 className="font-display text-xl text-foreground mb-2">ARKA</h3>
-                <p className="font-body text-xs tracking-widest uppercase text-accent mb-4">
-                  Mentor desde 2025
-                </p>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
-                  Escuela de Formación Transpersonal de Colombia. Un espacio de formación profunda
-                  que integra psicoterapia, autoconocimiento y espiritualidad.
-                </p>
-                <a
-                  href="https://www.escuelaarka.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors"
-                >
-                  Visitar ARKA <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <div className="bg-background border border-border rounded-sm p-8 hover:border-accent/40 transition-colors">
-                <h3 className="font-display text-xl text-foreground mb-2">El Año del Salto</h3>
-                <p className="font-body text-xs tracking-widest uppercase text-accent mb-4">
-                  Creador
-                </p>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
-                  Un programa de transformación personal que invita a dar el salto hacia una vida
-                  más auténtica y alineada con el propósito.
-                </p>
-                <a
-                  href="https://www.elaniodelsalto.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors"
-                >
-                  Visitar El Año del Salto <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, i) => (
+              <FadeIn key={i} delay={0.08 * i}>
+                <div className="bg-background border border-border rounded-sm p-6 hover:border-accent/40 transition-colors h-full flex flex-col">
+                  <project.icon className="w-6 h-6 text-accent mb-4" strokeWidth={1.5} />
+                  <h3 className="font-display text-xl text-foreground mb-1">{project.title}</h3>
+                  <p className="font-body text-xs tracking-widest uppercase text-accent mb-3">
+                    {project.role}
+                  </p>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                    {project.description}
+                  </p>
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors"
+                    >
+                      {project.urlLabel} <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  ) : project.internalLink ? (
+                    <Link
+                      to={project.internalLink}
+                      className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors"
+                    >
+                      {project.urlLabel} <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  ) : null}
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -139,6 +187,12 @@ const Perfil = () => {
       <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                Recorrido
+              </span>
+            </div>
             <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-12">
               Línea de <span className="italic text-accent">tiempo</span>
             </h2>
@@ -150,7 +204,7 @@ const Perfil = () => {
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="relative"
               >
                 <div className="absolute -left-[calc(1rem+5px)] top-1.5 w-2.5 h-2.5 rounded-full bg-accent" />
@@ -162,7 +216,7 @@ const Perfil = () => {
         </div>
       </section>
 
-      {/* Placeholder: Social media feed */}
+      {/* Social media placeholder */}
       <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
         <div className="max-w-6xl mx-auto text-center">
           <FadeIn>
