@@ -28,6 +28,8 @@ const App = () => (
         <Route path="/desaprender" element={<Desaprender />} />
         <Route path="/viaje-sanador" element={<ViajeSanador />} />
         <Route path="/vinculos-autenticos" element={<VinculosAutenticos />} />
+        <Route path="/cursos" element={<Cursos />} />
+        <Route path="/travesia-vincular" element={<TravesiaVincular />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
