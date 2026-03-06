@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Sparkles, Users, Clock, MapPin, ArrowLeft, Quote, BookOpen, Eye, Lightbulb, Heart, Compass, MessageSquare } from "lucide-react";
+import { Sparkles, Users, Clock, MapPin, ArrowLeft, Quote, BookOpen, Eye, Lightbulb, Heart, Compass } from "lucide-react";
+import NextEditionSection from "@/components/NextEditionSection";
 import desaprenderHero from "@/assets/desaprender-hero.jpg";
 import desaprenderGrupo1 from "@/assets/desaprender-grupo-1.jpg";
 import desaprenderGrupo2 from "@/assets/desaprender-grupo-2.jpg";
@@ -269,38 +270,19 @@ const Desaprender = () => {
         </div>
       </section>
 
-      {/* Próxima edición + CTA */}
+      {/* Próxima edición */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-px w-12 bg-accent" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próxima edición</span>
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próximas ediciones</span>
               <div className="h-px w-12 bg-accent" />
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-4">
+            <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-8 text-center">
               ¿Querés participar o traer <span className="italic text-accent">DesAprender</span> a tu ciudad?
             </h2>
-            <p className="font-body text-muted-foreground mb-8 max-w-xl mx-auto">
-              Consultá la agenda para ver las próximas ediciones o escribinos directamente por WhatsApp.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/agenda"
-                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                Ver agenda
-              </Link>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-              >
-                <MessageSquare className="w-4 h-4" />
-                Más información
-              </a>
-            </div>
+            <NextEditionSection slug="desaprender" />
           </FadeIn>
         </div>
       </section>
