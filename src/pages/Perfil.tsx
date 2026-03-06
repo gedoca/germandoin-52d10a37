@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe } from "lucide-react";
+import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe, MessageSquare } from "lucide-react";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
 import germanSpeaking from "@/assets/german-speaking.jpg";
@@ -267,7 +267,7 @@ const Perfil = () => {
                     <iframe
                       src={embedUrl}
                       title={`YouTube Short ${i + 1}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       className="w-full h-full border-0"
                       loading="lazy"
