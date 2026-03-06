@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // 1. Esto le dice a GitHub Pages que el sitio está en la carpeta /germandoin/
-  base: './', 
+  base: '/', 
   
   server: {
     host: "::",
