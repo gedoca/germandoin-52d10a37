@@ -54,7 +54,9 @@ const TravesiaVincular = () => {
               Travesía <span className="italic text-accent">Vincular</span>
             </h1>
             <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed mb-8">
-              Un proyecto coordinado por Germán Doin y Cintia Alegre que explora los vínculos humanos
+              Un proyecto coordinado por Germán Doin y{" "}
+              <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Cintia Alegre</a>{" "}
+              que explora los vínculos humanos
               como territorio de transformación. Retiros, escritura, conversaciones y prácticas para
               habitar relaciones más libres, genuinas y creativas.
             </p>
@@ -102,7 +104,9 @@ const TravesiaVincular = () => {
                 <div className="w-20 h-20 rounded-full bg-muted mb-6 flex items-center justify-center">
                   <span className="font-display text-2xl text-muted-foreground">CA</span>
                 </div>
-                <h3 className="font-display text-2xl text-foreground mb-3">Cintia Alegre</h3>
+                <h3 className="font-display text-2xl text-foreground mb-3">
+                  <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Cintia Alegre</a>
+                </h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   Música, cantautora y terapeuta vocal. Formada en Psicología Social y especializada
                   en exploración de la voz como herramienta de autoconocimiento y transformación.

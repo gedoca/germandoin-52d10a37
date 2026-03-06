@@ -2,7 +2,9 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
+import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon, MessageSquare } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -41,8 +43,8 @@ const steps = [
   {
     icon: Moon,
     number: "04",
-    title: "Encuentro con los Hongos",
-    description: "Exploración psicodélica con la medicina de los hongos durante la tarde noche, en un espacio preparado con música seleccionada, buscando conectar con nuestra esencia en un contexto grupal de ritual transformador.",
+    title: "Estados Ampliados de Consciencia",
+    description: "Exploración guiada de estados ampliados de consciencia en un espacio preparado con música seleccionada, buscando conectar con nuestra esencia en un contexto grupal de ritual transformador. Siempre sosteniendo el encuadre terapéutico de cuidado.",
   },
   {
     icon: Sunrise,
@@ -55,11 +57,9 @@ const steps = [
 const testimonials = [
   {
     text: "La intervención y acompañamiento de ustedes fue fundamental para la experiencia, me hicieron sentir todo el tiempo acompañada, guiada, contenida y segura. El saber que estaban ahí cuidándonos me daba una paz increíble.",
-    date: "Diciembre 2023",
   },
   {
     text: "Creo que fue posible gracias al amor, el cuidado, la experiencia, el tacto y la profesionalidad que supieron brindar. El respeto por el proceso, por el individuo, realmente hace la diferencia. Impecable manejo de tiempos grupales.",
-    date: "Diciembre 2023",
   },
 ];
 
@@ -86,13 +86,14 @@ const ViajeSanador = () => {
               Viaje <span className="italic text-accent">Sanador</span>
             </h1>
             <p className="font-display text-lg sm:text-xl text-muted-foreground mb-8">
-              Retiro de autoconocimiento asistido con psicodélicos
+              Retiro de autoconocimiento y estados ampliados de consciencia
             </p>
             <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
-              Un retiro vivencial donde nos sumergimos en una experiencia de trabajo personal profundo
-              de la mano de la sabiduría de los hongos. En un contexto grupal de buscadores de conciencia
-              y bienestar, actividades de introspección inspiradas en la gestalt, el mindfulness y el
-              movimiento psicocorporal.
+              Un retiro vivencial donde nos sumergimos en una experiencia de trabajo personal profundo.
+              En un contexto grupal de buscadores de conciencia y bienestar, proponemos actividades
+              de introspección inspiradas en la gestalt, el mindfulness y el movimiento psicocorporal,
+              con la intención de profundizar en quiénes somos y potenciar la oportunidad de
+              autoconocimiento y sanación.
             </p>
           </FadeIn>
         </div>
@@ -110,8 +111,8 @@ const ViajeSanador = () => {
               <div>
                 <p className="font-body text-muted-foreground leading-relaxed mb-6">
                   El Viaje Sanador está inspirado en el libro del mismo nombre del psicoterapeuta chileno
-                  Claudio Naranjo, y en su propuesta de 1970 de que los psicodélicos podrían ser la puerta
-                  para que los procesos terapéuticos se potencien.
+                  Claudio Naranjo, y en su propuesta de que los estados ampliados de consciencia podrían
+                  ser la puerta para que los procesos terapéuticos se potencien.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
                   Tomamos el hilo conductor del viaje del héroe, el encuentro con los propios demonios y sombras,
@@ -186,7 +187,11 @@ const ViajeSanador = () => {
                 </p>
               </div>
               <div className="p-8 border border-border rounded-sm bg-card">
-                <h3 className="font-display text-2xl text-foreground mb-3">Cintia Alegre</h3>
+                <h3 className="font-display text-2xl text-foreground mb-3">
+                  <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                    Cintia Alegre
+                  </a>
+                </h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   Música, cantautora y terapeuta vocal. Formada en Psicología Social y especializada en
                   exploración de la voz como herramienta de autoconocimiento y transformación. Ha acompañado
@@ -216,7 +221,6 @@ const ViajeSanador = () => {
                   <p className="font-body text-sm text-muted-foreground leading-relaxed italic mb-4">
                     "{t.text}"
                   </p>
-                  <p className="font-body text-xs text-accent font-medium">{t.date}</p>
                 </div>
               </FadeIn>
             ))}
@@ -224,35 +228,39 @@ const ViajeSanador = () => {
         </div>
       </section>
 
-      {/* Inversión */}
+      {/* Próxima edición + CTA */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-px w-12 bg-accent" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Inversión</span>
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próxima edición</span>
               <div className="h-px w-12 bg-accent" />
             </div>
             <div className="p-10 border border-border rounded-sm bg-card mb-8">
-              <p className="font-display text-4xl text-foreground mb-2">USD $200</p>
-              <p className="font-body text-sm text-muted-foreground mb-6">por persona</p>
-              <ul className="font-body text-sm text-muted-foreground space-y-2 mb-8 text-left max-w-md mx-auto">
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">·</span> Sesión individual previa de preparación
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">·</span> Actividades y acompañamiento durante el retiro
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">·</span> Inscripción al menos 1 mes antes
-                </li>
-              </ul>
-              <Link
-                to="/contacto"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-              >
-                Reservar mi lugar
-              </Link>
+              <h2 className="font-display text-2xl text-foreground mb-3">
+                Consultá fechas y lugares disponibles
+              </h2>
+              <p className="font-body text-sm text-muted-foreground mb-4">
+                Consultá la agenda para ver las próximas ediciones o escribinos directamente por WhatsApp.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  to="/agenda"
+                  className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  Ver agenda
+                </Link>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Más información
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>

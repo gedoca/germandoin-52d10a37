@@ -2,7 +2,9 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves } from "lucide-react";
+import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves, MessageSquare } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -31,7 +33,7 @@ const methodology = [
     icon: Users,
     number: "01",
     title: "Sesiones de Preparación",
-    description: "4 encuentros grupales en Bogotá para conocernos, despertar resonancias y construir la confianza necesaria. Nos familiarizamos con la metodología de indagación vincular y afinamos la escucha hacia lo que sucede entre nosotros.",
+    description: "Encuentros grupales previos para conocernos, despertar resonancias y construir la confianza necesaria. Nos familiarizamos con la metodología de indagación vincular y afinamos la escucha hacia lo que sucede entre nosotros.",
   },
   {
     icon: Eye,
@@ -49,7 +51,7 @@ const methodology = [
     icon: Sparkles,
     number: "04",
     title: "Exploración de estados ampliados",
-    description: "Dinámica interactiva y vincular de exploración profunda donde el grupo se convierte en espejo vivo. Transitamos estados ampliados de conciencia que permiten reconocer defensas y límites al vincularnos.",
+    description: "Dinámica interactiva y vincular de exploración profunda donde el grupo se convierte en espejo vivo. Transitamos estados ampliados de consciencia que permiten reconocer defensas y límites al vincularnos.",
   },
   {
     icon: Waves,
@@ -57,13 +59,6 @@ const methodology = [
     title: "Integración circular",
     description: "Cerramos con un desayuno integrador y un círculo de cierre donde cada participante comparte lo comprendido y sentido. Un espacio de reflexión y escucha mutua para asentar lo vivido en el cuerpo y la conciencia.",
   },
-];
-
-const pricing = [
-  { label: "Pago anticipado (diciembre)", value: "$1.300.000 COP" },
-  { label: "Plan en 3 pagos (dic–ene–feb)", value: "3 × $550.000 COP" },
-  { label: "Plan en 2 pagos (ene–feb)", value: "2 × $900.000 COP" },
-  { label: "Pago único (febrero)", value: "$2.000.000 COP" },
 ];
 
 const VinculosAutenticos = () => {
@@ -102,7 +97,10 @@ const VinculosAutenticos = () => {
             <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
               Una propuesta de exploración personal y colectiva para quienes buscan ir más allá del
               autoconocimiento individual y entrar en la experiencia transformadora del encuentro humano.
-              Co-facilitado por Germán Doin y Cintia Alegre.
+              Co-facilitado por Germán Doin y{" "}
+              <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Cintia Alegre
+              </a>.
             </p>
           </FadeIn>
         </div>
@@ -221,7 +219,11 @@ const VinculosAutenticos = () => {
                 </p>
               </div>
               <div className="p-8 border border-border rounded-sm bg-background">
-                <h3 className="font-display text-2xl text-foreground mb-3">Cintia Alegre</h3>
+                <h3 className="font-display text-2xl text-foreground mb-3">
+                  <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                    Cintia Alegre
+                  </a>
+                </h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   Música, cantautora y terapeuta vocal. Formada en Psicología Social y especializada en
                   exploración de la voz como herramienta de autoconocimiento y transformación. Ha acompañado
@@ -233,13 +235,13 @@ const VinculosAutenticos = () => {
         </div>
       </section>
 
-      {/* Condiciones + Inversión */}
+      {/* Condiciones + Próxima edición */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-accent" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Inversión</span>
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Información práctica</span>
             </div>
           </FadeIn>
           <div className="grid lg:grid-cols-2 gap-8">
@@ -251,50 +253,51 @@ const VinculosAutenticos = () => {
                     <span className="text-accent mt-0.5">·</span> Grupo reducido: 6 a 8 participantes
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5">·</span> 4 encuentros presenciales preparatorios en Bogotá
+                    <span className="text-accent mt-0.5">·</span> Encuentros presenciales preparatorios previos
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-0.5">·</span> Retiro de 3 días y 2 noches en entorno natural
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5">·</span> Se requiere no encontrarse bajo tratamiento con psicofármacos
                   </li>
                 </ul>
                 <h4 className="font-display text-lg text-foreground mt-6 mb-3">Qué incluye</h4>
                 <ul className="font-body text-sm text-muted-foreground space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5">·</span> Retiro vivencial (3 días / 2 noches)
+                    <span className="text-accent mt-0.5">·</span> Retiro vivencial completo
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-0.5">·</span> Alojamiento en habitaciones compartidas
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5">·</span> Alimentación completa (elaboración colectiva)
+                    <span className="text-accent mt-0.5">·</span> Alimentación completa
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5">·</span> 2 encuentros grupales previos de 2 horas en Bogotá
+                    <span className="text-accent mt-0.5">·</span> Encuentros grupales previos de preparación
                   </li>
                 </ul>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="p-8 border border-accent/40 rounded-sm bg-card h-full">
-                <h3 className="font-display text-2xl text-foreground mb-6">Valores</h3>
-                <div className="space-y-4">
-                  {pricing.map((p, i) => (
-                    <div key={i} className="flex justify-between items-center pb-3 border-b border-border last:border-0">
-                      <span className="font-body text-sm text-muted-foreground">{p.label}</span>
-                      <span className="font-display text-lg text-foreground">{p.value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8">
+              <div className="p-8 border border-accent/40 rounded-sm bg-card h-full flex flex-col items-center justify-center text-center">
+                <h3 className="font-display text-2xl text-foreground mb-4">Próxima edición</h3>
+                <p className="font-body text-sm text-muted-foreground mb-6 max-w-sm">
+                  Consultá la agenda para ver las próximas ediciones o escribinos directamente para recibir información sobre fechas, lugar e inversión.
+                </p>
+                <div className="flex flex-col gap-3 w-full max-w-xs">
                   <Link
-                    to="/contacto"
-                    className="inline-flex items-center justify-center w-full gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+                    to="/agenda"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
-                    Reservar mi lugar
+                    Ver agenda
                   </Link>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    Más información
+                  </a>
                 </div>
               </div>
             </FadeIn>

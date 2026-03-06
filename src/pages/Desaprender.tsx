@@ -2,7 +2,9 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Sparkles, Users, Clock, MapPin, ArrowLeft, Quote, BookOpen, Eye, Lightbulb, Heart, Compass } from "lucide-react";
+import { Sparkles, Users, Clock, MapPin, ArrowLeft, Quote, BookOpen, Eye, Lightbulb, Heart, Compass, MessageSquare } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -30,17 +32,14 @@ const qualities = [
 const testimonials = [
   {
     text: "Gracias a ustedes por enriquecerme con más sabiduría. Desaprender me dejó una gran perspectiva hacia donde voy en el plano educativo.",
-    date: "Mayo 2024",
   },
   {
     text: "DesAprender fue una experiencia que cambió mi manera de entender el acompañamiento. Profundo, humano, transformador.",
     author: "Carlos R.",
-    date: "Bogotá",
   },
   {
     text: "Germán tiene una capacidad única para abrir espacios donde lo profundo se vuelve accesible. Su trabajo me transformó como educadora y como persona.",
     author: "María L.",
-    date: "Buenos Aires",
   },
 ];
 
@@ -110,9 +109,7 @@ const Desaprender = () => {
                 <p className="font-body text-muted-foreground leading-relaxed">
                   Diferentes ejercicios traídos de las educaciones alternativas, la psicología social,
                   la psicoterapia gestáltica y la danza movimiento terapia nos acompañan en el
-                  descubrimiento de estas cualidades. En el camino nos guiamos con un marco simbólico
-                  natural, en el que cada momento del proceso es una inspiración para ponerle imagen
-                  y reflexión a las cualidades que buscamos desarrollar.
+                  descubrimiento de estas cualidades.
                 </p>
               </div>
             </div>
@@ -169,7 +166,7 @@ const Desaprender = () => {
                 </div>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   2 jornadas intensivas de 8 a 10 horas cada una. Requiere voluntad de participación
-                  y confianza por parte de los participantes, condición para que el trabajo rinda frutos.
+                  y confianza por parte de los participantes, condición para que el trabajo rinde frutos.
                 </p>
               </div>
             </FadeIn>
@@ -228,9 +225,9 @@ const Desaprender = () => {
                   <p className="font-body text-sm text-muted-foreground leading-relaxed italic mb-4">
                     "{t.text}"
                   </p>
-                  <p className="font-body text-xs text-accent font-medium">
-                    {t.author ? `${t.author} · ` : ""}{t.date}
-                  </p>
+                  {t.author && (
+                    <p className="font-body text-xs text-accent font-medium">{t.author}</p>
+                  )}
                 </div>
               </FadeIn>
             ))}
@@ -238,23 +235,38 @@ const Desaprender = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Próxima edición + CTA */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Próxima edición</span>
+              <div className="h-px w-12 bg-accent" />
+            </div>
             <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-4">
-              ¿Querés traer <span className="italic text-accent">DesAprender</span> a tu ciudad?
+              ¿Querés participar o traer <span className="italic text-accent">DesAprender</span> a tu ciudad?
             </h2>
             <p className="font-body text-muted-foreground mb-8 max-w-xl mx-auto">
-              Si sos organizador/a, escuela o colectivo y querés coordinar una edición
-              de DesAprender en tu comunidad, escribinos.
+              Consultá la agenda para ver las próximas ediciones o escribinos directamente por WhatsApp.
             </p>
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-            >
-              Contactar
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/agenda"
+                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Ver agenda
+              </Link>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+              >
+                <MessageSquare className="w-4 h-4" />
+                Más información
+              </a>
+            </div>
           </FadeIn>
         </div>
       </section>
