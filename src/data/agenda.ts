@@ -1,8 +1,8 @@
-import { Compass, Sparkles, HeartHandshake, PartyPopper } from "lucide-react";
+import { Compass, Sparkles, HeartHandshake, PartyPopper, Mic, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface AgendaEvent {
-  type: "Retiro" | "Taller" | "Festival";
+  type: "Retiro" | "Taller" | "Festival" | "Conferencia";
   name: string;
   icon: LucideIcon;
   location: string;
@@ -10,18 +10,11 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  /** Used by subpages to find their next event */
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
-/*
- * ─── AGENDA CENTRALIZADA ─────────────────────────────────────
- * Esta es la ÚNICA fuente de verdad para fechas y actividades.
- * Editá este array para actualizar todo el sitio automáticamente.
- * ──────────────────────────────────────────────────────────────
- */
 export const upcomingEvents: AgendaEvent[] = [
   {
     type: "Retiro",
@@ -33,6 +26,39 @@ export const upcomingEvents: AgendaEvent[] = [
     link: "/viaje-sanador",
     highlighted: true,
     slug: "viaje-sanador",
+  },
+  {
+    type: "Conferencia",
+    name: "Pedagogía del Vínculo",
+    icon: Mic,
+    location: "Guadalajara",
+    date: "Abril 2025",
+    dateDetail: "14 de Abril",
+    link: "/guadalajara",
+    highlighted: false,
+    slug: "guadalajara",
+  },
+  {
+    type: "Taller",
+    name: "Eneagrama para Educadores",
+    icon: Users,
+    location: "Espacio Alas, Guadalajara",
+    date: "Abril 2025",
+    dateDetail: "18 de Abril",
+    link: "/guadalajara",
+    highlighted: false,
+    slug: "guadalajara",
+  },
+  {
+    type: "Retiro",
+    name: "DesAprender",
+    icon: Sparkles,
+    location: "Guadalajara",
+    date: "Abril 2025",
+    dateDetail: "24 y 25 de Abril",
+    link: "/guadalajara",
+    highlighted: false,
+    slug: "guadalajara",
   },
   {
     type: "Taller",
@@ -102,7 +128,6 @@ export const upcomingEvents: AgendaEvent[] = [
   },
 ];
 
-/** Get next events for a given retreat slug */
 export function getNextEventsForSlug(slug: AgendaEvent["slug"]): AgendaEvent[] {
   return upcomingEvents.filter((e) => e.slug === slug);
 }

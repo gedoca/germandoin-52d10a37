@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { HeartHandshake, ExternalLink, Quote, ArrowRight, Users, Compass, Mic } from "lucide-react";
+import { HeartHandshake, ExternalLink, Quote, ArrowRight, Users, Compass, Mic, MessageSquare, Radio, CalendarDays } from "lucide-react";
+import { WHATSAPP_URL } from "@/data/agenda";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -60,15 +61,111 @@ const TravesiaVincular = () => {
               como territorio de transformación. Retiros, escritura, conversaciones y prácticas para
               habitar relaciones más libres, genuinas y creativas.
             </p>
-            <a
-              href="https://travesiavincular.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-            >
-              Leer en Substack
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://travesiavincular.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+              >
+                Leer en Substack
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              <a
+                href="https://chat.whatsapp.com/LM90nNwxFb0JY1sBtInjN8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <MessageSquare className="w-4 h-4" />
+                Sumarse al grupo de WhatsApp
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Vivos Semanales */}
+      <section className="py-16 lg:py-20 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="relative border border-accent/40 rounded-sm bg-card overflow-hidden">
+              <div className="h-2 bg-accent" />
+              <div className="p-8 lg:p-10">
+                <div className="flex items-start gap-4 mb-4">
+                  <Radio className="w-7 h-7 text-accent shrink-0 mt-1" strokeWidth={1.5} />
+                  <div>
+                    <h3 className="font-display text-2xl text-foreground mb-2">Vivos Semanales</h3>
+                    <p className="font-body text-muted-foreground leading-relaxed">
+                      Todos los <strong className="text-foreground">lunes a las 6:00 PM (hora Colombia)</strong> hacemos
+                      un vivo en Instagram y YouTube sobre el tema de la semana publicado en Substack.
+                    </p>
+                    <div className="flex flex-wrap gap-3 mt-4">
+                      <a
+                        href="https://travesiavincular.substack.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        Ver temas en Substack
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Grupo de Autoconocimiento Vincular */}
+      <section className="py-16 lg:py-20 px-6 sm:px-12 lg:px-16 bg-card">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                Proceso grupal
+              </span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-4">
+              Grupo de Autoconocimiento <span className="italic text-accent">Vincular</span>
+            </h2>
+            <p className="font-body text-muted-foreground max-w-3xl leading-relaxed mb-8">
+              Un proceso de <strong className="text-foreground">4 meses</strong> coordinado por Germán Doin y Cintia Alegre.
+              Encuentros virtuales semanales donde exploramos herramientas para conocernos
+              más profundamente y transformar nuestros vínculos.
+            </p>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Users, label: "Autoconocimiento", desc: "Exploración personal y grupal" },
+              { icon: Compass, label: "Mapas para reconocernos", desc: "Herramientas de navegación interior" },
+              { icon: HeartHandshake, label: "Eneagrama", desc: "Patrones de personalidad y consciencia" },
+              { icon: CalendarDays, label: "Inteligencia Vincular", desc: "El arte de vincularse con autenticidad" },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={0.08 * i}>
+                <div className="p-6 border border-border rounded-sm bg-background hover:border-accent/40 transition-colors h-full">
+                  <item.icon className="w-6 h-6 text-accent mb-4" strokeWidth={1.5} />
+                  <h3 className="font-display text-lg text-foreground mb-1">{item.label}</h3>
+                  <p className="font-body text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-8">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+              >
+                <MessageSquare className="w-4 h-4" />
+                Más información
+              </a>
+            </div>
           </FadeIn>
         </div>
       </section>

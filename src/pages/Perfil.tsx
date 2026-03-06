@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe } from "lucide-react";
+import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe, MessageSquare } from "lucide-react";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
 import germanSpeaking from "@/assets/german-speaking.jpg";
@@ -242,6 +242,37 @@ const Perfil = () => {
         </div>
       </section>
 
+      {/* Sesiones Individuales */}
+      <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="relative border border-accent/40 rounded-sm bg-card overflow-hidden">
+              <div className="h-2 bg-accent" />
+              <div className="p-8 lg:p-10 text-center">
+                <Users className="w-8 h-8 text-accent mx-auto mb-4" strokeWidth={1.5} />
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-3">
+                  Sesiones <span className="italic text-accent">Individuales</span>
+                </h2>
+                <p className="font-body text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
+                  Ofrezco acompañamiento en procesos de terapia individual, tanto en modalidad
+                  virtual como presencial. Un espacio seguro para explorar tu mundo interno,
+                  tus vínculos y tu camino de transformación personal.
+                </p>
+                <a
+                  href="https://wa.me/5491162720879"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Consultar por sesiones
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* YouTube Shorts */}
       <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
         <div className="max-w-6xl mx-auto">
@@ -267,7 +298,7 @@ const Perfil = () => {
                     <iframe
                       src={embedUrl}
                       title={`YouTube Short ${i + 1}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       className="w-full h-full border-0"
                       loading="lazy"
