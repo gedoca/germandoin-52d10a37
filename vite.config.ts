@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
-  base: '/germandoin-52d10a37/',
+  base: './',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
