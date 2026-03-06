@@ -9,6 +9,8 @@ import Guadalajara from "./pages/Guadalajara";
 import Desaprender from "./pages/Desaprender";
 import ViajeSanador from "./pages/ViajeSanador";
 import VinculosAutenticos from "./pages/VinculosAutenticos";
+import Cursos from "./pages/Cursos";
+import TravesiaVincular from "./pages/TravesiaVincular";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
