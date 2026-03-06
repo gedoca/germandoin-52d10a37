@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Compass, HeartHandshake, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Compass, HeartHandshake, Sparkles, ArrowRight } from "lucide-react";
 
 const retreats = [
   {
@@ -9,6 +10,7 @@ const retreats = [
     subtitle: "Las 7 cualidades del acompañamiento del otro",
     description:
       "Formación vivencial con más de 500 participantes en 7 países. Un espacio para soltar certezas y redescubrir el arte de acompañar.",
+    link: "/desaprender",
   },
   {
     icon: Compass,
@@ -16,6 +18,7 @@ const retreats = [
     subtitle: "Retiro de autoconocimiento transpersonal",
     description:
       "Exploración emocional profunda e integración consciente. Un viaje hacia lo esencial a través del cuerpo, la emoción y la presencia.",
+    link: "/viaje-sanador",
   },
   {
     icon: HeartHandshake,
@@ -23,6 +26,7 @@ const retreats = [
     subtitle: "Inteligencia vincular aplicada",
     description:
       "Herramientas para relaciones personales y profesionales más genuinas. Una invitación a vincularnos desde la verdad.",
+    link: "/vinculos-autenticos",
   },
 ];
 
@@ -31,7 +35,7 @@ const RetreatsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="retiros" className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16">
+    <section className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16">
       <div className="max-w-6xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -45,7 +49,7 @@ const RetreatsSection = () => {
               Retiros y experiencias
             </span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground">
             Espacios de <span className="italic text-accent">transformación</span>
           </h2>
         </motion.div>
@@ -62,19 +66,20 @@ const RetreatsSection = () => {
               <div className="h-2 bg-accent/60 group-hover:bg-accent transition-colors" />
               <div className="p-8 lg:p-10">
                 <retreat.icon className="w-7 h-7 text-accent mb-5" strokeWidth={1.5} />
-                <h3 className="font-display text-2xl font-semibold text-foreground mb-1">
+                <h3 className="font-display text-2xl text-foreground mb-1">
                   {retreat.name}
                 </h3>
                 <p className="font-body text-sm text-accent font-medium mb-4">{retreat.subtitle}</p>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
                   {retreat.description}
                 </p>
-                <a
-                  href="#contacto"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                <Link
+                  to={retreat.link}
+                  className="inline-flex items-center justify-center w-full gap-2 px-6 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   Más información
-                </a>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </motion.div>
           ))}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import germanPortrait from "@/assets/german-portrait.jpg";
 
 const HeroSection = () => {
@@ -28,10 +29,10 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="h-0.5 bg-accent mb-8"
           />
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-primary-foreground lg:text-foreground tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight text-primary-foreground lg:text-foreground tracking-tight">
             Germán Doin
             <br />
-            <span className="text-accent lg:text-accent">Campos</span>
+            <span className="text-accent italic">Campos</span>
           </h1>
           <p className="mt-4 font-display text-lg sm:text-xl italic text-primary-foreground/80 lg:text-muted-foreground">
             Comunicación. Educación. Transformación Vincular.
@@ -41,18 +42,18 @@ const HeroSection = () => {
             desde hace más de 15 años en América Latina.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <a
-              href="#sobre-mi"
+            <Link
+              to="/perfil"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
             >
               Conocer mi trabajo
-            </a>
-            <a
-              href="#retiros"
+            </Link>
+            <Link
+              to="/retiros"
               className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
             >
               Ver próximos retiros
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

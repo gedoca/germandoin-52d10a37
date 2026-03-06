@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Film, GraduationCap, Heart } from "lucide-react";
 
 const facets = [
@@ -12,6 +13,7 @@ const facets = [
       "Narrativas que movilizan conciencia colectiva.",
     ],
     cta: "Ver proyectos",
+    link: "/perfil",
   },
   {
     icon: GraduationCap,
@@ -22,6 +24,7 @@ const facets = [
       "Más de 4000 personas han participado en sus formaciones.",
     ],
     cta: "Explorar propuestas educativas",
+    link: "/retiros",
   },
   {
     icon: Heart,
@@ -33,6 +36,7 @@ const facets = [
       "Integración cuerpo–emoción–conciencia.",
     ],
     cta: "Conocer el enfoque terapéutico",
+    link: "/contacto",
   },
 ];
 
@@ -41,7 +45,7 @@ const FacetsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="facetas" className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-card">
+    <section className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-card">
       <div className="max-w-6xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -56,7 +60,7 @@ const FacetsSection = () => {
             </span>
             <div className="h-px w-12 bg-accent" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground">
             Tres facetas, <span className="italic text-accent">una visión</span>
           </h2>
         </motion.div>
@@ -71,7 +75,7 @@ const FacetsSection = () => {
               className="bg-background rounded-sm p-8 lg:p-10 flex flex-col border border-border hover:border-accent/40 transition-colors group"
             >
               <facet.icon className="w-8 h-8 text-accent mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
-              <h3 className="font-display text-xl font-semibold text-foreground mb-4 leading-snug">
+              <h3 className="font-display text-xl text-foreground mb-4 leading-snug">
                 {facet.title}
               </h3>
               <ul className="space-y-2 mb-8 flex-1">
@@ -81,13 +85,13 @@ const FacetsSection = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contacto"
+              <Link
+                to={facet.link}
                 className="inline-flex items-center font-body text-sm font-medium text-primary hover:text-accent transition-colors tracking-wide"
               >
                 {facet.cta}
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
