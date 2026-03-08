@@ -21,7 +21,7 @@ const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 };
 
 const internationalTour = [
-  { city: "Panamá", period: "Abril 2025", active: true },
+  { city: "Panamá", period: "Abril 2025", active: true, link: "/panama" },
   { city: "Monterrey", period: "Mayo 2025", active: true },
   { city: "Chiapas", period: "Junio 2025", active: true },
   { city: "México DF", period: "Junio 2025", active: true },

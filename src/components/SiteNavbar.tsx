@@ -15,6 +15,7 @@ const retreatLinks = [
 ];
 
 const destinoLinks = [
+  { label: "Panamá", to: "/panama" },
   { label: "Guadalajara", to: "/guadalajara" },
 ];
 
@@ -75,9 +76,7 @@ const SiteNavbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between h-16">
         <Link to="/" className="font-display text-xl text-foreground tracking-tight">
