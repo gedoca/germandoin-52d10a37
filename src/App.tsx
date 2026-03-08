@@ -6,6 +6,7 @@ import Retiros from "./pages/Retiros";
 import Agenda from "./pages/Agenda";
 import Contacto from "./pages/Contacto";
 import Guadalajara from "./pages/Guadalajara";
+import Panama from "./pages/Panama";
 import Desaprender from "./pages/Desaprender";
 import ViajeSanador from "./pages/ViajeSanador";
 import VinculosAutenticos from "./pages/VinculosAutenticos";
@@ -25,6 +26,7 @@ const App = () => (
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/guadalajara" element={<Guadalajara />} />
+        <Route path="/panama" element={<Panama />} />
         <Route path="/desaprender" element={<Desaprender />} />
         <Route path="/viaje-sanador" element={<ViajeSanador />} />
         <Route path="/vinculos-autenticos" element={<VinculosAutenticos />} />
