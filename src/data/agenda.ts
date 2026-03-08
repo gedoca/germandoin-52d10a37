@@ -23,7 +23,7 @@ export const upcomingEvents: AgendaEvent[] = [
     location: "Panamá",
     date: "Abril 2025",
     dateDetail: "10 al 12 de Abril",
-    link: "/viaje-sanador",
+    link: "/panama",
     highlighted: true,
     slug: "viaje-sanador",
   },
