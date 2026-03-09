@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import travesiaHero from "@/assets/travesia-vincular-hero.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
