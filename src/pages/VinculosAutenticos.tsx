@@ -123,13 +123,13 @@ const VinculosAutenticos = () => {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               <div className="aspect-[3/4] overflow-hidden rounded-sm col-span-2">
-                <img src={germanCintia} alt="Germán y Cintia facilitando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={vinculosEspacio} alt="Espacio interior del retiro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={retiroParejaEncuentro} alt="Dinámica de encuentro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={vinculosMateriales} alt="Materiales de trabajo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={retiroManosCirculo} alt="Manos en círculo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={vinculosCamino} alt="Grupo caminando en la naturaleza" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </FadeIn>
