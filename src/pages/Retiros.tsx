@@ -6,6 +6,7 @@ import { Compass, HeartHandshake, Sparkles, ArrowRight } from "lucide-react";
 import retiroBrazos from "@/assets/retiro-brazos-abiertos.jpg";
 import retiroGrupoNaturaleza from "@/assets/retiro-grupo-naturaleza.jpg";
 import retiroCirculoFogata from "@/assets/retiro-circulo-fogata.jpg";
+import vinculosHero from "@/assets/vinculos-hero.jpg";
 
 const retreats = [
   {
