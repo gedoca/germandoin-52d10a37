@@ -253,11 +253,25 @@ const SiteNavbar = () => {
             )}
           </div>
 
-          {secondaryLinks.map((link) => (
-            <Link key={link.to} to={link.to} className={`block py-2 ${linkClass(link.to)}`}>
-              {link.label}
-            </Link>
-          ))}
+          {/* Propuestas Virtuales section */}
+          <div className="py-2">
+            <button
+              onClick={() => setVirtualOpen(!virtualOpen)}
+              className={`${dropdownBtnClass(isVirtualActive)} w-full`}
+            >
+              Propuestas Virtuales
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${virtualOpen ? "rotate-180" : ""}`} />
+            </button>
+            {virtualOpen && (
+              <div className="pl-4 mt-1 space-y-1 border-l border-accent/30">
+                {virtualLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </nav>
