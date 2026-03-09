@@ -59,7 +59,7 @@ const SesionesTerapia = () => {
             </h1>
             <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
               Espacios de acompañamiento individual y vincular de manera online,
-              orientados al autoconocimiento, la sanación emocional y la
+              orientados al autoconocimiento, la madurez emocional y la
               transformación de los vínculos.
             </p>
           </FadeIn>
@@ -128,7 +128,7 @@ const SesionesTerapia = () => {
                 <div>
                   <h4 className="font-display text-lg text-foreground mb-1">Duración y frecuencia</h4>
                   <p className="font-body text-sm text-muted-foreground">
-                    Cada sesión dura entre 60 y 90 minutos. La frecuencia se define en conjunto según el proceso y las necesidades.
+                    Cada sesión tiene una duración de 55 minutos. La frecuencia se define en conjunto según el proceso y las necesidades.
                   </p>
                 </div>
               </div>
