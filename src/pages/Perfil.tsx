@@ -17,68 +17,68 @@ const toEmbedUrl = (url: string): string => {
 };
 
 const timelineEvents = [
-  { year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
-  { year: "2012", text: "Dirige y produce La Educación Prohibida, documental visto por millones de personas" },
-  { year: "2013", text: "Funda Reevo – Red de Educación Alternativa, plataforma colaborativa internacional" },
-  { year: "2015", text: "Diseña la Semana de las Educaciones Alternativas en Bogotá" },
-  { year: "2019", text: "Funda Proyecto C – laboratorio de transformación educativa (2019–2023)" },
-  { year: "2022", text: "Especialización en psicoterapia gestalt-transpersonal (Programa SAT & Aramí)" },
-  { year: "2024", text: "Inicia Travesía Vincular junto a Cintia Alegre" },
-  { year: "2025", text: "Mentor en ARKA – Escuela de Formación Transpersonal de Colombia" },
-  { year: "2025", text: "Crea El Año del Salto – programa de transformación personal" },
-];
+{ year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
+{ year: "2012", text: "Dirige y produce La Educación Prohibida, documental visto por millones de personas" },
+{ year: "2013", text: "Funda Reevo – Red de Educación Alternativa, plataforma colaborativa internacional" },
+{ year: "2015", text: "Diseña la Semana de las Educaciones Alternativas en Bogotá" },
+{ year: "2019", text: "Funda Proyecto C – laboratorio de transformación educativa (2019–2023)" },
+{ year: "2022", text: "Especialización en psicoterapia gestalt-transpersonal (Programa SAT & Aramí)" },
+{ year: "2024", text: "Inicia Travesía Vincular junto a Cintia Alegre" },
+{ year: "2025", text: "Mentor en ARKA – Escuela de Formación Transpersonal de Colombia" },
+{ year: "2025", text: "Crea El Año del Salto – programa de transformación personal" }];
+
 
 const projects = [
-  {
-    icon: Sparkles,
-    title: "ARKA",
-    role: "Mentor desde 2025",
-    description: "Escuela de Formación Transpersonal de Colombia. Un espacio de formación profunda que integra psicoterapia, autoconocimiento y espiritualidad.",
-    url: "https://www.escuelaarka.com",
-    urlLabel: "Visitar ARKA",
-  },
-  {
-    icon: ArrowRight,
-    title: "El Año del Salto",
-    role: "Creador",
-    description: "Un programa de transformación personal que invita a dar el salto hacia una vida más auténtica y alineada con el propósito.",
-    url: "https://www.elaniodelsalto.com",
-    urlLabel: "Visitar El Año del Salto",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Travesía Vincular",
-    role: "Co-creador con Cintia Alegre",
-    description: "Proyecto que explora los vínculos humanos como territorio de transformación. Retiros, escritura y prácticas para relaciones más genuinas.",
-    internalLink: "/travesia-vincular",
-    urlLabel: "Ver Travesía Vincular",
-  },
-  {
-    icon: Globe,
-    title: "Reevo",
-    role: "Fundador (2013)",
-    description: "Red de Educación Alternativa. Plataforma colaborativa que conectó experiencias educativas transformadoras en toda Iberoamérica.",
-    url: "https://reevo.org",
-    urlLabel: "Visitar Reevo",
-  },
-  {
-    icon: BookOpen,
-    title: "Cursos DesAprender Online",
-    role: "Creador",
-    description: "La experiencia formativa de DesAprender en formato online, accesible desde cualquier lugar del mundo.",
-    internalLink: "/cursos",
-    urlLabel: "Ver cursos",
-  },
-];
+{
+  icon: Sparkles,
+  title: "ARKA",
+  role: "Mentor desde 2025",
+  description: "Escuela de Formación Transpersonal de Colombia. Un espacio de formación profunda que integra psicoterapia, autoconocimiento y espiritualidad.",
+  url: "https://www.escuelaarka.com",
+  urlLabel: "Visitar ARKA"
+},
+{
+  icon: ArrowRight,
+  title: "El Año del Salto",
+  role: "Creador",
+  description: "Un programa de transformación personal que invita a dar el salto hacia una vida más auténtica y alineada con el propósito.",
+  url: "https://www.elaniodelsalto.com",
+  urlLabel: "Visitar El Año del Salto"
+},
+{
+  icon: HeartHandshake,
+  title: "Travesía Vincular",
+  role: "Co-creador con Cintia Alegre",
+  description: "Proyecto que explora los vínculos humanos como territorio de transformación. Retiros, escritura y prácticas para relaciones más genuinas.",
+  internalLink: "/travesia-vincular",
+  urlLabel: "Ver Travesía Vincular"
+},
+{
+  icon: Globe,
+  title: "Reevo",
+  role: "Fundador (2013)",
+  description: "Red de Educación Alternativa. Plataforma colaborativa que conectó experiencias educativas transformadoras en toda Iberoamérica.",
+  url: "https://reevo.org",
+  urlLabel: "Visitar Reevo"
+},
+{
+  icon: BookOpen,
+  title: "Cursos DesAprender Online",
+  role: "Creador",
+  description: "La experiencia formativa de DesAprender en formato online, accesible desde cualquier lugar del mundo.",
+  internalLink: "/cursos",
+  urlLabel: "Ver cursos"
+}];
+
 
 const shortsUrls = [
-  "https://youtube.com/shorts/nLTgWdXFpzg",
-  "https://youtube.com/shorts/zDCFR8sVnKY",
-  "https://youtube.com/shorts/RDlJt40i2LU",
-  "https://youtube.com/shorts/7ry5s7KRJWM",
-];
+"https://youtube.com/shorts/nLTgWdXFpzg",
+"https://youtube.com/shorts/zDCFR8sVnKY",
+"https://youtube.com/shorts/RDlJt40i2LU",
+"https://youtube.com/shorts/7ry5s7KRJWM"];
 
-const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
+
+const FadeIn = ({ children, delay = 0 }: {children: React.ReactNode;delay?: number;}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
   return (
@@ -86,11 +86,11 @@ const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
       ref={ref}
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-    >
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}>
+      
       {children}
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 const Perfil = () => {
@@ -105,8 +105,8 @@ const Perfil = () => {
                 <img
                   src={germanPortrait}
                   alt="Germán Doin Campos"
-                  className="w-full aspect-[3/4] object-cover object-top rounded-sm"
-                />
+                  className="w-full aspect-[3/4] object-cover object-top rounded-sm" />
+                
               </div>
               <div>
                 <div className="flex items-center gap-4 mb-4">
@@ -120,7 +120,7 @@ const Perfil = () => {
                   <span className="italic text-accent">búsqueda y servicio</span>
                 </h1>
                 <div className="font-body text-muted-foreground leading-relaxed space-y-4 text-base lg:text-lg">
-                  <p>
+                  <p>Germán Doin Campos es un profesional argentino de 38 años, padre de dos hijos, técnico en Comunicación Social y Producción Audiovisual.
                     <strong className="text-foreground">Germán Doin Campos</strong> es un profesional
                     argentino de 37 años, padre de dos hijos, técnico en Comunicación Social y
                     Producción Audiovisual.
@@ -152,15 +152,15 @@ const Perfil = () => {
                 <img
                   src={germanFacilitando}
                   alt="Germán facilitando un retiro"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                
               </div>
               <div className="aspect-[16/9] overflow-hidden rounded-sm">
                 <img
                   src={germanSpeaking}
                   alt="Germán hablando en un evento"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                
               </div>
             </div>
           </FadeIn>
@@ -180,9 +180,9 @@ const Perfil = () => {
             <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-3">
               La Educación <span className="italic text-accent">Prohibida</span>
             </h2>
-            <p className="font-body text-muted-foreground mb-8 max-w-2xl">
-              Documental que cuestiona la escuela moderna y explora modelos educativos alternativos.
-              Más de 20 millones de vistas en YouTube. Dirigido y producido por Germán Doin (2012).
+            <p className="font-body text-muted-foreground mb-8 max-w-2xl">Documental que cuestiona la escuela moderna y explora modelos educativos alternativos. Más de 28 millones de vistas en YouTube. Dirigido y producido por Germán Doin (2012).
+
+
             </p>
             <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-muted shadow-lg">
               <iframe
@@ -191,8 +191,8 @@ const Perfil = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="lazy"
-                className="absolute inset-0 w-full h-full border-0"
-              />
+                className="absolute inset-0 w-full h-full border-0" />
+              
             </div>
           </FadeIn>
         </div>
@@ -213,8 +213,8 @@ const Perfil = () => {
             </h2>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, i) => (
-              <FadeIn key={i} delay={0.08 * i}>
+            {projects.map((project, i) =>
+            <FadeIn key={i} delay={0.08 * i}>
                 <div className="bg-background border border-border rounded-sm p-6 hover:border-accent/40 transition-colors h-full flex flex-col">
                   <project.icon className="w-6 h-6 text-accent mb-4" strokeWidth={1.5} />
                   <h3 className="font-display text-xl text-foreground mb-1">{project.title}</h3>
@@ -224,26 +224,26 @@ const Perfil = () => {
                   <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
                     {project.description}
                   </p>
-                  {project.url ? (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors"
-                    >
+                  {project.url ?
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors">
+                  
                       {project.urlLabel} <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  ) : project.internalLink ? (
-                    <Link
-                      to={project.internalLink}
-                      className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors"
-                    >
+                    </a> :
+                project.internalLink ?
+                <Link
+                  to={project.internalLink}
+                  className="inline-flex items-center gap-2 font-body text-sm text-primary hover:text-accent transition-colors">
+                  
                       {project.urlLabel} <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  ) : null}
+                    </Link> :
+                null}
                 </div>
               </FadeIn>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -263,20 +263,20 @@ const Perfil = () => {
             </h2>
           </FadeIn>
           <div className="relative pl-8 border-l-2 border-accent/30 space-y-8">
-            {timelineEvents.map((event, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="relative"
-              >
+            {timelineEvents.map((event, i) =>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+              className="relative">
+              
                 <div className="absolute -left-[calc(1rem+5px)] top-1.5 w-2.5 h-2.5 rounded-full bg-accent" />
                 <span className="font-display text-sm text-accent">{event.year}</span>
                 <p className="font-body text-sm text-muted-foreground mt-0.5">{event.text}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -301,8 +301,8 @@ const Perfil = () => {
                   href="https://wa.me/5491162720879"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-                >
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors">
+                  
                   <MessageSquare className="w-4 h-4" />
                   Consultar por sesiones
                 </a>
@@ -325,26 +325,26 @@ const Perfil = () => {
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {shortsUrls.map((url, i) => (
-                <div key={i} className="relative w-full aspect-[9/16] rounded-sm overflow-hidden bg-muted">
+              {shortsUrls.map((url, i) =>
+              <div key={i} className="relative w-full aspect-[9/16] rounded-sm overflow-hidden bg-muted">
                   <iframe
-                    src={toEmbedUrl(url)}
-                    title={`YouTube Short ${i + 1}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full border-0"
-                  />
+                  src={toEmbedUrl(url)}
+                  title={`YouTube Short ${i + 1}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full border-0" />
+                
                 </div>
-              ))}
+              )}
             </div>
             <div className="text-center mt-8">
               <a
                 href="https://www.youtube.com/@edprohibida/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
+                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors">
+                
                 Ver más en @edprohibida
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
@@ -354,8 +354,8 @@ const Perfil = () => {
       </section>
 
       {/* Film card for La Educación Prohibida in projects removed — now featured as full embed above */}
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Perfil;
