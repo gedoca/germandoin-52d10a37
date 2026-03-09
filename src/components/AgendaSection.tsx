@@ -4,7 +4,7 @@ import { MapPin, ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const events = [
-  { city: "Panamá", period: "Abril", active: false },
+  { city: "Panamá", period: "Abril", active: true, link: "/panama" },
   { city: "Guadalajara", period: "Abril", active: true, link: "/guadalajara" },
   { city: "Monterrey", period: "Mayo", active: false },
   { city: "Chiapas", period: "Mayo / Junio", active: false },
