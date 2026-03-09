@@ -8,13 +8,13 @@ import { Skeleton } from "@/components/ui/skeleton";
  * Manual Instagram Reels gallery.
  * To update, simply replace the reel IDs below.
  */
-const INSTAGRAM_USERNAME = "germandoin";
+const INSTAGRAM_USERNAME = "german.doin";
 
 const reelIds = [
-  "DKIBwwWxekR",
-  "DJuOe66R3Cu",
-  "DJrpKLpxBfv",
-  "DJkBjxqRcXE",
+  "DMHG9dJTMT4",
+  "DU6jJ36k7mF",
+  "DQNi2TTkzRW",
+  "DOfFiUdkxxr",
 ];
 
 const getReelUrl = (id: string) => `https://www.instagram.com/reel/${id}/`;
