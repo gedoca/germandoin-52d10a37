@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Compass, HeartHandshake, Sparkles, ArrowRight } from "lucide-react";
 import retiroBrazos from "@/assets/retiro-brazos-abiertos.jpg";
 import retiroGrupoNaturaleza from "@/assets/retiro-grupo-naturaleza.jpg";
-import retiroCirculoFogata from "@/assets/retiro-circulo-fogata.jpg";
+import viajeSanadorHero from "@/assets/viaje-sanador-hero.jpg";
 import vinculosHero from "@/assets/vinculos-hero.jpg";
 
 const retreats = [
@@ -25,7 +25,7 @@ const retreats = [
     description:
       "Exploración emocional profunda e integración consciente. Un viaje hacia lo esencial a través del cuerpo, la emoción y la presencia.",
     link: "/viaje-sanador",
-    image: retiroCirculoFogata,
+    image: viajeSanadorHero,
   },
   {
     icon: HeartHandshake,
