@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
 import NextEditionSection from "@/components/NextEditionSection";
-import viajeHero from "@/assets/viaje-hero.jpg";
+import viajeHero from "@/assets/viaje-sanador-hero.jpg";
 import viajeFuego from "@/assets/viaje-sanador-fuego.jpg";
 import viajeNoche from "@/assets/viaje-sanador-noche.jpg";
 import viajeCirculo from "@/assets/viaje-sanador-circulo.jpg";
