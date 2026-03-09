@@ -59,7 +59,7 @@ const SesionesTerapia = () => {
             </h1>
             <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
               Espacios de acompañamiento individual y vincular de manera online,
-              orientados al autoconocimiento, la sanación emocional y la
+              orientados al autoconocimiento, la madurez emocional y la
               transformación de los vínculos.
             </p>
           </FadeIn>
