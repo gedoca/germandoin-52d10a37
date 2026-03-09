@@ -68,6 +68,7 @@ const SiteNavbar = () => {
 
   const isRetreatActive = retreatLinks.some((l) => location.pathname === l.to) || location.pathname === "/retiros";
   const isDestinoActive = destinoLinks.some((l) => location.pathname === l.to);
+  const isVirtualActive = virtualLinks.some((l) => location.pathname === l.to);
 
   const linkClass = (to: string) =>
     `font-body text-sm transition-colors ${
