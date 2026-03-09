@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
-import retiroGrupoCampo from "@/assets/retiro-grupo-campo.jpg";
+import retiroGrupoCampo from "@/assets/guadalajara-hero.jpg";
 
 const FadeIn = ({
   children,
