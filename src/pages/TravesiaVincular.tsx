@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import travesiaHero from "@/assets/travesia-vincular-hero.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -42,46 +43,57 @@ const TravesiaVincular = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 bg-gradient-to-b from-card to-background">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="flex items-center gap-4 mb-4">
-              <HeartHandshake className="w-6 h-6 text-accent" strokeWidth={1.5} />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
-                Proyecto conjunto
-              </span>
+      <section className="relative pt-0 pb-0 overflow-hidden">
+        {/* Hero image with overlay */}
+        <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh]">
+          <img
+            src={travesiaHero}
+            alt="Travesía Vincular – personas conectando"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 flex items-end">
+            <div className="max-w-5xl mx-auto w-full px-6 sm:px-12 lg:px-16 pb-12 lg:pb-16">
+              <FadeIn>
+                <div className="flex items-center gap-4 mb-4">
+                  <HeartHandshake className="w-6 h-6 text-accent" strokeWidth={1.5} />
+                  <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                    Proyecto conjunto
+                  </span>
+                </div>
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-4">
+                  Travesía <span className="italic text-accent">Vincular</span>
+                </h1>
+                <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed mb-8">
+                  Un proyecto coordinado por Germán Doin y{" "}
+                  <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Cintia Alegre</a>{" "}
+                  que explora los vínculos humanos
+                  como territorio de transformación. Retiros, escritura, conversaciones y prácticas para
+                  habitar relaciones más libres, genuinas y creativas.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://travesiavincular.substack.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
+                  >
+                    Leer en Substack
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://chat.whatsapp.com/LM90nNwxFb0JY1sBtInjN8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    Sumarse al grupo de WhatsApp
+                  </a>
+                </div>
+              </FadeIn>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-4">
-              Travesía <span className="italic text-accent">Vincular</span>
-            </h1>
-            <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed mb-8">
-              Un proyecto coordinado por Germán Doin y{" "}
-              <a href="https://www.allegramusica.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Cintia Alegre</a>{" "}
-              que explora los vínculos humanos
-              como territorio de transformación. Retiros, escritura, conversaciones y prácticas para
-              habitar relaciones más libres, genuinas y creativas.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://travesiavincular.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
-              >
-                Leer en Substack
-                <ExternalLink className="w-4 h-4" />
-              </a>
-              <a
-                href="https://chat.whatsapp.com/LM90nNwxFb0JY1sBtInjN8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <MessageSquare className="w-4 h-4" />
-                Sumarse al grupo de WhatsApp
-              </a>
-            </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
