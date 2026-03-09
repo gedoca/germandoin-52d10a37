@@ -12,6 +12,7 @@ import ViajeSanador from "./pages/ViajeSanador";
 import VinculosAutenticos from "./pages/VinculosAutenticos";
 import Cursos from "./pages/Cursos";
 import TravesiaVincular from "./pages/TravesiaVincular";
+import SesionesTerapia from "./pages/SesionesTerapia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
