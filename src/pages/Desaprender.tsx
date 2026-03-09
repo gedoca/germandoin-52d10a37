@@ -9,6 +9,9 @@ import desaprenderGrupo1 from "@/assets/desaprender-grupo-1.jpg";
 import desaprenderGrupo2 from "@/assets/desaprender-grupo-2.jpg";
 import desaprenderDinamica from "@/assets/desaprender-dinamica.jpg";
 import retreatLandscape from "@/assets/retreat-landscape.jpg";
+import desaprenderExtra1 from "@/assets/desaprender-extra-1.jpg";
+import desaprenderExtra2 from "@/assets/desaprender-extra-2.jpg";
+import desaprenderExtra3 from "@/assets/desaprender-extra-3.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
