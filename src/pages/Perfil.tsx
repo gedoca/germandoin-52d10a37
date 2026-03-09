@@ -71,11 +71,6 @@ const projects = [
 }];
 
 
-const shortsUrls = [
-"https://youtube.com/shorts/nLTgWdXFpzg",
-"https://youtube.com/shorts/zDCFR8sVnKY",
-"https://youtube.com/shorts/RDlJt40i2LU",
-"https://youtube.com/shorts/7ry5s7KRJWM"];
 
 
 const FadeIn = ({ children, delay = 0 }: {children: React.ReactNode;delay?: number;}) => {
