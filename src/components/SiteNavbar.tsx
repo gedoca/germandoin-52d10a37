@@ -58,6 +58,9 @@ const SiteNavbar = () => {
       if (destinoRef.current && !destinoRef.current.contains(e.target as Node)) {
         setDestinosOpen(false);
       }
+      if (virtualRef.current && !virtualRef.current.contains(e.target as Node)) {
+        setVirtualOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
