@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { MessageSquare } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 const footerLinks = [
   { label: "Perfil", to: "/perfil" },
@@ -36,11 +39,22 @@ const SiteFooter = () => {
           </div>
           <div>
             <h4 className="font-body text-sm font-semibold text-foreground mb-4">Contacto</h4>
-            <div className="space-y-2 font-body text-sm text-muted-foreground">
-              <a href="mailto:germandoin@gmail.com" className="block hover:text-foreground transition-colors">
-                germandoin@gmail.com
+            <div className="space-y-3 font-body text-sm text-muted-foreground">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-foreground transition-colors"
+              >
+                <MessageSquare className="w-4 h-4 text-accent" />
+                +54 911 6272 0879
               </a>
-              <a href="https://instagram.com/germandoin" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">
+              <a
+                href="https://instagram.com/germandoin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-foreground transition-colors"
+              >
                 @germandoin
               </a>
             </div>

@@ -10,7 +10,7 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "panama";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
@@ -25,7 +25,7 @@ export const upcomingEvents: AgendaEvent[] = [
     dateDetail: "10 al 12 de Abril",
     link: "/panama",
     highlighted: true,
-    slug: "viaje-sanador",
+    slug: "panama",
   },
   {
     type: "Conferencia",
