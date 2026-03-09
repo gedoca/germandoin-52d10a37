@@ -174,7 +174,7 @@ const Perfil = () => {
             </p>
             <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-muted shadow-lg">
               <iframe
-                src={toEmbedUrl("https://www.youtube.com/embed/-1Y9OqSJKCc")}
+                src="https://www.youtube.com/embed/-1Y9OqSJKCc"
                 title="La Educación Prohibida – Documental"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
