@@ -101,6 +101,15 @@ const Desaprender = () => {
               <div className="aspect-[4/3] overflow-hidden rounded-sm">
                 <img src={desaprenderDinamica} alt="Dinámica vivencial" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderExtra1} alt="DesAprender experiencia" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderExtra2} alt="DesAprender grupo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderExtra3} alt="DesAprender actividad" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
             </div>
           </FadeIn>
         </div>
