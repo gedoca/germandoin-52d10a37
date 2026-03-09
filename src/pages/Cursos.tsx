@@ -31,31 +31,27 @@ const toEmbedUrl = (url: string): string => {
 const courses = [
   {
     title: "Educación Alternativa en 8 Clases",
-    subtitle: "De los creadores de La Educación Prohibida",
+    subtitle: "Una puerta a las escuelas que pueden cambiar el mundo",
     description:
       "Un curso online de los creadores de La Educación Prohibida para conocer el amplio universo de la educación alternativa desde una perspectiva integral, humanista, crítica y constructiva.",
     features: [
       "8 CLASES EN VIDEO: Acceso a más de 10 horas de clases en video producido especialmente para este curso.",
       "MATERIAL DE APOYO: Contenidos seleccionados para acompañar a los videos, libros, artículos y enlaces para enriquecer cada clase.",
-      "Acceso de por vida",
-      "Dinámicas de reflexión personal",
     ],
-    hotmartUrl: "https://hotmart.com/es/marketplace/productos/desaprender-las-7-cualidades-del-acompanamiento/Y78388649D",
+    hotmartUrl: "https://go.hotmart.com/U102472135S?dp=1",
     badge: "Más vendido",
     videoUrl: "https://www.youtube.com/embed/pNE4_GFOqPw",
   },
   {
     title: "Tres sentidos de la Educación Libre",
-    subtitle: "Profundización en la educación libre",
+    subtitle: "Educar personas libres mediante aprendizaje libre para un mundo libre",
     description:
       "Un curso para profundizar en el amplio universo de la educación libre. ¿Cuáles son sus orígenes? ¿Qué formas existen de educación libre? ¿Qué principios la sostienen? ¿Cuáles son sus desafíos?",
     features: [
       "4 CLASES EN VIDEO: Acceso a más de 5 horas de clases en video producido especialmente para este curso.",
       "MATERIAL DE APOYO: Contenidos seleccionados para acompañar a los videos, libros, artículos y enlaces para enriquecer cada clase.",
-      "Acceso de por vida",
-      "Comunidad de aprendizaje",
     ],
-    hotmartUrl: "https://hotmart.com/es/marketplace/productos/desaprender-2/Y78388649D",
+    hotmartUrl: "https://go.hotmart.com/Y102478435J?dp=1",
     badge: null,
     videoUrl: "https://www.youtube.com/embed/70nWUCtl4OI",
   },
