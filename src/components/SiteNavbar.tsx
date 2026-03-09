@@ -19,9 +19,10 @@ const destinoLinks = [
   { label: "Guadalajara", to: "/guadalajara" },
 ];
 
-const secondaryLinks = [
-  { label: "Cursos", to: "/cursos" },
+const virtualLinks = [
+  { label: "Cursos de Educación", to: "/cursos" },
   { label: "Travesía Vincular", to: "/travesia-vincular" },
+  { label: "Sesiones de Terapia", to: "/sesiones-terapia" },
 ];
 
 const SiteNavbar = () => {
@@ -29,9 +30,11 @@ const SiteNavbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [retreatsOpen, setRetreatsOpen] = useState(false);
   const [destinosOpen, setDestinosOpen] = useState(false);
+  const [virtualOpen, setVirtualOpen] = useState(false);
   const location = useLocation();
   const retreatRef = useRef<HTMLDivElement>(null);
   const destinoRef = useRef<HTMLDivElement>(null);
+  const virtualRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -43,6 +46,7 @@ const SiteNavbar = () => {
     setMobileOpen(false);
     setRetreatsOpen(false);
     setDestinosOpen(false);
+    setVirtualOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
@@ -54,6 +58,9 @@ const SiteNavbar = () => {
       if (destinoRef.current && !destinoRef.current.contains(e.target as Node)) {
         setDestinosOpen(false);
       }
+      if (virtualRef.current && !virtualRef.current.contains(e.target as Node)) {
+        setVirtualOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -61,6 +68,7 @@ const SiteNavbar = () => {
 
   const isRetreatActive = retreatLinks.some((l) => location.pathname === l.to) || location.pathname === "/retiros";
   const isDestinoActive = destinoLinks.some((l) => location.pathname === l.to);
+  const isVirtualActive = virtualLinks.some((l) => location.pathname === l.to);
 
   const linkClass = (to: string) =>
     `font-body text-sm transition-colors ${
@@ -154,11 +162,33 @@ const SiteNavbar = () => {
             )}
           </div>
 
-          {secondaryLinks.map((link) => (
-            <Link key={link.to} to={link.to} className={linkClass(link.to)}>
-              {link.label}
-            </Link>
-          ))}
+          {/* Propuestas Virtuales dropdown */}
+          <div className="relative" ref={virtualRef}>
+            <button
+              onClick={() => { setVirtualOpen(!virtualOpen); setRetreatsOpen(false); setDestinosOpen(false); }}
+              className={dropdownBtnClass(isVirtualActive)}
+            >
+              Propuestas Virtuales
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${virtualOpen ? "rotate-180" : ""}`} />
+            </button>
+            {virtualOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-background border border-border rounded-sm shadow-lg py-2">
+                {virtualLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`block px-4 py-2 font-body text-sm transition-colors ${
+                      location.pathname === link.to
+                        ? "text-foreground font-medium bg-muted/30"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -223,11 +253,25 @@ const SiteNavbar = () => {
             )}
           </div>
 
-          {secondaryLinks.map((link) => (
-            <Link key={link.to} to={link.to} className={`block py-2 ${linkClass(link.to)}`}>
-              {link.label}
-            </Link>
-          ))}
+          {/* Propuestas Virtuales section */}
+          <div className="py-2">
+            <button
+              onClick={() => setVirtualOpen(!virtualOpen)}
+              className={`${dropdownBtnClass(isVirtualActive)} w-full`}
+            >
+              Propuestas Virtuales
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${virtualOpen ? "rotate-180" : ""}`} />
+            </button>
+            {virtualOpen && (
+              <div className="pl-4 mt-1 space-y-1 border-l border-accent/30">
+                {virtualLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </nav>
