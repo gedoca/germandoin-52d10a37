@@ -110,6 +110,15 @@ const TravesiaVincular = () => {
                         Ver temas en Substack
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
+                      <a
+                        href="https://www.youtube.com/@edprohibida/streams"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        <Radio className="w-3.5 h-3.5" />
+                        Ver canal de Streaming
+                      </a>
                     </div>
                   </div>
                 </div>
