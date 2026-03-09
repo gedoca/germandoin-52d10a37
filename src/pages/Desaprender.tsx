@@ -9,6 +9,9 @@ import desaprenderGrupo1 from "@/assets/desaprender-grupo-1.jpg";
 import desaprenderGrupo2 from "@/assets/desaprender-grupo-2.jpg";
 import desaprenderDinamica from "@/assets/desaprender-dinamica.jpg";
 import retreatLandscape from "@/assets/retreat-landscape.jpg";
+import desaprenderExtra1 from "@/assets/desaprender-extra-1.jpg";
+import desaprenderExtra2 from "@/assets/desaprender-extra-2.jpg";
+import desaprenderExtra3 from "@/assets/desaprender-extra-3.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
@@ -97,6 +100,15 @@ const Desaprender = () => {
               </div>
               <div className="aspect-[4/3] overflow-hidden rounded-sm">
                 <img src={desaprenderDinamica} alt="Dinámica vivencial" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderExtra1} alt="DesAprender experiencia" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderExtra2} alt="DesAprender grupo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                <img src={desaprenderExtra3} alt="DesAprender actividad" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </FadeIn>
