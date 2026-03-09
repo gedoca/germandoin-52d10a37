@@ -23,9 +23,9 @@ const timelineEvents = [
 { year: "2015", text: "Diseña la Semana de las Educaciones Alternativas en Bogotá" },
 { year: "2019", text: "Funda Proyecto C – laboratorio de transformación educativa (2019–2023)" },
 { year: "2022", text: "Especialización en psicoterapia gestalt-transpersonal (Programa SAT & Aramí)" },
-{ year: "2024", text: "Inicia Travesía Vincular junto a Cintia Alegre" },
-{ year: "2025", text: "Mentor en ARKA – Escuela de Formación Transpersonal de Colombia" },
-{ year: "2025", text: "Crea El Año del Salto – programa de transformación personal" }];
+{ year: "2025", text: "Inicia Travesía Vincular junto a Cintia Alegre" },
+{ year: "2026", text: "Mentor en ARKA – Escuela de Formación Transpersonal de Colombia" },
+{ year: "2026", text: "Crea El Año del Salto – programa de transformación personal" }];
 
 
 const projects = [
