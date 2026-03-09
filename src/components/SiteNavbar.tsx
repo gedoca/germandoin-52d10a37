@@ -5,18 +5,17 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const mainLinks = [
   { label: "Inicio", to: "/" },
   { label: "Perfil", to: "/perfil" },
-  { label: "Agenda", to: "/agenda" },
+];
+
+const agendaLinks = [
+  { label: "Panamá", to: "/panama" },
+  { label: "Guadalajara", to: "/guadalajara" },
 ];
 
 const retreatLinks = [
   { label: "Viaje Sanador", to: "/viaje-sanador" },
   { label: "DesAprender", to: "/desaprender" },
   { label: "Vínculos Auténticos", to: "/vinculos-autenticos" },
-];
-
-const destinoLinks = [
-  { label: "Panamá", to: "/panama" },
-  { label: "Guadalajara", to: "/guadalajara" },
 ];
 
 const virtualLinks = [
@@ -28,12 +27,12 @@ const virtualLinks = [
 const SiteNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [agendaOpen, setAgendaOpen] = useState(false);
   const [retreatsOpen, setRetreatsOpen] = useState(false);
-  const [destinosOpen, setDestinosOpen] = useState(false);
   const [virtualOpen, setVirtualOpen] = useState(false);
   const location = useLocation();
+  const agendaRef = useRef<HTMLDivElement>(null);
   const retreatRef = useRef<HTMLDivElement>(null);
-  const destinoRef = useRef<HTMLDivElement>(null);
   const virtualRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,19 +43,19 @@ const SiteNavbar = () => {
 
   useEffect(() => {
     setMobileOpen(false);
+    setAgendaOpen(false);
     setRetreatsOpen(false);
-    setDestinosOpen(false);
     setVirtualOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      if (agendaRef.current && !agendaRef.current.contains(e.target as Node)) {
+        setAgendaOpen(false);
+      }
       if (retreatRef.current && !retreatRef.current.contains(e.target as Node)) {
         setRetreatsOpen(false);
-      }
-      if (destinoRef.current && !destinoRef.current.contains(e.target as Node)) {
-        setDestinosOpen(false);
       }
       if (virtualRef.current && !virtualRef.current.contains(e.target as Node)) {
         setVirtualOpen(false);
@@ -66,9 +65,11 @@ const SiteNavbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const isAgendaActive = location.pathname === "/agenda" || agendaLinks.some((l) => location.pathname === l.to);
   const isRetreatActive = retreatLinks.some((l) => location.pathname === l.to) || location.pathname === "/retiros";
-  const isDestinoActive = destinoLinks.some((l) => location.pathname === l.to);
   const isVirtualActive = virtualLinks.some((l) => location.pathname === l.to);
+
+  const closeAll = () => { setAgendaOpen(false); setRetreatsOpen(false); setVirtualOpen(false); };
 
   const linkClass = (to: string) =>
     `font-body text-sm transition-colors ${
@@ -83,9 +84,7 @@ const SiteNavbar = () => {
     }`;
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
       <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between h-16">
         <Link to="/" className="font-display text-xl text-foreground tracking-tight">
           Germán Doin
@@ -99,10 +98,45 @@ const SiteNavbar = () => {
             </Link>
           ))}
 
+          {/* Agenda dropdown */}
+          <div className="relative" ref={agendaRef}>
+            <button
+              onClick={() => { closeAll(); setAgendaOpen(!agendaOpen); }}
+              className={dropdownBtnClass(isAgendaActive)}
+            >
+              Agenda
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${agendaOpen ? "rotate-180" : ""}`} />
+            </button>
+            {agendaOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-background border border-border rounded-sm shadow-lg py-2">
+                <Link
+                  to="/agenda"
+                  className="block px-4 py-2 font-body text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors font-medium"
+                >
+                  Ver agenda completa
+                </Link>
+                <div className="h-px bg-border my-1" />
+                {agendaLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`block px-4 py-2 font-body text-sm transition-colors ${
+                      location.pathname === link.to
+                        ? "text-foreground font-medium bg-muted/30"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Retiros dropdown */}
           <div className="relative" ref={retreatRef}>
             <button
-              onClick={() => { setRetreatsOpen(!retreatsOpen); setDestinosOpen(false); }}
+              onClick={() => { closeAll(); setRetreatsOpen(!retreatsOpen); }}
               className={dropdownBtnClass(isRetreatActive)}
             >
               Retiros
@@ -134,38 +168,10 @@ const SiteNavbar = () => {
             )}
           </div>
 
-          {/* Destinos dropdown */}
-          <div className="relative" ref={destinoRef}>
-            <button
-              onClick={() => { setDestinosOpen(!destinosOpen); setRetreatsOpen(false); }}
-              className={dropdownBtnClass(isDestinoActive)}
-            >
-              Destinos
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${destinosOpen ? "rotate-180" : ""}`} />
-            </button>
-            {destinosOpen && (
-              <div className="absolute top-full left-0 mt-2 w-52 bg-background border border-border rounded-sm shadow-lg py-2">
-                {destinoLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`block px-4 py-2 font-body text-sm transition-colors ${
-                      location.pathname === link.to
-                        ? "text-foreground font-medium bg-muted/30"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
           {/* Propuestas Virtuales dropdown */}
           <div className="relative" ref={virtualRef}>
             <button
-              onClick={() => { setVirtualOpen(!virtualOpen); setRetreatsOpen(false); setDestinosOpen(false); }}
+              onClick={() => { closeAll(); setVirtualOpen(!virtualOpen); }}
               className={dropdownBtnClass(isVirtualActive)}
             >
               Propuestas Virtuales
@@ -210,6 +216,29 @@ const SiteNavbar = () => {
             </Link>
           ))}
 
+          {/* Agenda section */}
+          <div className="py-2">
+            <button
+              onClick={() => setAgendaOpen(!agendaOpen)}
+              className={`${dropdownBtnClass(isAgendaActive)} w-full`}
+            >
+              Agenda
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${agendaOpen ? "rotate-180" : ""}`} />
+            </button>
+            {agendaOpen && (
+              <div className="pl-4 mt-1 space-y-1 border-l border-accent/30">
+                <Link to="/agenda" className={`block py-1.5 ${linkClass("/agenda")}`}>
+                  Ver agenda completa
+                </Link>
+                {agendaLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Retiros section */}
           <div className="py-2">
             <button
@@ -225,26 +254,6 @@ const SiteNavbar = () => {
                   Ver todos
                 </Link>
                 {retreatLinks.map((link) => (
-                  <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Destinos section */}
-          <div className="py-2">
-            <button
-              onClick={() => setDestinosOpen(!destinosOpen)}
-              className={`${dropdownBtnClass(isDestinoActive)} w-full`}
-            >
-              Destinos
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${destinosOpen ? "rotate-180" : ""}`} />
-            </button>
-            {destinosOpen && (
-              <div className="pl-4 mt-1 space-y-1 border-l border-accent/30">
-                {destinoLinks.map((link) => (
                   <Link key={link.to} to={link.to} className={`block py-1.5 ${linkClass(link.to)}`}>
                     {link.label}
                   </Link>
