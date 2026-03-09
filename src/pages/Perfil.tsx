@@ -2,19 +2,12 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight, Film, BookOpen, Users, Sparkles, HeartHandshake, Globe, MessageSquare } from "lucide-react";
+import { ExternalLink, ArrowRight, BookOpen, Users, Sparkles, HeartHandshake, Globe, MessageSquare } from "lucide-react";
+import InstagramReelsSection from "@/components/InstagramReelsSection";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
 import germanSpeaking from "@/assets/german-speaking.jpg";
 
-/** Converts any YouTube URL (watch?v=, /shorts/, or already /embed/) to an embed URL */
-const toEmbedUrl = (url: string): string => {
-  if (url.includes("/embed/")) return url;
-  if (url.includes("/shorts/")) return url.replace("/shorts/", "/embed/");
-  const match = url.match(/[?&]v=([^&]+)/);
-  if (match) return `https://www.youtube.com/embed/${match[1]}`;
-  return url;
-};
 
 const timelineEvents = [
 { year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
@@ -71,11 +64,6 @@ const projects = [
 }];
 
 
-const shortsUrls = [
-"https://youtube.com/shorts/nLTgWdXFpzg",
-"https://youtube.com/shorts/zDCFR8sVnKY",
-"https://youtube.com/shorts/RDlJt40i2LU",
-"https://youtube.com/shorts/7ry5s7KRJWM"];
 
 
 const FadeIn = ({ children, delay = 0 }: {children: React.ReactNode;delay?: number;}) => {
@@ -186,7 +174,7 @@ const Perfil = () => {
             </p>
             <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-muted shadow-lg">
               <iframe
-                src={toEmbedUrl("https://www.youtube.com/embed/-1Y9OqSJKCc")}
+                src="https://www.youtube.com/embed/-1Y9OqSJKCc"
                 title="La Educación Prohibida – Documental"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -312,46 +300,8 @@ const Perfil = () => {
         </div>
       </section>
 
-      {/* YouTube Shorts */}
-      <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
-        <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-4">
-                Últimas <span className="italic text-accent">publicaciones</span>
-              </h2>
-              <p className="font-body text-sm text-muted-foreground">
-                Videos cortos de @edprohibida en YouTube
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {shortsUrls.map((url, i) =>
-              <div key={i} className="relative w-full aspect-[9/16] rounded-sm overflow-hidden bg-muted">
-                  <iframe
-                  src={toEmbedUrl(url)}
-                  title={`YouTube Short ${i + 1}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full border-0" />
-                
-                </div>
-              )}
-            </div>
-            <div className="text-center mt-8">
-              <a
-                href="https://www.youtube.com/@edprohibida/shorts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 border border-primary text-primary font-body text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors">
-                
-                Ver más en @edprohibida
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* Instagram Reels */}
+      <InstagramReelsSection />
 
       {/* Film card for La Educación Prohibida in projects removed — now featured as full embed above */}
     </Layout>);
