@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { BookOpen, ExternalLink, ArrowRight, Star } from "lucide-react";
+import cursosHero from "@/assets/cursos-hero.webp";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -61,19 +62,23 @@ const Cursos = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 bg-gradient-to-b from-card to-background">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={cursosHero} alt="Educación alternativa" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/60" />
+        </div>
+        <div className="relative max-w-5xl mx-auto w-full px-6 sm:px-12 lg:px-16 pb-16 pt-32">
           <FadeIn>
             <div className="flex items-center gap-4 mb-4">
               <BookOpen className="w-6 h-6 text-accent" strokeWidth={1.5} />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+              <span className="font-body text-sm tracking-widest uppercase text-white/70">
                 Formación online
               </span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-4">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white mb-4">
               Cursos <span className="italic text-accent">Online</span>
             </h1>
-            <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="font-body text-base lg:text-lg text-white/80 max-w-3xl leading-relaxed">
               Formaciones online de los creadores de La Educación Prohibida. Accede al universo de la educación alternativa desde cualquier lugar del mundo, a tu propio ritmo.
             </p>
           </FadeIn>
