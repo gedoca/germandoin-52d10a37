@@ -30,9 +30,11 @@ const SiteNavbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [retreatsOpen, setRetreatsOpen] = useState(false);
   const [destinosOpen, setDestinosOpen] = useState(false);
+  const [virtualOpen, setVirtualOpen] = useState(false);
   const location = useLocation();
   const retreatRef = useRef<HTMLDivElement>(null);
   const destinoRef = useRef<HTMLDivElement>(null);
+  const virtualRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
