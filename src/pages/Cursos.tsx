@@ -71,14 +71,14 @@ const Cursos = () => {
           <FadeIn>
             <div className="flex items-center gap-4 mb-4">
               <BookOpen className="w-6 h-6 text-accent" strokeWidth={1.5} />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+              <span className="font-body text-sm tracking-widest uppercase text-white/70">
                 Formación online
               </span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-4">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white mb-4">
               Cursos <span className="italic text-accent">Online</span>
             </h1>
-            <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="font-body text-base lg:text-lg text-white/80 max-w-3xl leading-relaxed">
               Formaciones online de los creadores de La Educación Prohibida. Accede al universo de la educación alternativa desde cualquier lugar del mundo, a tu propio ritmo.
             </p>
           </FadeIn>
