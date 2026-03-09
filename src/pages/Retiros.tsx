@@ -25,7 +25,7 @@ const retreats = [
     description:
       "Exploración emocional profunda e integración consciente. Un viaje hacia lo esencial a través del cuerpo, la emoción y la presencia.",
     link: "/viaje-sanador",
-    image: retiroCirculoFogata,
+    image: viajeSanadorHero,
   },
   {
     icon: HeartHandshake,
