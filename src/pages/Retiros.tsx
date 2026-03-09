@@ -34,7 +34,7 @@ const retreats = [
     description:
       "Herramientas para relaciones personales y profesionales más genuinas. Una invitación a vincularnos desde la verdad.",
     link: "/vinculos-autenticos",
-    image: null,
+    image: vinculosHero,
   },
 ];
 
