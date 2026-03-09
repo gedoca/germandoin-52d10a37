@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { BookOpen, ExternalLink, ArrowRight, Play, Star } from "lucide-react";
+import { BookOpen, ExternalLink, ArrowRight, Star } from "lucide-react";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -19,6 +19,15 @@ const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 };
 
+/** Converts any YouTube URL (watch?v=, /shorts/, or already /embed/) to an embed URL */
+const toEmbedUrl = (url: string): string => {
+  if (url.includes("/embed/")) return url;
+  if (url.includes("/shorts/")) return url.replace("/shorts/", "/embed/");
+  const match = url.match(/[?&]v=([^&]+)/);
+  if (match) return `https://www.youtube.com/embed/${match[1]}`;
+  return url;
+};
+
 const courses = [
   {
     title: "DesAprender Online – Curso 1",
@@ -33,6 +42,7 @@ const courses = [
     ],
     hotmartUrl: "https://hotmart.com/es/marketplace/productos/desaprender-las-7-cualidades-del-acompanamiento/Y78388649D",
     badge: "Más vendido",
+    videoUrl: "https://www.youtube.com/embed/70nWUCtl4OI",
   },
   {
     title: "DesAprender Online – Curso 2",
@@ -47,6 +57,7 @@ const courses = [
     ],
     hotmartUrl: "https://hotmart.com/es/marketplace/productos/desaprender-2/Y78388649D",
     badge: null,
+    videoUrl: "https://www.youtube.com/embed/pNE4_GFOqPw",
   },
 ];
 
@@ -94,9 +105,16 @@ const Cursos = () => {
                   )}
 
                   <div className="p-8 lg:p-10 flex flex-col flex-1">
-                    {/* Placeholder visual */}
-                    <div className="aspect-video bg-muted rounded-sm mb-6 flex items-center justify-center group-hover:bg-muted/80 transition-colors">
-                      <Play className="w-10 h-10 text-muted-foreground/40" />
+                    {/* Responsive video embed */}
+                    <div className="relative w-full aspect-video rounded-sm overflow-hidden mb-6 bg-muted">
+                      <iframe
+                        src={toEmbedUrl(course.videoUrl)}
+                        title={course.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full border-0"
+                      />
                     </div>
 
                     <h2 className="font-display text-2xl text-foreground mb-1">{course.title}</h2>
