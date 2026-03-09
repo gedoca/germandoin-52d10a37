@@ -7,6 +7,15 @@ import germanPortrait from "@/assets/german-portrait.jpg";
 import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
 import germanSpeaking from "@/assets/german-speaking.jpg";
 
+/** Converts any YouTube URL (watch?v=, /shorts/, or already /embed/) to an embed URL */
+const toEmbedUrl = (url: string): string => {
+  if (url.includes("/embed/")) return url;
+  if (url.includes("/shorts/")) return url.replace("/shorts/", "/embed/");
+  const match = url.match(/[?&]v=([^&]+)/);
+  if (match) return `https://www.youtube.com/embed/${match[1]}`;
+  return url;
+};
+
 const timelineEvents = [
   { year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
   { year: "2012", text: "Dirige y produce La Educación Prohibida, documental visto por millones de personas" },
@@ -45,14 +54,6 @@ const projects = [
     urlLabel: "Ver Travesía Vincular",
   },
   {
-    icon: Film,
-    title: "La Educación Prohibida",
-    role: "Director y Productor (2012)",
-    description: "Documental que cuestiona la escuela moderna y explora modelos educativos alternativos. Más de 20 millones de vistas en YouTube.",
-    url: "https://www.youtube.com/watch?v=-1Y9OqSJKCc",
-    urlLabel: "Ver documental",
-  },
-  {
     icon: Globe,
     title: "Reevo",
     role: "Fundador (2013)",
@@ -68,6 +69,13 @@ const projects = [
     internalLink: "/cursos",
     urlLabel: "Ver cursos",
   },
+];
+
+const shortsUrls = [
+  "https://youtube.com/shorts/nLTgWdXFpzg",
+  "https://youtube.com/shorts/zDCFR8sVnKY",
+  "https://youtube.com/shorts/RDlJt40i2LU",
+  "https://youtube.com/shorts/7ry5s7KRJWM",
 ];
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
@@ -159,8 +167,39 @@ const Perfil = () => {
         </div>
       </section>
 
-      {/* Proyectos destacados */}
+      {/* La Educación Prohibida – Documental destacado */}
       <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                Obra audiovisual principal
+              </span>
+            </div>
+            <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-3">
+              La Educación <span className="italic text-accent">Prohibida</span>
+            </h2>
+            <p className="font-body text-muted-foreground mb-8 max-w-2xl">
+              Documental que cuestiona la escuela moderna y explora modelos educativos alternativos.
+              Más de 20 millones de vistas en YouTube. Dirigido y producido por Germán Doin (2012).
+            </p>
+            <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-muted shadow-lg">
+              <iframe
+                src={toEmbedUrl("https://www.youtube.com/embed/-1Y9OqSJKCc")}
+                title="La Educación Prohibida – Documental"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full border-0"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Proyectos destacados */}
+      <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-6">
@@ -210,7 +249,7 @@ const Perfil = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16">
+      <section className="py-16 lg:py-24 px-6 sm:px-12 lg:px-16 bg-card">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-6">
@@ -286,26 +325,18 @@ const Perfil = () => {
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                "https://youtube.com/shorts/nLTgWdXFpzg",
-                "https://youtube.com/shorts/zDCFR8sVnKY",
-                "https://youtube.com/shorts/RDlJt40i2LU",
-                "https://youtube.com/shorts/7ry5s7KRJWM",
-              ].map((url, i) => {
-                const embedUrl = url.replace("youtube.com/shorts/", "youtube.com/embed/");
-                return (
-                  <div key={i} className="aspect-[9/16] rounded-sm overflow-hidden bg-muted">
-                    <iframe
-                      src={embedUrl}
-                      title={`YouTube Short ${i + 1}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      className="w-full h-full border-0"
-                      loading="lazy"
-                    />
-                  </div>
-                );
-              })}
+              {shortsUrls.map((url, i) => (
+                <div key={i} className="relative w-full aspect-[9/16] rounded-sm overflow-hidden bg-muted">
+                  <iframe
+                    src={toEmbedUrl(url)}
+                    title={`YouTube Short ${i + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full border-0"
+                  />
+                </div>
+              ))}
             </div>
             <div className="text-center mt-8">
               <a
@@ -321,6 +352,8 @@ const Perfil = () => {
           </FadeIn>
         </div>
       </section>
+
+      {/* Film card for La Educación Prohibida in projects removed — now featured as full embed above */}
     </Layout>
   );
 };
