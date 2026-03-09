@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { BookOpen, ExternalLink, ArrowRight, Star } from "lucide-react";
+import cursosHero from "@/assets/cursos-hero.webp";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
