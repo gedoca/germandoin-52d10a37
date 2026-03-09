@@ -30,34 +30,34 @@ const toEmbedUrl = (url: string): string => {
 
 const courses = [
   {
-    title: "DesAprender Online – Curso 1",
-    subtitle: "Las 7 cualidades del acompañamiento",
+    title: "Educación Alternativa en 8 Clases",
+    subtitle: "De los creadores de La Educación Prohibida",
     description:
-      "La versión online de la formación vivencial DesAprender. Explora las 7 cualidades relacionales y psicoemocionales necesarias para acompañar infancias y procesos de aprendizaje desde una perspectiva integral.",
+      "Un curso online de los creadores de La Educación Prohibida para conocer el amplio universo de la educación alternativa desde una perspectiva integral, humanista, crítica y constructiva.",
     features: [
-      "Clases en video con Germán Doin",
-      "Material complementario descargable",
+      "8 CLASES EN VIDEO: Acceso a más de 10 horas de clases en video producido especialmente para este curso.",
+      "MATERIAL DE APOYO: Contenidos seleccionados para acompañar a los videos, libros, artículos y enlaces para enriquecer cada clase.",
       "Acceso de por vida",
       "Dinámicas de reflexión personal",
     ],
     hotmartUrl: "https://hotmart.com/es/marketplace/productos/desaprender-las-7-cualidades-del-acompanamiento/Y78388649D",
     badge: "Más vendido",
-    videoUrl: "https://www.youtube.com/embed/70nWUCtl4OI",
+    videoUrl: "https://www.youtube.com/embed/pNE4_GFOqPw",
   },
   {
-    title: "DesAprender Online – Curso 2",
-    subtitle: "Profundización y práctica",
+    title: "Tres sentidos de la Educación Libre",
+    subtitle: "Profundización en la educación libre",
     description:
-      "La continuación del proceso formativo. Profundiza en las herramientas del acompañamiento consciente con nuevas dinámicas, reflexiones y prácticas para integrar en tu vida cotidiana y profesional.",
+      "Un curso para profundizar en el amplio universo de la educación libre. ¿Cuáles son sus orígenes? ¿Qué formas existen de educación libre? ¿Qué principios la sostienen? ¿Cuáles son sus desafíos?",
     features: [
-      "Contenido avanzado exclusivo",
-      "Ejercicios prácticos integrativos",
+      "4 CLASES EN VIDEO: Acceso a más de 5 horas de clases en video producido especialmente para este curso.",
+      "MATERIAL DE APOYO: Contenidos seleccionados para acompañar a los videos, libros, artículos y enlaces para enriquecer cada clase.",
       "Acceso de por vida",
       "Comunidad de aprendizaje",
     ],
     hotmartUrl: "https://hotmart.com/es/marketplace/productos/desaprender-2/Y78388649D",
     badge: null,
-    videoUrl: "https://www.youtube.com/embed/pNE4_GFOqPw",
+    videoUrl: "https://www.youtube.com/embed/70nWUCtl4OI",
   },
 ];
 
@@ -75,11 +75,10 @@ const Cursos = () => {
               </span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-4">
-              Cursos <span className="italic text-accent">DesAprender</span>
+              Cursos <span className="italic text-accent">Online</span>
             </h1>
             <p className="font-body text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
-              La experiencia formativa de DesAprender en formato online. Accede a las herramientas
-              del acompañamiento consciente desde cualquier lugar del mundo, a tu propio ritmo.
+              Formaciones online de los creadores de La Educación Prohibida. Accede al universo de la educación alternativa desde cualquier lugar del mundo, a tu propio ritmo.
             </p>
           </FadeIn>
         </div>
@@ -127,7 +126,7 @@ const Cursos = () => {
                     <ul className="font-body text-sm text-muted-foreground space-y-2 mb-8">
                       {course.features.map((f, j) => (
                         <li key={j} className="flex items-start gap-2">
-                          <span className="text-accent mt-0.5">✓</span> {f}
+                          <span className="text-accent mt-0.5 shrink-0">✓</span> {f}
                         </li>
                       ))}
                     </ul>
