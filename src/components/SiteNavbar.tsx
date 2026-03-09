@@ -19,9 +19,10 @@ const destinoLinks = [
   { label: "Guadalajara", to: "/guadalajara" },
 ];
 
-const secondaryLinks = [
-  { label: "Cursos", to: "/cursos" },
+const virtualLinks = [
+  { label: "Cursos de Educación", to: "/cursos" },
   { label: "Travesía Vincular", to: "/travesia-vincular" },
+  { label: "Sesiones de Terapia", to: "/sesiones-terapia" },
 ];
 
 const SiteNavbar = () => {
