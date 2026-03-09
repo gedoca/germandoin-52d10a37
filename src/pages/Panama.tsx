@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music } from "lucide-react";
 import { WHATSAPP_URL } from "@/data/agenda";
 import NextEditionSection from "@/components/NextEditionSection";
-import viajeHero from "@/assets/viaje-hero.jpg";
+import viajeHero from "@/assets/viaje-sanador-panama.jpg";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
