@@ -162,11 +162,33 @@ const SiteNavbar = () => {
             )}
           </div>
 
-          {secondaryLinks.map((link) => (
-            <Link key={link.to} to={link.to} className={linkClass(link.to)}>
-              {link.label}
-            </Link>
-          ))}
+          {/* Propuestas Virtuales dropdown */}
+          <div className="relative" ref={virtualRef}>
+            <button
+              onClick={() => { setVirtualOpen(!virtualOpen); setRetreatsOpen(false); setDestinosOpen(false); }}
+              className={dropdownBtnClass(isVirtualActive)}
+            >
+              Propuestas Virtuales
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${virtualOpen ? "rotate-180" : ""}`} />
+            </button>
+            {virtualOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-background border border-border rounded-sm shadow-lg py-2">
+                {virtualLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`block px-4 py-2 font-body text-sm transition-colors ${
+                      location.pathname === link.to
+                        ? "text-foreground font-medium bg-muted/30"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile toggle */}
