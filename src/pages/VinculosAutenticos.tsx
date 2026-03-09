@@ -4,11 +4,12 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves } from "lucide-react";
 import NextEditionSection from "@/components/NextEditionSection";
-import vinculosHero from "@/assets/vinculos-hero.jpg";
-import germanCintia from "@/assets/german-cintia-vinculos.jpg";
-import retiroParejaEncuentro from "@/assets/retiro-pareja-encuentro.jpg";
-import retiroManosCirculo from "@/assets/retiro-manos-circulo.jpg";
-import retiroMovimiento from "@/assets/retiro-movimiento-corporal.jpg";
+import vinculosHero from "@/assets/vinculos-grupo-colina.jpg";
+import vinculosEspacio from "@/assets/vinculos-espacio-interior.jpg";
+import vinculosPaisaje from "@/assets/vinculos-paisaje-lago.jpg";
+import vinculosCamino from "@/assets/vinculos-camino-grupo.jpg";
+import vinculosMateriales from "@/assets/vinculos-materiales.jpg";
+import vinculosGrupoLago from "@/assets/vinculos-grupo-lago.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
