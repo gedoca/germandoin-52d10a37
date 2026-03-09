@@ -4,11 +4,12 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { HeartHandshake, ArrowLeft, Quote, Clock, Users, Sparkles, Eye, Activity, Waves } from "lucide-react";
 import NextEditionSection from "@/components/NextEditionSection";
-import vinculosHero from "@/assets/vinculos-hero.jpg";
-import germanCintia from "@/assets/german-cintia-vinculos.jpg";
-import retiroParejaEncuentro from "@/assets/retiro-pareja-encuentro.jpg";
-import retiroManosCirculo from "@/assets/retiro-manos-circulo.jpg";
-import retiroMovimiento from "@/assets/retiro-movimiento-corporal.jpg";
+import vinculosHero from "@/assets/vinculos-grupo-colina.jpg";
+import vinculosEspacio from "@/assets/vinculos-espacio-interior.jpg";
+import vinculosPaisaje from "@/assets/vinculos-paisaje-lago.jpg";
+import vinculosCamino from "@/assets/vinculos-camino-grupo.jpg";
+import vinculosMateriales from "@/assets/vinculos-materiales.jpg";
+import vinculosGrupoLago from "@/assets/vinculos-grupo-lago.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
@@ -122,13 +123,13 @@ const VinculosAutenticos = () => {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               <div className="aspect-[3/4] overflow-hidden rounded-sm col-span-2">
-                <img src={germanCintia} alt="Germán y Cintia facilitando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={vinculosEspacio} alt="Espacio interior del retiro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={retiroParejaEncuentro} alt="Dinámica de encuentro" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={vinculosMateriales} alt="Materiales de trabajo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={retiroManosCirculo} alt="Manos en círculo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={vinculosCamino} alt="Grupo caminando en la naturaleza" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </FadeIn>
@@ -169,7 +170,7 @@ const VinculosAutenticos = () => {
                   <p className="font-body text-sm text-accent font-medium">Eugenio Carutti</p>
                 </div>
                 <div className="aspect-[16/9] overflow-hidden rounded-sm">
-                  <img src={retiroMovimiento} alt="Trabajo corporal vincular" className="w-full h-full object-cover" />
+                  <img src={vinculosGrupoLago} alt="Grupo en la naturaleza" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
