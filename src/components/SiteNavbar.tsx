@@ -46,6 +46,7 @@ const SiteNavbar = () => {
     setMobileOpen(false);
     setRetreatsOpen(false);
     setDestinosOpen(false);
+    setVirtualOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
