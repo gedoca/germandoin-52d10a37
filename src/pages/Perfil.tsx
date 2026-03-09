@@ -8,14 +8,6 @@ import germanPortrait from "@/assets/german-portrait.jpg";
 import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
 import germanSpeaking from "@/assets/german-speaking.jpg";
 
-/** Converts any YouTube URL (watch?v=, /shorts/, or already /embed/) to an embed URL */
-const toEmbedUrl = (url: string): string => {
-  if (url.includes("/embed/")) return url;
-  if (url.includes("/shorts/")) return url.replace("/shorts/", "/embed/");
-  const match = url.match(/[?&]v=([^&]+)/);
-  if (match) return `https://www.youtube.com/embed/${match[1]}`;
-  return url;
-};
 
 const timelineEvents = [
 { year: "2009", text: "Comienza la investigación de modelos educativos alternativos en América Latina" },
