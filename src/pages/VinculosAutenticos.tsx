@@ -170,7 +170,7 @@ const VinculosAutenticos = () => {
                   <p className="font-body text-sm text-accent font-medium">Eugenio Carutti</p>
                 </div>
                 <div className="aspect-[16/9] overflow-hidden rounded-sm">
-                  <img src={retiroMovimiento} alt="Trabajo corporal vincular" className="w-full h-full object-cover" />
+                  <img src={vinculosGrupoLago} alt="Grupo en la naturaleza" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
