@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import {
   Mic,
   Users,
@@ -7,11 +8,10 @@ import {
   Calendar,
   MapPin,
   Clock,
-  Heart,
-  Brain,
-  Drama,
-  Flower2,
   ArrowRight,
+  Tag,
+  UsersRound,
+  Sparkles,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
@@ -56,16 +56,15 @@ const activities = [
       "Educar desde la presencia y la autenticidad",
     ],
     description: null,
-    methodology: null,
-    itinerary: null,
+    showDesaprenderLink: false,
   },
   {
     icon: Users,
     type: "Taller Presencial",
     title: "Eneagrama para Educadores",
     date: "18 de abril",
-    time: "12:00 pm",
-    location: "Espacio Alas, Guadalajara",
+    time: "9:00 a 19:00 horas (con dos horas de comida)",
+    location: "Francisco Zarco 274A, Col. Artesanos, GDL",
     featured: false,
     highlights: [
       "Autoconocimiento para acompañar procesos de aprendizaje",
@@ -73,8 +72,7 @@ const activities = [
       "Herramientas prácticas para la transformación educativa",
     ],
     description: null,
-    methodology: null,
-    itinerary: null,
+    showDesaprenderLink: false,
   },
   {
     icon: Compass,
@@ -82,21 +80,31 @@ const activities = [
     title: "DesAprender",
     date: "24 y 25 de abril",
     time: "Jornada completa",
-    location: "Guadalajara",
+    location:
+      "Casa para el Encuentro y el Diálogo de Saberes, Carlos Núñez Hurtado CEDE/IMDEC. Arcadio Zúñiga y Tejeda 1398, Balcones de La Joya, 44390 Guadalajara, Jal.",
     featured: true,
     highlights: [],
     description:
       "Una experiencia de dos días para deconstruir la historia pedagógica personal. Un espacio seguro para soltar certezas, reconectar con la vocación y redescubrir el arte de acompañar.",
-    methodology: [
-      { icon: Heart, label: "Psicoterapia humanista" },
-      { icon: Brain, label: "Pedagogías alternativas" },
-      { icon: Drama, label: "Movimiento / Teatro" },
-      { icon: Flower2, label: "Prácticas contemplativas" },
-    ],
-    itinerary: [
-      { day: "Sábado", theme: "El educador que aprendí a ser" },
-      { day: "Domingo", theme: "El educador que quiero ser" },
-    ],
+    showDesaprenderLink: true,
+  },
+];
+
+const pricing = [
+  {
+    event: "Conferencia",
+    general: "$500",
+    earlyBird: "$400",
+  },
+  {
+    event: "Eneagrama",
+    general: "$2,500",
+    earlyBird: "$2,000",
+  },
+  {
+    event: "Retiro DesAprender",
+    general: "$5,600",
+    earlyBird: "$4,500",
   },
 ];
 
@@ -148,6 +156,12 @@ const Guadalajara = () => {
               <div className="mt-10">
                 <a
                   href="#propuestas"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("propuestas")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-accent-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
                 >
                   Ver las propuestas
@@ -219,16 +233,16 @@ const Guadalajara = () => {
 
                       <div className="space-y-2 mb-6">
                         <div className="flex items-center gap-2 text-muted-foreground font-body text-sm">
-                          <Calendar className="w-4 h-4 text-accent" />
+                          <Calendar className="w-4 h-4 text-accent shrink-0" />
                           {activity.date}
                         </div>
                         <div className="flex items-center gap-2 text-muted-foreground font-body text-sm">
-                          <Clock className="w-4 h-4 text-accent" />
+                          <Clock className="w-4 h-4 text-accent shrink-0" />
                           {activity.time}
                         </div>
-                        <div className="flex items-center gap-2 text-muted-foreground font-body text-sm">
-                          <MapPin className="w-4 h-4 text-accent" />
-                          {activity.location}
+                        <div className="flex items-start gap-2 text-muted-foreground font-body text-sm">
+                          <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                          <span>{activity.location}</span>
                         </div>
                       </div>
 
@@ -252,61 +266,30 @@ const Guadalajara = () => {
                         </p>
                       )}
 
-                      {activity.methodology && (
+                      {activity.showDesaprenderLink && (
                         <div className="mb-6">
-                          <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-3">
-                            Metodología
-                          </p>
-                          <div className="grid grid-cols-2 gap-3">
-                            {activity.methodology.map((m, j) => (
-                              <div
-                                key={j}
-                                className="flex items-center gap-2 font-body text-sm text-foreground"
-                              >
-                                <m.icon
-                                  className="w-4 h-4 text-accent"
-                                  strokeWidth={1.5}
-                                />
-                                {m.label}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {activity.itinerary && (
-                        <div className="mb-6">
-                          <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-3">
-                            Itinerario
-                          </p>
-                          <div className="space-y-2">
-                            {activity.itinerary.map((item, j) => (
-                              <div
-                                key={j}
-                                className="flex items-center gap-3 bg-muted/50 rounded-sm px-4 py-3"
-                              >
-                                <span className="font-display text-sm font-semibold text-accent">
-                                  {item.day}
-                                </span>
-                                <span className="font-body text-sm text-muted-foreground italic">
-                                  {item.theme}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
+                          <Link
+                            to="/desaprender"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-body text-sm font-medium rounded-sm hover:opacity-90 transition-opacity"
+                          >
+                            Conocer más sobre el Retiro
+                            <ArrowRight className="w-4 h-4" />
+                          </Link>
                         </div>
                       )}
 
                       <div className="mt-auto pt-4">
                         <a
-                          href="#contacto"
+                          href="https://wa.me/5491162720879"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className={`inline-flex items-center justify-center w-full gap-2 px-6 py-3 font-body text-sm font-medium rounded-sm transition-colors ${
                             activity.featured
                               ? "bg-primary text-primary-foreground hover:opacity-90"
                               : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                           }`}
                         >
-                          Más información / Inscripción
+                          Inscribirse
                           <ArrowRight className="w-4 h-4" />
                         </a>
                       </div>
@@ -315,6 +298,126 @@ const Guadalajara = () => {
                 </FadeIn>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Precios */}
+        <section className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-muted/30">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-px w-12 bg-accent" />
+                <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                  Precios y promociones
+                </span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-12">
+                Inversión por{" "}
+                <span className="italic text-accent">evento</span>
+              </h2>
+            </FadeIn>
+
+            {/* Pricing table */}
+            <FadeIn delay={0.1}>
+              <div className="overflow-x-auto mb-10">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        Evento
+                      </th>
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        Público General
+                      </th>
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        <span className="flex items-center gap-1.5">
+                          <Tag className="w-3.5 h-3.5 text-accent" />
+                          Early Bird (antes 30 Marzo)
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pricing.map((row, i) => (
+                      <tr
+                        key={i}
+                        className="border-b border-border/50 hover:bg-muted/50 transition-colors"
+                      >
+                        <td className="py-4 px-4 font-display text-base font-semibold text-foreground">
+                          {row.event}
+                        </td>
+                        <td className="py-4 px-4 font-body text-base text-muted-foreground">
+                          {row.general}
+                        </td>
+                        <td className="py-4 px-4 font-body text-base font-semibold text-accent">
+                          {row.earlyBird}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </FadeIn>
+
+            {/* Special combo + group discounts */}
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              <FadeIn delay={0.2}>
+                <div className="rounded-sm border border-accent bg-card p-8 text-center shadow-md ring-1 ring-accent/20">
+                  <Sparkles className="w-6 h-6 text-accent mx-auto mb-3" />
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-2">
+                    Valor especial
+                  </p>
+                  <p className="font-display text-3xl font-bold text-foreground mb-1">
+                    $6,500
+                  </p>
+                  <p className="font-body text-sm text-muted-foreground">
+                    por los 3 eventos
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.3}>
+                <div className="rounded-sm border border-border bg-card p-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <UsersRound className="w-5 h-5 text-accent" />
+                    <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">
+                      Descuentos por grupos
+                    </p>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 font-body text-sm text-foreground">
+                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                      Grupos de 5 personas:{" "}
+                      <span className="font-semibold text-accent">
+                        15% de descuento
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-3 font-body text-sm text-foreground">
+                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                      Grupos de 10 personas:{" "}
+                      <span className="font-semibold text-accent">
+                        20% de descuento
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Inscribirse CTA */}
+            <FadeIn delay={0.4}>
+              <div className="text-center">
+                <a
+                  href="https://wa.me/5491162720879"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-accent-foreground font-body font-medium text-base tracking-wide rounded-sm hover:opacity-90 transition-opacity"
+                >
+                  Inscribirse por WhatsApp
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
@@ -356,13 +459,13 @@ const Guadalajara = () => {
                     </p>
                   </div>
                   <div className="mt-8">
-                    <a
-                      href="/"
+                    <Link
+                      to="/perfil"
                       className="inline-flex items-center gap-2 font-body text-sm text-accent hover:text-foreground transition-colors"
                     >
                       Conocer más sobre su trabajo
                       <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
