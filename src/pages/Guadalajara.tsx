@@ -105,7 +105,7 @@ const pricing = [
     earlyBird: "$400",
   },
   {
-    event: "Eneagrama",
+    event: "Taller Eneagrama",
     general: "$2,500",
     earlyBird: "$2,000",
   },
