@@ -161,7 +161,7 @@ const Guadalajara = () => {
                 la educación desde la presencia, el vínculo y la transformación
                 personal.
               </p>
-              <div className="mt-10">
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="#propuestas"
                   onClick={(e) => {
@@ -174,6 +174,19 @@ const Guadalajara = () => {
                 >
                   Ver las propuestas
                   <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#precios"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("precios")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/40 text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:bg-primary-foreground/10 transition-colors"
+                >
+                  Inversión
+                  <Tag className="w-4 h-4" />
                 </a>
               </div>
             </motion.div>
