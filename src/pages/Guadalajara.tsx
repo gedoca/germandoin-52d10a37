@@ -430,7 +430,7 @@ const Guadalajara = () => {
             <FadeIn delay={0.4}>
               <div className="text-center">
                 <a
-                  href="https://wa.me/5491162720879"
+                  href={WHATSAPP_GDL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-accent-foreground font-body font-medium text-base tracking-wide rounded-sm hover:opacity-90 transition-opacity"
