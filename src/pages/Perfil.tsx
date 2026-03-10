@@ -306,8 +306,7 @@ const Perfil = () => {
       </section>
 
       {/* Instagram Reels */}
-      <div class="sk-ww-instagram-reels" data-embed-id="25661050"></div>
-      <script src="https://widgets.sociablekit.com/instagram-reels/widget.js" defer></script>
+      <InstagramReelsSection />
 
       {/* Film card for La Educación Prohibida in projects removed — now featured as full embed above */}
     </Layout>
