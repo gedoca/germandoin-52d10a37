@@ -399,6 +399,20 @@ const Guadalajara = () => {
                         20% de descuento
                       </span>
                     </li>
+                                        <li className="flex items-center gap-3 font-body text-sm text-foreground">
+                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                      Madres y Padres de ALAS:{" "}
+                      <span className="font-semibold text-accent">
+                        Consultar descuento especial
+                      </span>
+                    </li>
+                                                            <li className="flex items-center gap-3 font-body text-sm text-foreground">
+                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                      Facilitadores de ALAS:{" "}
+                      <span className="font-semibold text-accent">
+                        Consultar descuento especial
+                      </span>
+                    </li>
                   </ul>
                 </div>
               </FadeIn>
