@@ -16,6 +16,7 @@ import {
 import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import retiroGrupoCampo from "@/assets/guadalajara-hero.jpg";
+import logoAlas from "@/assets/logo-alas.png";
 
 const FadeIn = ({
   children,
