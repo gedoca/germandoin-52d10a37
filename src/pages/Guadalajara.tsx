@@ -41,6 +41,11 @@ const FadeIn = ({
   );
 };
 
+const WHATSAPP_GDL =
+  "https://api.whatsapp.com/send?phone=5213320662279&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Guadalajara.";
+const GOOGLE_FORM_CONFERENCIA =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfTcE8U1weKmqBygt0w_GdZcnSUc9j42QiPyV5cGLUCg73tOg/viewform?usp=sharing&ouid=110739269478320367816";
+
 const activities = [
   {
     icon: Mic,
@@ -57,6 +62,7 @@ const activities = [
     ],
     description: null,
     showDesaprenderLink: false,
+    registrationLink: GOOGLE_FORM_CONFERENCIA,
   },
   {
     icon: Users,
@@ -73,6 +79,7 @@ const activities = [
     ],
     description: null,
     showDesaprenderLink: false,
+    registrationLink: WHATSAPP_GDL,
   },
   {
     icon: Compass,
@@ -87,6 +94,7 @@ const activities = [
     description:
       "Una experiencia de dos días para deconstruir la historia pedagógica personal. Un espacio seguro para soltar certezas, reconectar con la vocación y redescubrir el arte de acompañar.",
     showDesaprenderLink: true,
+    registrationLink: WHATSAPP_GDL,
   },
 ];
 
