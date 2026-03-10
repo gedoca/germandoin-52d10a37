@@ -211,9 +211,12 @@ const Guadalajara = () => {
                 Tres caminos, una{" "}
                 <span className="italic text-accent">búsqueda</span>
               </h2>
-              <p className="font-body text-muted-foreground max-w-2xl mb-16">
+              <p className="font-body text-muted-foreground max-w-2xl mb-6">
                 Cada actividad ofrece una puerta de entrada distinta a la
                 transformación educativa y vincular.
+              </p>
+              <p className="font-body text-sm text-muted-foreground/80 italic max-w-2xl mb-16">
+                Toda la agenda de actividades en Guadalajara es organizada y coordinada por Comunidad ALAS.
               </p>
             </FadeIn>
 
