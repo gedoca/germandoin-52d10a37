@@ -306,7 +306,7 @@ const Perfil = () => {
       </section>
 
       {/* Instagram Reels */}
-      <InstagramReelsSection />
+      <SociableKitReels />
 
       {/* Film card for La Educación Prohibida in projects removed — now featured as full embed above */}
     </Layout>
