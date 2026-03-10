@@ -141,7 +141,7 @@ const Guadalajara = () => {
                 <div className="flex items-center gap-3 px-5 py-2 rounded-full border border-primary-foreground/20">
                   <MapPin className="w-4 h-4 text-accent" />
                   <span className="font-body text-sm text-primary-foreground/80 tracking-wide">
-                    Guadalajara · Abril 2025
+                    Guadalajara · Abril 2026
                   </span>
                 </div>
               </div>
