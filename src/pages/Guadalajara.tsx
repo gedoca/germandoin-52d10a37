@@ -16,6 +16,7 @@ import {
 import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import retiroGrupoCampo from "@/assets/guadalajara-hero.jpg";
+import logoAlas from "@/assets/logo-alas.png";
 
 const FadeIn = ({
   children,
@@ -210,9 +211,12 @@ const Guadalajara = () => {
                 Tres caminos, una{" "}
                 <span className="italic text-accent">búsqueda</span>
               </h2>
-              <p className="font-body text-muted-foreground max-w-2xl mb-16">
+              <p className="font-body text-muted-foreground max-w-2xl mb-6">
                 Cada actividad ofrece una puerta de entrada distinta a la
                 transformación educativa y vincular.
+              </p>
+              <p className="font-body text-sm text-muted-foreground/80 italic max-w-2xl mb-16">
+                Toda la agenda de actividades en Guadalajara es organizada y coordinada por Comunidad ALAS.
               </p>
             </FadeIn>
 
@@ -495,6 +499,57 @@ const Guadalajara = () => {
                       Conocer más sobre su trabajo
                       <ArrowRight className="w-4 h-4" />
                     </Link>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Comunidad ALAS */}
+        <section className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-background">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="grid md:grid-cols-[280px_1fr] gap-12 items-center">
+                <div className="relative flex items-center justify-center">
+                  <img
+                    src={logoAlas}
+                    alt="Comunidad ALAS - Aprendizaje en Libertad"
+                    className="w-full max-w-[260px] object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-px w-12 bg-accent" />
+                    <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                      Organiza
+                    </span>
+                  </div>
+                  <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-6">
+                    Comunidad{" "}
+                    <span className="italic text-accent">ALAS</span>
+                    <span className="block font-body text-base font-normal text-muted-foreground mt-2">
+                      Aprendizaje en Libertad
+                    </span>
+                  </h2>
+                  <div className="font-body text-muted-foreground leading-relaxed space-y-4">
+                    <p>
+                      Comunidad ALAS es una organización dedicada a promover la
+                      libertad en el aprendizaje y el desarrollo humano,
+                      coordinando espacios de encuentro y transformación en
+                      Guadalajara.
+                    </p>
+                  </div>
+                  <div className="mt-8">
+                    <a
+                      href="https://alascomunidad.org/alas/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-body text-sm text-accent hover:text-foreground transition-colors"
+                    >
+                      Conocer más sobre Comunidad ALAS
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
               </div>
