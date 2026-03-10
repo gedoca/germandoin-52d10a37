@@ -41,6 +41,11 @@ const FadeIn = ({
   );
 };
 
+const WHATSAPP_GDL =
+  "https://api.whatsapp.com/send?phone=5213320662279&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Guadalajara.";
+const GOOGLE_FORM_CONFERENCIA =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfTcE8U1weKmqBygt0w_GdZcnSUc9j42QiPyV5cGLUCg73tOg/viewform?usp=sharing&ouid=110739269478320367816";
+
 const activities = [
   {
     icon: Mic,
@@ -57,6 +62,7 @@ const activities = [
     ],
     description: null,
     showDesaprenderLink: false,
+    registrationLink: GOOGLE_FORM_CONFERENCIA,
   },
   {
     icon: Users,
@@ -73,6 +79,7 @@ const activities = [
     ],
     description: null,
     showDesaprenderLink: false,
+    registrationLink: WHATSAPP_GDL,
   },
   {
     icon: Compass,
@@ -87,6 +94,7 @@ const activities = [
     description:
       "Una experiencia de dos días para deconstruir la historia pedagógica personal. Un espacio seguro para soltar certezas, reconectar con la vocación y redescubrir el arte de acompañar.",
     showDesaprenderLink: true,
+    registrationLink: WHATSAPP_GDL,
   },
 ];
 
@@ -280,7 +288,7 @@ const Guadalajara = () => {
 
                       <div className="mt-auto pt-4">
                         <a
-                          href="https://wa.me/5491162720879"
+                          href={activity.registrationLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`inline-flex items-center justify-center w-full gap-2 px-6 py-3 font-body text-sm font-medium rounded-sm transition-colors ${
@@ -422,7 +430,7 @@ const Guadalajara = () => {
             <FadeIn delay={0.4}>
               <div className="text-center">
                 <a
-                  href="https://wa.me/5491162720879"
+                  href={WHATSAPP_GDL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-accent-foreground font-body font-medium text-base tracking-wide rounded-sm hover:opacity-90 transition-opacity"
@@ -503,18 +511,12 @@ const Guadalajara = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/5491162720879"
+                  href={WHATSAPP_GDL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-accent-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
                 >
                   Contactar por WhatsApp
-                </a>
-                <a
-                  href="mailto:germandoin@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:bg-primary-foreground/10 transition-colors"
-                >
-                  Enviar email
                 </a>
               </div>
             </div>
