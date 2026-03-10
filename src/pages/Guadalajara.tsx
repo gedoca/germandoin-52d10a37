@@ -160,7 +160,7 @@ const Guadalajara = () => {
                 recorrido un camino profundo de investigación, formación y
                 acompañamiento. Estos encuentros son una invitación a explorar
                 la educación desde la presencia, el vínculo y la transformación
-                personal.
+                personal. Organiza <b>Comunidad Alas - Aprendizaje en Libertad</b>.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
