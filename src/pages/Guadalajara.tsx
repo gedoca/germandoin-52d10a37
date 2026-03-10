@@ -323,7 +323,7 @@ const Guadalajara = () => {
         </section>
 
         {/* Precios */}
-        <section className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-muted/30">
+        <section id="precios" className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-muted/30">
           <div className="max-w-5xl mx-auto">
             <FadeIn>
               <div className="flex items-center gap-4 mb-4">
