@@ -511,18 +511,12 @@ const Guadalajara = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/5491162720879"
+                  href={WHATSAPP_GDL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-accent-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
                 >
                   Contactar por WhatsApp
-                </a>
-                <a
-                  href="mailto:germandoin@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:bg-primary-foreground/10 transition-colors"
-                >
-                  Enviar email
                 </a>
               </div>
             </div>
