@@ -12,7 +12,7 @@ import {
   Globe,
   MessageSquare,
 } from "lucide-react";
-import InstagramReelsSection from "@/components/InstagramReelsSection";
+import SociableKitReels from "@/components/SociableKitReels";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import germanFacilitando from "@/assets/german-facilitando-noche.jpg";
 import germanSpeaking from "@/assets/german-speaking.jpg";
@@ -306,7 +306,7 @@ const Perfil = () => {
       </section>
 
       {/* Instagram Reels */}
-      <InstagramReelsSection />
+      <SociableKitReels />
 
       {/* Film card for La Educación Prohibida in projects removed — now featured as full embed above */}
     </Layout>
