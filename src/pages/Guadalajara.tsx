@@ -53,8 +53,8 @@ const activities = [
     type: "Conferencia",
     title: "Pedagogía del Vínculo",
     date: "14 de abril",
-    time: "7:00 pm",
-    location: "Guadalajara",
+    time: "19 a 21hs",
+    location: "Casa de la Cultura, Constituyentes 21, Independencia Centro, GDL",
     featured: false,
     highlights: [
       "Por qué la inteligencia vincular es clave en la educación",
@@ -70,7 +70,7 @@ const activities = [
     type: "Taller Presencial",
     title: "Eneagrama para Educadores",
     date: "18 de abril",
-    time: "9:00 a 19:00 horas (con dos horas de comida)",
+    time: "9 a 19hs (con dos horas de comida)",
     location: "Francisco Zarco 274A, Col. Artesanos, GDL",
     featured: false,
     highlights: [
