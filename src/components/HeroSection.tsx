@@ -44,16 +44,16 @@ const HeroSection = () => {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
-              to="/perfil"
+              to="/panama"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
             >
-              Conocer mi trabajo
+              Panamá
             </Link>
             <Link
-              to="/retiros"
+              to="/guadalajara"
               className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
             >
-              Ver próximos retiros
+              Guadalajara
             </Link>
           </div>
         </motion.div>
