@@ -276,7 +276,7 @@ const Guadalajara = () => {
                             to="/desaprender"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-body text-sm font-medium rounded-sm hover:opacity-90 transition-opacity"
                           >
-                            Conocer más sobre el Retiro
+                            Conocer más sobre el Taller
                             <ArrowRight className="w-4 h-4" />
                           </Link>
                         </div>
