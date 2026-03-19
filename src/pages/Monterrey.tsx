@@ -16,7 +16,7 @@ import {
 import Layout from "@/components/Layout";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import retiroGrupoCampo from "@/assets/guadalajara-hero.jpg";
-import logoAlas from "@/assets/logo-alas.png";
+import logoAlas from "@/assets/logo-micelio.png";
 
 const FadeIn = ({
   children,
@@ -363,58 +363,6 @@ const Guadalajara = () => {
               </div>
             </FadeIn>
 
-            {/* Special combo + group discounts */}
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
-              <FadeIn delay={0.2}>
-                <div className="rounded-sm border border-accent bg-card p-8 text-center shadow-md ring-1 ring-accent/20">
-                  <Sparkles className="w-6 h-6 text-accent mx-auto mb-3" />
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-2">
-                    Valor especial
-                  </p>
-                  <p className="font-display text-3xl font-bold text-foreground mb-1">
-                    $6,500
-                  </p>
-                  <p className="font-body text-sm text-muted-foreground">
-                    por los 3 eventos
-                  </p>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.3}>
-                <div className="rounded-sm border border-border bg-card p-8">
-                  <div className="flex items-center gap-2 mb-4">
-                    <UsersRound className="w-5 h-5 text-accent" />
-                    <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">
-                      Descuentos por grupos
-                    </p>
-                  </div>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3 font-body text-sm text-foreground">
-                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
-                      Grupos de 5 personas:{" "}
-                      <span className="font-semibold text-accent">
-                        15% de descuento
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-3 font-body text-sm text-foreground">
-                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
-                      Grupos de 10 personas:{" "}
-                      <span className="font-semibold text-accent">
-                        20% de descuento
-                      </span>
-                    </li>
-                                        <li className="flex items-center gap-3 font-body text-sm text-foreground">
-                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
-                      Miembros de la Comunidad de ALAS:{" "}
-                      <span className="font-semibold text-accent">
-                        Consultar por descuento especial
-                      </span>
-                    </li>
-
-                  </ul>
-                </div>
-              </FadeIn>
-            </div>
 
             {/* Inscribirse CTA */}
             <FadeIn delay={0.4}>
