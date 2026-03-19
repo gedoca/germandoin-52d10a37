@@ -45,7 +45,7 @@ const FadeIn = ({
 const WHATSAPP_GDL =
   "https://api.whatsapp.com/send?phone=5218119972756&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Monterrey.";
 const GOOGLE_FORM_CONFERENCIA =
-  "";
+  "https://api.whatsapp.com/send?phone=5218119972756&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Monterrey.";
 
 const activities = [
   {
