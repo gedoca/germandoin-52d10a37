@@ -199,7 +199,7 @@ const Guadalajara = () => {
               </p>
             </FadeIn>
 
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-2 gap-8">
               {activities.map((activity, i) => (
                 <FadeIn key={i} delay={0.1 * i}>
                   <div
