@@ -39,8 +39,8 @@ const HeroSection = () => {
             Comunicación. Educación. Transformación Vincular.
           </p>
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-primary-foreground/70 lg:text-muted-foreground font-body">
-            Acompaño procesos de transformación personal, educativa y vincular
-            desde hace más de 15 años en América Latina.
+            Acompaño procesos de transformación personal, educativa y vincular desde hace más de 15 años en América
+            Latina.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
@@ -55,6 +55,12 @@ const HeroSection = () => {
             >
               Guadalajara
             </Link>
+            <Link
+              to="/monterrey"
+              className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
+            >
+              Monterrey
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -66,11 +72,7 @@ const HeroSection = () => {
         transition={{ duration: 1.2, delay: 0.6 }}
         className="hidden lg:block absolute bottom-8 right-8 w-64 h-40 rounded-sm overflow-hidden shadow-2xl border border-border/30"
       >
-        <img
-          src={retreatLandscape}
-          alt="Paisaje de retiro"
-          className="w-full h-full object-cover"
-        />
+        <img src={retreatLandscape} alt="Paisaje de retiro" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
         <span className="absolute bottom-3 left-4 font-body text-xs text-primary-foreground/90 tracking-wide">
           Próximos retiros →
