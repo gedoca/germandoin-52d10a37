@@ -22,10 +22,12 @@ const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 const internationalTour = [
   { city: "Panamá", period: "Abril 2025", active: true, link: "/panama" },
-  { city: "Monterrey", period: "Mayo 2025", active: true },
-  { city: "Chiapas", period: "Junio 2025", active: true },
-  { city: "México DF", period: "Junio 2025", active: true },
   { city: "Guadalajara", period: "Abril 2025", active: true, link: "/guadalajara" },
+  { city: "Monterrey", period: "Mayo 2025", active: true, link: "/monterrey"  },
+  { city: "San Luis Potosí", period: "Mayo 2025", active: false },
+  { city: "Tepoztlán", period: "Junio 2025", active: false },
+  { city: "Chiapas", period: "Junio 2025", active: false },
+  { city: "México DF", period: "Junio 2025", active: false },
   { city: "Roma", period: "Julio 2025", active: false },
   { city: "España", period: "Julio / Agosto 2025", active: false },
   { city: "Tenerife", period: "Agosto 2025", active: false },
