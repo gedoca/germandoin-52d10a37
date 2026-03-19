@@ -336,7 +336,7 @@ const Guadalajara = () => {
                       <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
                         <span className="flex items-center gap-1.5">
                           <Tag className="w-3.5 h-3.5 text-accent" />
-                          Early Bird (antes 30 Marzo)
+                          Early Bird (antes 30 de Abril)
                         </span>
                       </th>
                     </tr>
