@@ -10,6 +10,7 @@ const mainLinks = [
 const agendaLinks = [
   { label: "Panamá", to: "/panama" },
   { label: "Guadalajara", to: "/guadalajara" },
+  { label: "Monterrey", to: "/monterrey" },
 ];
 
 const retreatLinks = [
