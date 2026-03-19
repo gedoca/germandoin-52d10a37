@@ -61,7 +61,6 @@ const activities = [
       "Por qué la inteligencia vincular es clave en la educación",
       "Cómo los vínculos condicionan el aprendizaje",
       "Educar desde la presencia y la autenticidad",
-      ⁠⁠"Beneficios concretos y maneras de desarrollarlo",
     ],
     description: null,
     showDesaprenderLink: false,
