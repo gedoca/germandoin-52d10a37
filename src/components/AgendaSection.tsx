@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const events = [
   { city: "Panamá", period: "Abril", active: true, link: "/panama" },
   { city: "Guadalajara", period: "Abril", active: true, link: "/guadalajara" },
-  { city: "Monterrey", period: "Mayo", active: false },
+  { city: "Monterrey", period: "Mayo", active: true, link: "/monterrey" },
   { city: "Chiapas", period: "Mayo / Junio", active: false },
   { city: "México DF", period: "Junio", active: false },
   { city: "Roma", period: "Julio", active: false },
