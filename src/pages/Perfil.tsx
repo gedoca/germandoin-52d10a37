@@ -121,8 +121,6 @@ const Perfil = () => {
                   <p>
                     Germán Doin Campos es un profesional argentino de 38 años, padre de dos hijos, técnico en
                     Comunicación Social y Producción Audiovisual.
-                    <strong className="text-foreground">Germán Doin Campos</strong> es un profesional argentino de 37
-                    años, padre de dos hijos, técnico en Comunicación Social y Producción Audiovisual.
                   </p>
                   <p>
                     Desde 2009 investiga y difunde modelos educativos alternativos, trabajo que lo llevó a dirigir y
