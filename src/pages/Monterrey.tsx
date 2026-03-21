@@ -86,13 +86,13 @@ const activities = [
 const pricing = [
   {
     event: "Conferencia Taller",
-    general: "$1,100",
-    earlyBird: "$1,000",
+    general: "$1,300",
+    earlyBird: "$1,100",
   },
   {
     event: "Taller DesAprender",
-    general: "$4,600",
-    earlyBird: "$4,300",
+    general: "$4,750",
+    earlyBird: "$4,550",
   },
 ];
 
