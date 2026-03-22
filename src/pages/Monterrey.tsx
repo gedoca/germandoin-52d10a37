@@ -73,7 +73,7 @@ const activities = [
     date: "23 y 24 de Mayo",
     time: "9am a 6pm",
     location:
-      "Lugar a confirmar",
+      "Amayal - Palo Blanco, San Pedro Garza García, Nuevo León",
     featured: true,
     highlights: [],
     description:
