@@ -45,7 +45,7 @@ const FadeIn = ({
 const WHATSAPP_GDL =
   "https://api.whatsapp.com/send?phone=5218119972756&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Monterrey.";
 const GOOGLE_FORM_CONFERENCIA =
-  "https://api.whatsapp.com/send?phone=5218119972756&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Monterrey.";
+  "https://tally.so/r/D4eObZ";
 
 const activities = [
   {
@@ -79,7 +79,7 @@ const activities = [
     description:
       "Una experiencia de dos días para deconstruir la historia pedagógica personal. Un espacio seguro para soltar certezas, reconectar con la vocación y redescubrir el arte de acompañar.",
     showDesaprenderLink: true,
-    registrationLink: WHATSAPP_GDL,
+    registrationLink: GOOGLE_FORM_CONFERENCIA,
   },
 ];
 
