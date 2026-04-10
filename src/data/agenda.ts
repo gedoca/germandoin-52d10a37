@@ -17,17 +17,6 @@ const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 export const upcomingEvents: AgendaEvent[] = [
   {
-    type: "Retiro",
-    name: "Viaje Sanador",
-    icon: Compass,
-    location: "Estado de México",
-    date: "Junio 2025",
-    dateDetail: "26 al 28 de Junio",
-    link: "/estado-de-mexico",
-    highlighted: true,
-    slug: "estado-de-mexico",
-  },
-  {
     type: "Conferencia",
     name: "Pedagogía del Vínculo",
     icon: Mic,
