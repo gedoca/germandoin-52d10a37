@@ -66,6 +66,24 @@ const facilitators = [
   },
 ];
 
+const pricing = [
+  {
+    event: "Haste 15/05",
+    general: "u$d 650",
+    earlyBird: "$625",
+  },
+  {
+    event: "Hasta 12/06",
+    general: "u$d 700",
+    earlyBird: "$2,000",
+  },
+  {
+    event: "Hasta 26/06",
+    general: "u$d 800",
+    earlyBird: "$4,500",
+  },
+];
+
 const EstadoDeMexico = () => {
   return (
     <Layout>
@@ -247,6 +265,57 @@ const EstadoDeMexico = () => {
           </FadeIn>
         </div>
       </section>
+
+        {/* Precios */}
+        <section id="precios" className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-muted/30">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-px w-12 bg-accent" />
+                <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                  Precios y promociones
+                </span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-12">
+                Inversión del{" "}
+                <span className="italic text-accent">viaje</span>
+              </h2>
+            </FadeIn>
+
+            {/* Pricing table */}
+            <FadeIn delay={0.1}>
+              <div className="overflow-x-auto mb-10">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        Reservando
+                      </th>
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        Valor
+                      </th>
+                  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pricing.map((row, i) => (
+                      <tr
+                        key={i}
+                        className="border-b border-border/50 hover:bg-muted/50 transition-colors"
+                      >
+                        <td className="py-4 px-4 font-display text-base font-semibold text-foreground">
+                          {row.event}
+                        </td>
+                        <td className="py-4 px-4 font-body text-base text-muted-foreground">
+                          {row.general}
+                        </td>
+
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </FadeIn>
 
 
       {/* CTA */}
