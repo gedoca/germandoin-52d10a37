@@ -2,13 +2,15 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music, Home, UtensilsCrossed, AlertCircle } from "lucide-react";
-import { WHATSAPP_KARI } from "@/data/agenda";
+import { WHATSAPP_URL } from "@/data/agenda";
 import NextEditionSection from "@/components/NextEditionSection";
 import avandaro1 from "@/assets/avandaro-1.png";
 import avandaro2 from "@/assets/avandaro-2.png";
 import avandaro3 from "@/assets/avandaro-3.png";
 import avandaro4 from "@/assets/avandaro-4.png";
 import viajeHero from "@/assets/viaje-sanador-panama.jpg";
+
+const WHATSAPP_KARI = "https://wa.me/5215548663748";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
