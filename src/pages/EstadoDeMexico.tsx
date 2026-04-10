@@ -178,6 +178,64 @@ const EstadoDeMexico = () => {
         </div>
       </section>
 
+      {/* El Lugar */}
+      <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">El lugar</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6">
+              Avándaro, <span className="italic text-accent">Estado de México</span>
+            </h2>
+            <p className="font-body text-muted-foreground leading-relaxed mb-8">
+              Nos hospedaremos en una casa soñada en Avándaro, Estado de México. La experiencia incluye pernocte en habitaciones compartidas por 2 noches y 4 comidas (Cena viernes, desayuno y cena sábado, desayuno y almuerzo domingo). Se requiere ayuno de sólidos y café el día sábado previo a la experiencia.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {[avandaro1, avandaro2, avandaro3, avandaro4].map((img, i) => (
+                <div key={i} className="overflow-hidden rounded-sm">
+                  <img
+                    src={img}
+                    alt={`Casa en Avándaro - Vista ${i + 1}`}
+                    className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div className="flex items-start gap-3 p-4 border border-border rounded-sm bg-background">
+                <Home className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">2 noches de pernocte</p>
+                  <p className="font-body text-xs text-muted-foreground">Habitaciones compartidas</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 border border-border rounded-sm bg-background">
+                <UtensilsCrossed className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">4 comidas incluidas</p>
+                  <p className="font-body text-xs text-muted-foreground">Cena, desayuno, cena, brunch</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 border border-border rounded-sm bg-background">
+                <AlertCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">Ayuno el sábado</p>
+                  <p className="font-body text-xs text-muted-foreground">Sin sólidos ni café</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Testimonios */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
         <div className="max-w-3xl mx-auto text-center">
