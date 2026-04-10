@@ -8,7 +8,7 @@ const mainLinks = [
 ];
 
 const agendaLinks = [
-  { label: "Panamá", to: "/panama" },
+  { label: "Estado de México", to: "/estado-de-mexico" },
   { label: "Guadalajara", to: "/guadalajara" },
   { label: "Monterrey", to: "/monterrey" },
 ];
