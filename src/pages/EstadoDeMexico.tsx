@@ -224,7 +224,7 @@ const EstadoDeMexico = () => {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <NextEditionSection slug="viaje-sanador" />
+            <NextEditionSection slug="estado-de-mexico" />
           </FadeIn>
         </div>
       </section>
