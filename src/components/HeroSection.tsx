@@ -43,12 +43,7 @@ const HeroSection = () => {
             Latina.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
-              to="/estado-de-mexico"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
-            >
-              Estado de México
-            </Link>
+
             <Link
               to="/guadalajara"
               className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
@@ -60,6 +55,12 @@ const HeroSection = () => {
               className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
             >
               Monterrey
+            </Link>
+                        <Link
+              to="/estado-de-mexico"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
+            >
+              Estado de México
             </Link>
           </div>
         </motion.div>
