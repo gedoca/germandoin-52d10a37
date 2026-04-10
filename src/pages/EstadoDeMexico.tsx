@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music, Home, UtensilsCrossed, AlertCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/data/agenda";
+import { WHATSAPP_KARI } from "@/data/agenda";
 import NextEditionSection from "@/components/NextEditionSection";
 import avandaro1 from "@/assets/avandaro-1.png";
 import avandaro2 from "@/assets/avandaro-2.png";
@@ -331,7 +331,7 @@ const EstadoDeMexico = () => {
               Escribinos para consultar disponibilidad, resolver dudas y reservar tu lugar.
             </p>
             <a
-              href={WHATSAPP_URL}
+              href={WHATSAPP_KARI}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
