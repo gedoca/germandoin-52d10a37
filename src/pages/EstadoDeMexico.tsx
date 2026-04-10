@@ -316,6 +316,7 @@ const EstadoDeMexico = () => {
                 </table>
               </div>
             </FadeIn>
+      </section>
 
 
       {/* CTA */}
