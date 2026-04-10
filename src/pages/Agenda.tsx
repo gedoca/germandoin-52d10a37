@@ -27,7 +27,7 @@ const internationalTour = [
   { city: "Tepoztlán", period: "Junio 2026", active: false },
   { city: "San Miguel de Allende", period: "Junio 2026", active: false },
   { city: "Chiapas", period: "Junio 2026", active: false },
-  { city: "México DF", period: "Junio 2026", active: false },
+  { city: "México DF", period: "Junio 2026",  active: true, link: "/estado-de-mexico" },
   { city: "Roma", period: "Julio 2026", active: false },
   { city: "España", period: "Julio / Agosto 2026", active: false },
   { city: "Tenerife", period: "Agosto 2026", active: false },
