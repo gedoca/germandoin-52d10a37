@@ -80,7 +80,7 @@ const EstadoDeMexico = () => {
             <div className="flex justify-center mb-8">
               <div className="flex items-center gap-3 px-5 py-2 rounded-full border border-primary-foreground/20">
                 <MapPin className="w-4 h-4 text-accent" />
-                <span className="font-body text-sm text-primary-foreground/80 tracking-wide">Estado de México · Junio 2026</span>
+                <span className="font-body text-sm text-primary-foreground/80 tracking-wide">Avándaro · Estado de México · Junio 2026</span>
               </div>
             </div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-primary-foreground mb-6">
