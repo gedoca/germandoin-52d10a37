@@ -151,7 +151,19 @@ const EstadoDeMexico = () => {
           </div>
         </div>
       </section>
+      {/* Naranjo Quote */}
+      <section className="py-16 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <p className="font-display text-lg sm:text-xl italic text-foreground/80 leading-relaxed text-balance mb-4">
+              "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que antes había sido una mera sombra."
+            </p>
+            <p className="font-body text-sm text-accent font-medium">Claudio Naranjo — "El Viaje Sanador"</p>
+          </FadeIn>
+        </div>
+      </section>
 
+      
       {/* Facilitadores */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
@@ -236,60 +248,6 @@ const EstadoDeMexico = () => {
         </div>
       </section>
 
-      {/* Testimonios */}
-      <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <Quote className="w-10 h-10 text-accent/30 mx-auto mb-6" strokeWidth={1} />
-            <p className="font-display text-xl sm:text-2xl italic text-foreground leading-relaxed text-balance mb-4">
-              "La intervención y acompañamiento de ustedes fue fundamental para la experiencia, me hicieron sentir todo el tiempo acompañada, guiada, contenida y segura. El saber que estaban ahí cuidándonos me daba una paz increíble."
-            </p>
-            <p className="font-body text-sm text-muted-foreground">Participante del Viaje Sanador</p>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <div className="mt-12 pt-12 border-t border-border">
-              <Quote className="w-10 h-10 text-accent/30 mx-auto mb-6" strokeWidth={1} />
-              <p className="font-display text-xl sm:text-2xl italic text-foreground leading-relaxed text-balance mb-4">
-                "Creo que fue posible gracias al amor, el cuidado, la experiencia, el tacto y la profesionalidad que supieron brindar. El respeto por el proceso, por el individuo, realmente hace la diferencia."
-              </p>
-              <p className="font-body text-sm text-muted-foreground">Participante del Viaje Sanador</p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Naranjo Quote */}
-      <section className="py-16 px-6 sm:px-12 lg:px-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <p className="font-display text-lg sm:text-xl italic text-foreground/80 leading-relaxed text-balance mb-4">
-              "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que antes había sido una mera sombra."
-            </p>
-            <p className="font-body text-sm text-accent font-medium">Claudio Naranjo — "El Viaje Sanador"</p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Próxima edición */}
-      <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
-        <div className="max-w-4xl mx-auto">
-          <FadeIn>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-accent" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Inscripción</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-4">
-              Próximas <span className="italic text-accent">ediciones</span>
-            </h2>
-            <p className="font-body text-muted-foreground mb-8 max-w-2xl">
-              La inscripción requiere al menos 1 mes de anticipación para garantizar la realización de la sesión individual previa.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <NextEditionSection slug="estado-de-mexico" />
-          </FadeIn>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
@@ -308,7 +266,7 @@ const EstadoDeMexico = () => {
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
             >
               <MessageSquare className="w-4 h-4" />
-              Contactar por WhatsApp
+              Quiero saber más
             </a>
           </FadeIn>
         </div>
