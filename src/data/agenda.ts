@@ -14,6 +14,7 @@ export interface AgendaEvent {
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
+const WHATSAPP_KARI = "https://wa.me/5215548663748";
 
 export const upcomingEvents: AgendaEvent[] = [
   {
