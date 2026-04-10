@@ -13,8 +13,8 @@ export interface AgendaEvent {
   slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "monterrey" | "allende";
 }
 
-const WHATSAPP_URL = "https://wa.me/5491162720879";
-const WHATSAPP_KARI = "https://wa.me/5215548663748";
+export const WHATSAPP_URL = "https://wa.me/5491162720879";
+export const WHATSAPP_KARI = "https://wa.me/5215548663748";
 
 export const upcomingEvents: AgendaEvent[] = [
   {
