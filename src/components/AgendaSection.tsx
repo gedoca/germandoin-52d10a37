@@ -10,7 +10,7 @@ const events = [
   { city: "Tepoztlan", period: "Mayo / Junio", active: false, link: "/tepoztlan" },
   { city: "San Miguel de Allende", period: "Junio", active: false, link: "/allende" },
   { city: "Chiapas", period: "Mayo / Junio", active: false },
-  { city: "México DF", period: "Junio", active: true, link: "/estado-de-mexico" }
+  { city: "México DF", period: "Junio", active: true, link: "/estado-de-mexico" },
   { city: "Roma", period: "Julio", active: false },
   { city: "España", period: "Julio / Agosto", active: false },
   { city: "Tenerife", period: "Agosto", active: false },
