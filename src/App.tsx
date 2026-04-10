@@ -7,7 +7,7 @@ import Agenda from "./pages/Agenda";
 import Contacto from "./pages/Contacto";
 import Guadalajara from "./pages/Guadalajara";
 import Monterrey from "./pages/Monterrey";
-import Panama from "./pages/Panama";
+import EstadoDeMexico from "./pages/EstadoDeMexico";
 import Desaprender from "./pages/Desaprender";
 import ViajeSanador from "./pages/ViajeSanador";
 import VinculosAutenticos from "./pages/VinculosAutenticos";
@@ -29,7 +29,7 @@ const App = () => (
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/guadalajara" element={<Guadalajara />} />
         <Route path="/monterrey" element={<Monterrey />} />
-        <Route path="/panama" element={<Panama />} />
+        <Route path="/estado-de-mexico" element={<EstadoDeMexico />} />
         <Route path="/desaprender" element={<Desaprender />} />
         <Route path="/viaje-sanador" element={<ViajeSanador />} />
         <Route path="/vinculos-autenticos" element={<VinculosAutenticos />} />

@@ -2,7 +2,7 @@ import { Compass, Sparkles, HeartHandshake, PartyPopper, Mic, Users } from "luci
 import type { LucideIcon } from "lucide-react";
 
 export interface AgendaEvent {
-  type: "Retiro" | "Taller" | "Festival" | "Conferencia";
+  type: "Retiro" | "Taller" | "Festival" | "Conferencia" | "Conferencia Taller" | "Taller Vivencial" | "Retiro Vivencial";
   name: string;
   icon: LucideIcon;
   location: string;
@@ -10,7 +10,7 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "panama" | "monterrey";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "monterrey" | "allende";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
@@ -20,12 +20,12 @@ export const upcomingEvents: AgendaEvent[] = [
     type: "Retiro",
     name: "Viaje Sanador",
     icon: Compass,
-    location: "Panamá",
-    date: "Abril 2025",
-    dateDetail: "10 al 12 de Abril",
-    link: "/panama",
+    location: "Estado de México",
+    date: "Junio 2025",
+    dateDetail: "26 al 28 de Junio",
+    link: "/estado-de-mexico",
     highlighted: true,
-    slug: "panama",
+    slug: "estado-de-mexico",
   },
   {
     type: "Conferencia",
@@ -130,12 +130,12 @@ export const upcomingEvents: AgendaEvent[] = [
     type: "Retiro",
     name: "Viaje Sanador",
     icon: Compass,
-    location: "México DF",
+    location: "Estado de México",
     date: "Junio 2025",
     dateDetail: "26 al 28 de Junio",
-    link: "/viaje-sanador",
+    link: "/estado-de-mexico",
     highlighted: false,
-    slug: "viaje-sanador",
+    slug: "estado-de-mexico",
   },
   {
     type: "Festival",

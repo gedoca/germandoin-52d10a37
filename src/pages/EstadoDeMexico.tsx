@@ -62,13 +62,13 @@ const facilitators = [
   },
 ];
 
-const Panama = () => {
+const EstadoDeMexico = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={viajeHero} alt="Retiro Viaje Sanador en Panamá" className="w-full h-full object-cover" />
+          <img src={viajeHero} alt="Retiro Viaje Sanador en Estado de México" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/65" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-16 py-32 text-center">
@@ -76,7 +76,7 @@ const Panama = () => {
             <div className="flex justify-center mb-8">
               <div className="flex items-center gap-3 px-5 py-2 rounded-full border border-primary-foreground/20">
                 <MapPin className="w-4 h-4 text-accent" />
-                <span className="font-body text-sm text-primary-foreground/80 tracking-wide">Panamá · Abril 2025</span>
+                <span className="font-body text-sm text-primary-foreground/80 tracking-wide">Estado de México · Junio 2025</span>
               </div>
             </div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-primary-foreground mb-6">
@@ -86,7 +86,7 @@ const Panama = () => {
               Un retiro vivencial de autoconocimiento donde nos sumergimos en una experiencia de trabajo personal profundo, en un contexto grupal de buscadores de conciencia y bienestar.
             </p>
             <p className="font-body text-sm text-primary-foreground/50 flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4" /> 10 al 12 de Abril de 2025
+              <Clock className="w-4 h-4" /> 26 al 28 de Junio de 2025
             </p>
           </motion.div>
         </div>
@@ -224,7 +224,7 @@ const Panama = () => {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <NextEditionSection slug="viaje-sanador" />
+            <NextEditionSection slug="estado-de-mexico" />
           </FadeIn>
         </div>
       </section>
@@ -255,4 +255,4 @@ const Panama = () => {
   );
 };
 
-export default Panama;
+export default EstadoDeMexico;
