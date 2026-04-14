@@ -52,9 +52,9 @@ const activities = [
     icon: Mic,
     type: "Conferencia",
     title: "Pedagogía del Vínculo",
-    date: "14 de abril",
+    date: "21 de abril",
     time: "19 a 21hs",
-    location: "Casa de la Cultura, Constituyentes 21, Independencia Centro, GDL",
+    location: "Francisco Zarco 274A, Col. Artesanos, GDL",
     featured: false,
     highlights: [
       "Por qué la inteligencia vincular es clave en la educación",
