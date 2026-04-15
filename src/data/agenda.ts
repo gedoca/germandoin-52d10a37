@@ -10,7 +10,7 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "monterrey" | "allende";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "monterrey" | "san-miguel-de-allende";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
@@ -100,9 +100,9 @@ export const upcomingEvents: AgendaEvent[] = [
     location: "San Miguel de Allende, México",
     date: "Junio 2026",
     dateDetail: "12 al 14 de Junio",
-    link: "/desaprender",
+    link: "/san-miguel-de-allende",
     highlighted: false,
-    slug: "allende",
+    slug: "san-miguel-de-allende",
   },
     {
     type: "Retiro",
