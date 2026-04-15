@@ -56,6 +56,7 @@ const HeroSection = () => {
             >
               Monterrey
             </Link>
+            <br />
                         <Link
               to="/san-miguel-de-allende"
               className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
