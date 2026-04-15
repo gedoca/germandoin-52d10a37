@@ -1,22 +1,32 @@
-## Plan: Add venue gallery section to Estado de México page
 
-### What we'll do
 
-Add a new section after the "Facilitacion" section showing photos of the venue in Avándaro with a description of what's included (lodging, meals, fasting requirements).
+## Plan: Create San Miguel de Allende page
+
+### Summary
+Create a new destination page for the **Retiro DesAprender in San Miguel de Allende** (June 12-14), modeled after the Monterrey page structure but focused on a single event. Include content from the Desaprender page, a pricing table, and a dedicated WhatsApp contact.
 
 ### Steps
 
-1. **Copy the 4 uploaded images** to `src/assets/` as `avandaro-1.png`, `avandaro-2.png`, `avandaro-3.png`, `avandaro-4.png`.
-2. **Add a new "El Lugar" section** in `src/pages/EstadoDeMexico.tsx` after the "Propuesta" section:
-  - Section header: "El Lugar"
-  - Title: "Avándaro, Estado de México"
-  - Description paragraph with the provided text about lodging, shared rooms, 4 meals included, and fasting requirements.
-  - A responsive image grid (2x2 on desktop, stacked on mobile) displaying the 4 venue photos with rounded corners and hover effects, wrapped in `FadeIn` animations.
-  - Include relevant icons (Home, Utensils) for the included amenities as small info cards below the description (2 nights lodging, 4 meals included, Saturday fasting requirement).
+1. **Create `src/pages/SanMiguelDeAllende.tsx`** based on Monterrey's structure but simplified for a single event:
+   - **Hero**: "San Miguel de Allende · Junio 2026" with DesAprender branding, using existing `desaprender-hero.jpg` as background
+   - **Propuesta section**: Single card for "Retiro Vivencial DesAprender" (12-14 de Junio), pulling content from Desaprender page (description, 7 qualities, format info for retiro vivencial)
+   - **Photo gallery**: Reuse Desaprender images (grupo, dinamica, extras)
+   - **Content section**: Key content from Desaprender page (what we'll learn, qualities grid)
+   - **Pricing table**: Single row — "Retiro DesAprender" with Early Bird Prepago (hasta 15 de Mayo): **$7,500**. No general price shown (only early bird as specified).
+   - **WhatsApp CTA**: Link to `+52 1 55 3040 4218`
+   - **Sobre German** section (reused from Monterrey pattern)
+
+2. **Add route in `src/App.tsx`**: `/san-miguel-de-allende` → `SanMiguelDeAllende`
+
+3. **Update `src/data/agenda.ts`**:
+   - Add `"san-miguel-de-allende"` to the slug union type
+   - Update the existing Allende event entry to use slug `"san-miguel-de-allende"` and link `/san-miguel-de-allende`
+
+4. **Update `src/components/SiteNavbar.tsx`**: Add "San Miguel de Allende" to the `agendaLinks` array
 
 ### Technical details
+- WhatsApp URL: `https://wa.me/5215530404218`
+- Reuse existing assets (desaprender-hero, desaprender-grupo, german-portrait, etc.)
+- Same FadeIn animation pattern, Layout wrapper, and styling conventions as Monterrey
+- The slug `"allende"` in agenda.ts will become `"san-miguel-de-allende"`
 
-- Import the 4 images as ES6 modules from `@/assets/`
-- Use the existing `FadeIn` component for scroll animations
-- Grid layout: `grid grid-cols-1 sm:grid-cols-2 gap-4` for the photos
-- Consistent styling with the rest of the page (same padding, max-width, typography classes)
