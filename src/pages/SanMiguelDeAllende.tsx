@@ -380,14 +380,35 @@ const SanMiguelDeAllende = () => {
                           Early Bird Prepago (hasta 15 de Mayo)
                         </span>
                       </th>
+                       <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        <span className="flex items-center gap-1.5">
+                          <Tag className="w-3.5 h-3.5 text-accent" />
+                          Valor Final (desde 16 de Mayo)
+                        </span>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border/50 hover:bg-muted/50 transition-colors">
                       <td className="py-4 px-4 font-display text-base font-semibold text-foreground">
-                        Retiro DesAprender
+                        Valor por Persona
                       </td>
                       <td className="py-4 px-4 font-body text-base font-semibold text-accent">
+                        $7,500
+                      </td>
+                     <td className="py-4 px-4 font-body text-base font-semibold text-accent">
+                        $8,500
+                      </td>
+                    </tr>
+                    
+                    <tr className="border-b border-border/50 hover:bg-muted/50 transition-colors">
+                      <td className="py-4 px-4 font-display text-base font-semibold text-foreground">
+                        Grupos 3 o más
+                      </td>
+                      <td className="py-4 px-4 font-body text-base font-semibold text-accent">
+                        $6,900
+                      </td>
+                     <td className="py-4 px-4 font-body text-base font-semibold text-accent">
                         $7,500
                       </td>
                     </tr>
