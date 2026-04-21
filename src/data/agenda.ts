@@ -2,7 +2,7 @@ import { Compass, Sparkles, HeartHandshake, PartyPopper, Mic, Users } from "luci
 import type { LucideIcon } from "lucide-react";
 
 export interface AgendaEvent {
-  type: "Retiro" | "Taller" | "Festival" | "Conferencia";
+  type: "Retiro" | "Taller" | "Festival" | "Conferencia" | "Conferencia Taller" | "Taller Vivencial" | "Retiro Vivencial";
   name: string;
   icon: LucideIcon;
   location: string;
@@ -10,30 +10,19 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "panama" | "monterrey";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "monterrey" | "san-miguel-de-allende";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 export const upcomingEvents: AgendaEvent[] = [
   {
-    type: "Retiro",
-    name: "Viaje Sanador",
-    icon: Compass,
-    location: "Panamá",
-    date: "Abril 2025",
-    dateDetail: "10 al 12 de Abril",
-    link: "/panama",
-    highlighted: true,
-    slug: "panama",
-  },
-  {
     type: "Conferencia",
     name: "Pedagogía del Vínculo",
     icon: Mic,
-    location: "Guadalajara",
+    location: "Francisco Zarco 274A, Col. Artesanos, GDL",
     date: "Abril 2025",
-    dateDetail: "14 de Abril",
+    dateDetail: "21 de Abril 7pm",
     link: "/guadalajara",
     highlighted: false,
     slug: "guadalajara",
@@ -82,6 +71,17 @@ export const upcomingEvents: AgendaEvent[] = [
     highlighted: false,
     slug: "monterrey",
   },
+    {
+    type: "Retiro",
+    name: "Vínculos Auténticos",
+    icon: Compass,
+    location: "Tepoztlán, México",
+    date: "Mayo 2025",
+    dateDetail: "29 al 31 de Mayo",
+    link: "/vinculos-autenticos",
+    highlighted: false,
+    slug: "vinculos-autenticos",
+  },  
   {
     type: "Taller Vivencial",
     name: "DesAprender",
@@ -94,16 +94,16 @@ export const upcomingEvents: AgendaEvent[] = [
     slug: "monterrey",
   },
     {
-    type: "Retiro",
-    name: "Vínculos Auténticos",
-    icon: Compass,
-    location: "Tepoztlán, México",
-    date: "Junio 2025",
+    type: "Retiro Vivencial",
+    name: "DesAprender",
+    icon: Sparkles,
+    location: "San Miguel de Allende, México",
+    date: "Junio 2026",
     dateDetail: "12 al 14 de Junio",
-    link: "/vinculos-autenticos",
+    link: "/san-miguel-de-allende",
     highlighted: false,
-    slug: "vinculos-autenticos",
-  },  
+    slug: "san-miguel-de-allende",
+  },
     {
     type: "Retiro",
     name: "Viaje Sanador",
@@ -119,12 +119,12 @@ export const upcomingEvents: AgendaEvent[] = [
     type: "Retiro",
     name: "Viaje Sanador",
     icon: Compass,
-    location: "México DF",
+    location: "Estado de México",
     date: "Junio 2025",
     dateDetail: "26 al 28 de Junio",
-    link: "/viaje-sanador",
+    link: "/estado-de-mexico",
     highlighted: false,
-    slug: "viaje-sanador",
+    slug: "estado-de-mexico",
   },
   {
     type: "Festival",

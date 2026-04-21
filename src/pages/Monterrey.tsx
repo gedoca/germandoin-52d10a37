@@ -45,7 +45,7 @@ const FadeIn = ({
 const WHATSAPP_GDL =
   "https://api.whatsapp.com/send?phone=5218119972756&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Monterrey.";
 const GOOGLE_FORM_CONFERENCIA =
-  "https://api.whatsapp.com/send?phone=5218119972756&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+las+actividade+de+German+Doin+en+Monterrey.";
+  "https://tally.so/r/D4eObZ";
 
 const activities = [
   {
@@ -73,26 +73,26 @@ const activities = [
     date: "23 y 24 de Mayo",
     time: "9am a 6pm",
     location:
-      "Lugar a confirmar",
+      "Amayal - Palo Blanco, San Pedro Garza García, Nuevo León",
     featured: true,
     highlights: [],
     description:
       "Una experiencia de dos días para deconstruir la historia pedagógica personal. Un espacio seguro para soltar certezas, reconectar con la vocación y redescubrir el arte de acompañar.",
     showDesaprenderLink: true,
-    registrationLink: WHATSAPP_GDL,
+    registrationLink: GOOGLE_FORM_CONFERENCIA,
   },
 ];
 
 const pricing = [
   {
     event: "Conferencia Taller",
-    general: "$1,100",
-    earlyBird: "$1,000",
+    general: "$1,300",
+    earlyBird: "$1,100",
   },
   {
     event: "Taller DesAprender",
-    general: "$4,600",
-    earlyBird: "$4,300",
+    general: "$4,750",
+    earlyBird: "$4,550",
   },
 ];
 
@@ -336,7 +336,7 @@ const Guadalajara = () => {
                       <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
                         <span className="flex items-center gap-1.5">
                           <Tag className="w-3.5 h-3.5 text-accent" />
-                          Early Bird (antes 30 de Abril)
+                          Early Bird (antes 7 de Mayo)
                         </span>
                       </th>
                     </tr>

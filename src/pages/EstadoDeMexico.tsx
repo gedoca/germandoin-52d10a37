@@ -1,10 +1,16 @@
 import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music } from "lucide-react";
+import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music, Home, UtensilsCrossed, AlertCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/data/agenda";
 import NextEditionSection from "@/components/NextEditionSection";
+import avandaro1 from "@/assets/avandaro-1.png";
+import avandaro2 from "@/assets/avandaro-2.png";
+import avandaro3 from "@/assets/avandaro-3.png";
+import avandaro4 from "@/assets/avandaro-4.png";
 import viajeHero from "@/assets/viaje-sanador-panama.jpg";
+
+const WHATSAPP_KARI = "https://wa.me/5215548663748";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -62,13 +68,31 @@ const facilitators = [
   },
 ];
 
-const Panama = () => {
+const pricing = [
+  {
+    event: "Haste 15/05",
+    general: "u$d 650",
+    earlyBird: "$625",
+  },
+  {
+    event: "Hasta 12/06",
+    general: "u$d 700",
+    earlyBird: "$2,000",
+  },
+  {
+    event: "Hasta 26/06",
+    general: "u$d 800",
+    earlyBird: "$4,500",
+  },
+];
+
+const EstadoDeMexico = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={viajeHero} alt="Retiro Viaje Sanador en Panamá" className="w-full h-full object-cover" />
+          <img src={viajeHero} alt="Retiro Viaje Sanador en Estado de México" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/65" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-16 py-32 text-center">
@@ -76,7 +100,7 @@ const Panama = () => {
             <div className="flex justify-center mb-8">
               <div className="flex items-center gap-3 px-5 py-2 rounded-full border border-primary-foreground/20">
                 <MapPin className="w-4 h-4 text-accent" />
-                <span className="font-body text-sm text-primary-foreground/80 tracking-wide">Panamá · Abril 2025</span>
+                <span className="font-body text-sm text-primary-foreground/80 tracking-wide">Avándaro · Estado de México · Junio 2026</span>
               </div>
             </div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-primary-foreground mb-6">
@@ -86,7 +110,7 @@ const Panama = () => {
               Un retiro vivencial de autoconocimiento donde nos sumergimos en una experiencia de trabajo personal profundo, en un contexto grupal de buscadores de conciencia y bienestar.
             </p>
             <p className="font-body text-sm text-primary-foreground/50 flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4" /> 10 al 12 de Abril de 2025
+              <Clock className="w-4 h-4" /> 26 al 28 de Junio de 2026
             </p>
           </motion.div>
         </div>
@@ -147,7 +171,19 @@ const Panama = () => {
           </div>
         </div>
       </section>
+      {/* Naranjo Quote */}
+      <section className="py-16 px-6 sm:px-12 lg:px-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <p className="font-display text-lg sm:text-xl italic text-foreground/80 leading-relaxed text-balance mb-4">
+              "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que antes había sido una mera sombra."
+            </p>
+            <p className="font-body text-sm text-accent font-medium">Claudio Naranjo — "El Viaje Sanador"</p>
+          </FadeIn>
+        </div>
+      </section>
 
+      
       {/* Facilitadores */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
@@ -174,60 +210,117 @@ const Panama = () => {
         </div>
       </section>
 
-      {/* Testimonios */}
-      <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <Quote className="w-10 h-10 text-accent/30 mx-auto mb-6" strokeWidth={1} />
-            <p className="font-display text-xl sm:text-2xl italic text-foreground leading-relaxed text-balance mb-4">
-              "La intervención y acompañamiento de ustedes fue fundamental para la experiencia, me hicieron sentir todo el tiempo acompañada, guiada, contenida y segura. El saber que estaban ahí cuidándonos me daba una paz increíble."
-            </p>
-            <p className="font-body text-sm text-muted-foreground">Participante del Viaje Sanador</p>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <div className="mt-12 pt-12 border-t border-border">
-              <Quote className="w-10 h-10 text-accent/30 mx-auto mb-6" strokeWidth={1} />
-              <p className="font-display text-xl sm:text-2xl italic text-foreground leading-relaxed text-balance mb-4">
-                "Creo que fue posible gracias al amor, el cuidado, la experiencia, el tacto y la profesionalidad que supieron brindar. El respeto por el proceso, por el individuo, realmente hace la diferencia."
-              </p>
-              <p className="font-body text-sm text-muted-foreground">Participante del Viaje Sanador</p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Naranjo Quote */}
-      <section className="py-16 px-6 sm:px-12 lg:px-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <p className="font-display text-lg sm:text-xl italic text-foreground/80 leading-relaxed text-balance mb-4">
-              "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que antes había sido una mera sombra."
-            </p>
-            <p className="font-body text-sm text-accent font-medium">Claudio Naranjo — "El Viaje Sanador"</p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Próxima edición */}
-      <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16 bg-card">
+      {/* El Lugar */}
+      <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-accent" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">Inscripción</span>
+              <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">El lugar</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-4">
-              Próximas <span className="italic text-accent">ediciones</span>
+            <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6">
+              Avándaro, <span className="italic text-accent">Estado de México</span>
             </h2>
-            <p className="font-body text-muted-foreground mb-8 max-w-2xl">
-              La inscripción requiere al menos 1 mes de anticipación para garantizar la realización de la sesión individual previa.
+            <p className="font-body text-muted-foreground leading-relaxed mb-8">
+              Nos hospedaremos en una casa soñada en Avándaro, Estado de México. La experiencia incluye pernocte en habitaciones compartidas por 2 noches y 4 comidas (Cena viernes, desayuno y cena sábado, desayuno y almuerzo domingo). Se requiere ayuno de sólidos y café el día sábado previo a la experiencia.
             </p>
           </FadeIn>
+
           <FadeIn delay={0.1}>
-            <NextEditionSection slug="viaje-sanador" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {[avandaro1, avandaro2, avandaro3, avandaro4].map((img, i) => (
+                <div key={i} className="overflow-hidden rounded-sm">
+                  <img
+                    src={img}
+                    alt={`Casa en Avándaro - Vista ${i + 1}`}
+                    className="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div className="flex items-start gap-3 p-4 border border-border rounded-sm bg-background">
+                <Home className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">2 noches de pernocte</p>
+                  <p className="font-body text-xs text-muted-foreground">Habitaciones compartidas</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 border border-border rounded-sm bg-background">
+                <UtensilsCrossed className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">4 comidas incluidas</p>
+                  <p className="font-body text-xs text-muted-foreground">Cena, desayuno, cena, brunch</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 border border-border rounded-sm bg-background">
+                <AlertCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">Ayuno el sábado</p>
+                  <p className="font-body text-xs text-muted-foreground">Sin sólidos ni café</p>
+                </div>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
+
+        {/* Precios */}
+        <section id="precios" className="py-24 lg:py-32 px-6 sm:px-12 lg:px-16 bg-muted/30">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-px w-12 bg-accent" />
+                <span className="font-body text-sm tracking-widest uppercase text-muted-foreground">
+                  Precios y promociones
+                </span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-12">
+                Inversión del{" "}
+                <span className="italic text-accent">viaje</span>
+              </h2>
+            </FadeIn>
+
+            {/* Pricing table */}
+            <FadeIn delay={0.1}>
+              <div className="overflow-x-auto mb-10">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        Reservando
+                      </th>
+                      <th className="py-4 px-4 font-body text-xs tracking-widest uppercase text-muted-foreground">
+                        Valor
+                      </th>
+                  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pricing.map((row, i) => (
+                      <tr
+                        key={i}
+                        className="border-b border-border/50 hover:bg-muted/50 transition-colors"
+                      >
+                        <td className="py-4 px-4 font-display text-base font-semibold text-foreground">
+                          {row.event}
+                        </td>
+                        <td className="py-4 px-4 font-body text-base text-muted-foreground">
+                          {row.general}
+                        </td>
+
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </FadeIn>
+            </div>
+      </section>
+
 
       {/* CTA */}
       <section className="py-20 lg:py-28 px-6 sm:px-12 lg:px-16">
@@ -240,13 +333,13 @@ const Panama = () => {
               Escribinos para consultar disponibilidad, resolver dudas y reservar tu lugar.
             </p>
             <a
-              href={WHATSAPP_URL}
+              href={WHATSAPP_KARI}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-body text-sm font-medium rounded-sm hover:bg-primary/90 transition-colors"
             >
               <MessageSquare className="w-4 h-4" />
-              Contactar por WhatsApp
+              Quiero saber más
             </a>
           </FadeIn>
         </div>
@@ -255,4 +348,4 @@ const Panama = () => {
   );
 };
 
-export default Panama;
+export default EstadoDeMexico;
