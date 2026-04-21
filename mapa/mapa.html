@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Mapas de la Emoción e Indagación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f2f2f0;
+            --text-color: #2c2c2c;
+            --accent-color: #a0a0a0;
+            --slide-bg: #ffffff;
+            --dark-bg: #1a1a1a;
+            --dark-text: #f0f0f0;
+            --pedagogia-color: #888;
+        }
+
+        * { box-sizing: border-box; }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden; /* Bloquea el scroll vertical para forzar el horizontal */
+        }
+
+        /* Contenedor principal de scroll horizontal */
+        .slider {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slider::-webkit-scrollbar { display: none; }
+
+        section {
+            min-width: 100vw;
+            height: 100vh;
+            scroll-snap-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* Slides de Pregunta (Fondo Oscuro) */
+        section.pregunta {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+            text-align: center;
+        }
+
+        .pregunta-content h3 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1.4;
+            max-width: 850px;
+            margin: 0 auto;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        /* Contenedor de Slide Técnica */
+        .slide-content {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            background: var(--slide-bg);
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+            border-radius: 2px;
+        }
+
+        .text-side h2 { 
+            font-size: 2.2rem; 
+            font-weight: 300; 
+            margin: 0 0 5px 0; 
+            letter-spacing: -1px;
+        }
+
+        .modelo-pedagogico {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--pedagogia-color);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .essencia { 
+            font-style: italic; 
+            font-size: 1.05rem; 
+            color: #666; 
+            margin-bottom: 30px; 
+            border-left: 3px solid var(--accent-color); 
+            padding-left: 20px;
+            line-height: 1.5;
+        }
+        
+        .data-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+        }
+
+        .data-item { 
+            font-size: 0.85rem; 
+            padding: 12px; 
+            background: #fafafa; 
+            border: 1px solid #f0f0f0;
+            line-height: 1.4;
+        }
+
+        .data-item strong { 
+            display: block; 
+            text-transform: uppercase; 
+            font-size: 0.7rem; 
+            color: var(--accent-color); 
+            margin-bottom: 5px; 
+            letter-spacing: 1px; 
+        }
+
+        .image-side {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            background-color: #eee;
+        }
+
+        .image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(1.05);
+        }
+
+        .hero h1 { font-size: 4.5rem; font-weight: 200; margin: 0; }
+        .hero p { letter-spacing: 10px; color: var(--accent-color); text-transform: uppercase; margin-top: 15px; }
+
+        .hint {
+            position: fixed; 
+            bottom: 25px; 
+            width: 100%; 
+            text-align: center; 
+            font-size: 0.7rem; 
+            color: #888; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 900px) {
+            .slide-content { grid-template-columns: 1fr; padding: 30px; }
+            .image-side { order: -1; min-height: 250px; }
+            .pregunta-content h3 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hint">Flechas ← → para navegar entre modelos e indagaciones</div>
+
+    <div class="slider" id="slider">
+        
+        <section>
+            <div class="hero">
+                <h1>Mapas de la Emoción</h1>
+                <p>9 Visiones Pedagógicas</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>01. El Orden da estructura</h2>
+                    <span class="modelo-pedagogico">Método Montessori</span>
+                    <p class="essencia">"La paz nace de la capacidad de interactuar con el mundo de forma autónoma en un entorno preparado."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Perfeccionismo rígido y frustración.</div>
+                        <div class="data-item"><strong>Recursos</strong>Ambiente preparado y materiales.</div>
+                        <div class="data-item"><strong>Problemas</strong>Dificultad para el caos creativo.</div>
+                        <div class="data-item"><strong>Éxito</strong>Autoconfianza e independencia.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen01.png" alt="Orden"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Qué parte de mi necesidad de control me impide confiar en la capacidad de autogestión de los demás?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>02. El Cuidado está en la percepción</h2>
+                    <span class="modelo-pedagogico">Pedagogía Waldorf / Pikler</span>
+                    <p class="essencia">"El equilibrio emocional se respira a través del ritmo y la protección de los sentidos."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Sobreprotección / Dependencia.</div>
+                        <div class="data-item"><strong>Recursos</strong>Ritmos diarios y naturaleza.</div>
+                        <div class="data-item"><strong>Problemas</strong>Falta de límites o reactividad.</div>
+                        <div class="data-item"><strong>Éxito</strong>Empatía y conexión biológica.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen02.png" alt="Cuidado"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Cuándo mi cuidado se vuelve una cárcel que asfixia el crecimiento del otro?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>03. El Bienestar se gestiona</h2>
+                    <span class="modelo-pedagogico">Educación Progresista - Modelo Finlandés</span>
+                    <p class="essencia">"El aprendizaje solo ocurre cuando la mente y el cuerpo se sienten 'a salvo'."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Bienestar funcional y vacío.</div>
+                        <div class="data-item"><strong>Recursos</strong>Evaluación cualitativa y descanso.</div>
+                        <div class="data-item"><strong>Problemas</strong>La emoción como trámite productivo.</div>
+                        <div class="data-item"><strong>Éxito</strong>Resiliencia sin competencia.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen03.png" alt="Bienestar"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Estoy buscando un bienestar real o solo una comodidad que no me exija transformar nada?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>04. El Arte entrena la expresión </h2>
+                    <span class="modelo-pedagogico">Reggio Emilia - Educación por el Arte</span>
+                    <p class="essencia">"La emoción es un lenguaje estético visibilizado y documentado."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Ensimismamiento melancólico.</div>
+                        <div class="data-item"><strong>Recursos</strong>Atelier y documentación de procesos.</div>
+                        <div class="data-item"><strong>Problemas</strong>Sobre-interpretación del niño.</div>
+                        <div class="data-item"><strong>Éxito</strong>Alta capacidad simbólica y estética.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen04.png" alt="Expresión"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Qué tanto me permito mostrar mi mundo interno sin la máscara de lo que "debe ser"?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>05. La Observación de las reflexiones</h2>
+                    <span class="modelo-pedagogico">Educación Contemplativa (Krishnamurti)</span>
+                    <p class="essencia">"Observar la emoción sin juzgarla para comprender el condicionamiento social."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Aislamiento intelectual o desapego.</div>
+                        <div class="data-item"><strong>Recursos</strong>Diálogo socrático y silencio.</div>
+                        <div class="data-item"><strong>Problemas</strong>Falta de vitalidad corporal.</div>
+                        <div class="data-item"><strong>Éxito</strong>Mente libre de condicionamientos.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen05.png" alt="Reflexión"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Estoy observando la realidad o solo mis propios prejuicios sobre ella?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>06. La Confianza está hacer las reglas</h2>
+                    <span class="modelo-pedagogico">Pedagogía Libertaria</span>
+                    <p class="essencia">"La gestión emocional es colectiva; el miedo se disuelve en el apoyo mutuo."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Paranoia grupal o ansiedad.</div>
+                        <div class="data-item"><strong>Recursos</strong>Asamblea y autogestión.</div>
+                        <div class="data-item"><strong>Problemas</strong>Parálisis por exceso de debate.</div>
+                        <div class="data-item"><strong>Éxito</strong>Redes de cuidado y lealtad ética.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen06.png" alt="Confianza"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Confío realmente en la red cuando la autoridad desaparece, o busco un culpable para sentirme seguro?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>07. El Placer de la libertad</h2>
+                    <span class="modelo-pedagogico">Educación Libre / Educación Viva</span>
+                    <p class="essencia">"El aprendizaje sigue al deseo. Si hay placer, hay salud emocional."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Evitación sistemática del dolor.</div>
+                        <div class="data-item"><strong>Recursos</strong>Asistencia voluntaria y juego libre.</div>
+                        <div class="data-item"><strong>Problemas</strong>Dispersión y falta de profundidad.</div>
+                        <div class="data-item"><strong>Éxito</strong>Vitalidad y ausencia de neurosis.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen07.png" alt="Placer"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Tengo miedo de que, si sigo mi deseo, descubriré que no sé quién soy fuera del deber?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>08. El Poder implica responsabilidad</h2>
+                    <span class="modelo-pedagogico">Pedagogía Crítica y Popular</span>
+                    <p class="essencia">"La emoción como motor de transformación social y pertenencia."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Reactividad y dureza emocional.</div>
+                        <div class="data-item"><strong>Recursos</strong>Círculo de cultura y acción-reflexión.</div>
+                        <div class="data-item"><strong>Problemas</strong>Liderazgos autoritarios ocultos.</div>
+                        <div class="data-item"><strong>Éxito</strong>Fuerza colectiva y justicia social.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen08.png" alt="Poder"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Uso mi fuerza para proteger la manada o para imponer mi propia mirada sobre los demás?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <h2>09. La Paz está en el equilibrio</h2>
+                    <span class="modelo-pedagogico">Educación Democrática</span>
+                    <p class="essencia">"La paz es el resultado de habitar el conflicto a través del diálogo."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Riesgo</strong>Inercia y evitación del conflicto.</div>
+                        <div class="data-item"><strong>Recursos</strong>Justicia restaurativa.</div>
+                        <div class="data-item"><strong>Problemas</strong>Decisiones excesivamente lentas.</div>
+                        <div class="data-item"><strong>Éxito</strong>Mediación excepcional y equilibrio.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="imagen09.png" alt="Paz"></div>
+            </div>
+        </section>
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>¿Mi búsqueda de paz es un puente hacia el otro o una muralla para que nada me perturbe?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="hero">
+                <h2>Cosecha e Integración</h2>
+                <p>¿Qué mapa resuena hoy con tu necesidad?</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        
+        // Control por teclado (Flechas)
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') slider.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+            if (e.key === 'ArrowLeft') slider.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+        });
+
+        // Control por Rueda del Ratón (Conversión de scroll vertical a horizontal)
+        slider.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                slider.scrollBy({ 
+                    left: e.deltaY * 3, 
+                    behavior: 'auto' 
+                });
+            }
+        });
+    </script>
+</body>
+</html>
