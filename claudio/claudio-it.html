@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claudio Naranjo: Educazione ed Enneagramma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f4f2;
+            --text-color: #2c2c2c;
+            --accent-color: #c05621;
+            --slide-bg: #ffffff;
+            --dark-bg: #121212;
+            --dark-text: #e0e0e0;
+            --label-color: #888;
+        }
+
+        * { box-sizing: border-box; }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slider::-webkit-scrollbar { display: none; }
+
+        section {
+            min-width: 100vw;
+            height: 100vh;
+            scroll-snap-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        section.pregunta {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+            text-align: center;
+        }
+
+        .pregunta-content h3 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            background: var(--slide-bg);
+            padding: 60px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .text-side h2 { 
+            font-size: 2.5rem; 
+            font-weight: 300; 
+            margin: 0 0 10px 0; 
+            letter-spacing: -1px;
+            color: var(--dark-bg);
+        }
+
+        .label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .essencia { 
+            font-style: italic; 
+            font-size: 1.1rem; 
+            color: #555; 
+            margin-bottom: 35px; 
+            border-left: 2px solid var(--accent-color); 
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+        
+        .data-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        }
+
+        .data-item { 
+            font-size: 0.9rem; 
+            padding: 15px; 
+            background: #fbfbfb; 
+            border: 1px solid #f0f0f0;
+            line-height: 1.5;
+        }
+
+        .data-item strong { 
+            display: block; 
+            text-transform: uppercase; 
+            font-size: 0.7rem; 
+            color: var(--label-color); 
+            margin-bottom: 8px; 
+            letter-spacing: 1.5px; 
+        }
+
+        .pasion-list {
+            grid-template-columns: 1fr 1fr 1fr !important;
+        }
+
+        .image-side {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(10%) contrast(1.05);
+        }
+
+        .hero h1 { font-size: 5rem; font-weight: 200; margin: 0; letter-spacing: -2px; }
+        .hero p { letter-spacing: 8px; color: var(--accent-color); text-transform: uppercase; margin-top: 20px; font-size: 0.9rem; }
+
+        .hint {
+            position: fixed; 
+            bottom: 30px; 
+            width: 100%; 
+            text-align: center; 
+            font-size: 0.65rem; 
+            color: #999; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @media (max-width: 1000px) {
+            .slide-content { grid-template-columns: 1fr; padding: 40px; height: auto; overflow-y: auto; }
+            .image-side { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .pasion-list { grid-template-columns: 1fr 1fr !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hint">Usa le frecce o lo scroll per navigare</div>
+
+    <div class="slider" id="slider">
+        
+        <section>
+            <div class="hero">
+                <h1>Claudio Naranjo</h1>
+                <p>un approccio globale ed equilibrato</p>
+            </div>
+        </section>
+
+<section>
+    <div class="slide-content">
+        <div class="text-side">
+            <span class="label">00. Profilo Biografico</span>
+            <h2>Claudio Naranjo</h2>
+            <p class="essencia">"Il male della nostra cultura è che guarda più verso l'esterno che verso l'interno. La guarigione è il ritorno all'essere."</p>
+            <div class="data-grid">
+                <div class="data-item">
+                    <strong>Medicina e Accademia</strong>
+                    Medico Psichiatra presso l'U. de Chile. Ricercatore a Berkeley sui tipi di personalità e sul Paradigma Triunitario di Totila Albert.
+                </div>
+                <div class="data-item">
+                    <strong>Psicoterapia Umana</strong>
+                    Formatosi in Gestalt con Fritz Perls e in Autoanalisi con Karen Horney, integrando la profondità clinica con quella transpersonale.
+                </div>
+                <div class="data-item">
+                    <strong>Scuole di Saggezza</strong>
+                    Ha integrato l'Enneagramma (Oscar Ichazo), la Quarta Via (Gurdjieff), il Sufismo (Idries Shaw) e il Buddismo (Tarthang Tulku).
+                </div>
+                <div class="data-item">
+                    <strong>Frontiere della Coscienza</strong>
+                    Pioniere della psicologia transpersonale e della ricerca sugli stati ampliati di coscienza per la trasformazione dell'essere.
+                </div>
+            </div>
+        </div>
+        <div class="image-side">
+            <img src="https://img.europapress.es/fotoweb/fotonoticia_20190712154930_1920.jpg" alt="Claudio Naranjo">
+        </div>
+    </div>
+</section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">01. La Radice Sociale</span>
+                    <h2>Mente Patriarcale</h2>
+                    <p class="essencia">"Viviamo in una cultura che criminalizza l'istinto e svaluta la cura materna."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Autoritarismo violento</strong>Si riferisce all'esercizio del potere basato sul dominio, sulla gerarchia rigida e sull'uso della forza o dell'imposizione sugli altri.</div>
+                        <div class="data-item"><strong>Svalutazione del "maternage"</strong>È il disprezzo per le funzioni di cura, nutrimento affettivo e protezione, storicamente associate al femminile e alla figura materna.</div>
+                        <div class="data-item"><strong>Criminalizzazione implicita dell'istinto</strong>Repressione degli impulsi naturali e biologici, visti come qualcosa di pericoloso che deve essere controllato.</div>
+                        <div class="data-item"><strong>Invalidazione dell'intuizione</strong>È il rifiuto delle forme di conoscenza non razionali, dando priorità alla logica fredda rispetto alla saggezza interiore e alla percezione sensibile.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="https://img.freepik.com/premium-photo/economic-crisis-globe-concept-global-recession-economy-declining_454018-2117.jpg" alt="Conflitto e Decadenza"></div>
+            </div>
+        </section>
+		
+		
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">02. Il Sistema Educativo</span>
+                    <h2>Scuole del Patriarcato</h2>
+                    <p class="essencia">"L'educazione attuale è un addomesticamento orientato alla produttività, non alla fioritura umana."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Metodo e curricula obbligatori</strong>Strutture rigide che impongono contenuti standardizzati.</div>
+                        <div class="data-item"><strong>Nessun approccio emotivo</strong>Omissione totale del mondo affettivo nell'insegnamento.</div>
+                        <div class="data-item"><strong>Passività degli studenti</strong>Modello in cui l'alunno è solo un ricevitore senza autonomia.</div>
+                        <div class="data-item"><strong>Assenza di senso profondo</strong>Educazione scollegata dallo scopo vitale o trascendente.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800" alt="Aula Tradizionale"></div>
+            </div>
+        </section>
+
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>Quale dei 4 pilastri del complesso patriarcale è stato più presente nella mia storia?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">03. Struttura Psichica</span>
+                    <h2>Cervello Triunitario</h2>
+                    <p class="essencia">"L'essere umano è una trinità di impulsi: viscerale, emotivo e cognitivo."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Istintivo</strong>Cervello Rettiliano. Azione, sopravvivenza e territorio.</div>
+                        <div class="data-item"><strong>Affettivo</strong>Sistema Limbico. Sentimento, legame e appartenenza.</div>
+                        <div class="data-item"><strong>Intellettuale</strong>Neocorteccia. Parola, concetto e senso del futuro.</div>
+                        <div class="data-item"><strong>Armonia</strong>La salute è l'equilibrio funzionale tra i tre centri.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="https://tse4.mm.bing.net/th/id/OIP.rtsG9OCupE7C4itiZ9pCawHaEJ?pid=Api&P=0&h=180" alt="Anatomia della Mente"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">04. Metafora di Gurdjieff</span>
+                    <h2>La Carrozza</h2>
+                    <p class="essencia">"L'uomo addormentato viaggia in una carrozza dove il passeggero non dà ordini e il cocchiere è ubriaco."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>La Carrozza</strong>Il corpo fisico e le sue necessità materiali.</div>
+                        <div class="data-item"><strong>I Cavalli</strong>Le emozioni e gli impulsi che danno forza al movimento.</div>
+                        <div class="data-item"><strong>Il Cocchiere</strong>La mente/intelletto che deve dirigere e guidare.</div>
+                        <div class="data-item"><strong>Il Passeggero</strong>L'Essere Reale o essenza che abita l'insieme.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="https://3.bp.blogspot.com/-Uzd8gCeRXyo/UDEpTiEaNfI/AAAAAAAABUs/95B5g-AkUPI/s1600/parabola.png" alt="Illustrazione Carrozza"></div>
+            </div>
+        </section>
+		
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>In questo momento della mia vita, chi sta guidando chi? È il cocchiere che impone una rotta che il cavallo non vuole seguire, o è il cavallo che lancia la carrozza senza direzione?</h3>
+            </div>
+        </section>
+		
+		
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">05. La Mappa dell'Ego</span>
+                    <h2>Enneagramma delle Passioni</h2>
+                    <p class="essencia">"Le passioni sono le interferenze che ci impediscono di vedere la realtà così com'è."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Nevrosi</strong>Una strategia di sopravvivenza infantile che è diventata rigida.</div>
+                        <div class="data-item"><strong>Fissazione</strong>Il meccanismo razionale che giustifica il nostro carattere.</div>
+                        <div class="data-item"><strong>Passione</strong>L'inerzia emotiva che distorce la percezione.</div>
+                        <div class="data-item"><strong>Cammino</strong>Riconoscere l'automatismo per recuperare la libertà.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="https://www.eneagrama.me/wp-content/uploads/2020/07/1200-x-800-6-2-1024x683.jpg" alt="Eneagramma Geometria"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content" style="max-width: 1300px;">
+                <div class="text-side" style="grid-column: span 2;">
+                    <span class="label">06. Enneagramma</span>
+                    <h2>Le 9 Passioni dell'Ego</h2>
+                    <div class="data-grid pasion-list">
+                        <div class="data-item"><strong>E1 - Ira</strong>Perfezionismo, esigenza e risentimento.</div>
+                        <div class="data-item"><strong>E2 - Orgoglio</strong>Bisogno di essere necessario, seduzione affettiva.</div>
+                        <div class="data-item"><strong>E3 - Vanità</strong>Orientamento al successo, immagine ed efficacia.</div>
+                        <div class="data-item"><strong>E4 - Invidia</strong>Senso di mancanza, malinconia e dramma.</div>
+                        <div class="data-item"><strong>E5 - Avarizia</strong>Distacco, isolamento e ritenzione di energia.</div>
+                        <div class="data-item"><strong>E6 - Paura</strong>Dubbio, ricerca di sicurezza o ribellione.</div>
+                        <div class="data-item"><strong>E7 - Gola</strong>Ricerca di piacere, godimento e distrazione.</div>
+                        <div class="data-item"><strong>E8 - Lussuria</strong>Eccesso, controllo, forza e territorialità.</div>
+                        <div class="data-item"><strong>E9 - Pigrizia</strong>Dimenticanza di sé, narcotizzazione e adattamento.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pregunta">
+            <div class="pregunta-content">
+                <h3>Quale ferita della mia infanzia sto cercando di "curare" o compensare attraverso i miei legami?</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">07. Integrazione</span>
+                    <h2>L'Educatore Consapevole</h2>
+                    <p class="essencia">"Non si può trasformare l'educazione senza una trasformazione dell'educatore."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Compito</strong>Guarire la propria ferita prima di cercare di accompagnare l'altro.</div>
+                        <div class="data-item"><strong>Presenza</strong>Essere svegli di fronte alla singolarità dello studente.</div>
+                        <div class="data-item"><strong>Compassione</strong>Uno stato di benevolenza che permette l'errore e abbraccia l'esperienza.</div>
+                        <div class="data-item"><strong>Obiettivo</strong>Facilitare l'auto-scoperta, non imporre saperi.</div>
+                    </div>
+                </div>
+                <div class="image-side"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Educazione Libera"></div>
+            </div>
+        </section>
+
+<section>
+            <div class="slide-content">
+                <div class="text-side">
+                    <span class="label">08. L'Abbraccio a Tre</span>
+                    <h2>Il Paradigma Triunitario</h2>
+                    <p class="essencia">"Dobbiamo passare dallo spirito dispotico del padre assoluto a un abbraccio integratore tra il padre, la madre e il bambino interiore."</p>
+                    <div class="data-grid">
+                        <div class="data-item"><strong>Il Padre</strong>Rappresenta l'intelligenza che ispira e comprende, esercitando una guida senza violenza.</div>
+                        <div class="data-item"><strong>La Madre</strong>Incarna l'amore e la saggezza dell'istinto che si prende cura in modo organico e disinteressato.</div>
+                        <div class="data-item"><strong>Il Bambino</strong>La spontaneità e la libertà che agisce senza sforzo, promuovendo l'ordine naturale.</div>
+                        <div class="data-item"><strong>Integrazione Olistica</strong>Un equilibrio di valori in cui mente, cuore e corpo funzionano in unità.</div>
+                    </div>
+                </div>
+                <div class="image-side">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.DbyOPV00P6viyzoppuqpNQHaEK?pid=Api&P=0&h=180" alt="Equilibrio e Natura">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') slider.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+            if (e.key === 'ArrowLeft') slider.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+        });
+
+        slider.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                slider.scrollBy({ 
+                    left: e.deltaY * 4, 
+                    behavior: 'auto' 
+                });
+            }
+        });
+    </script>
+</body>
+</html>
