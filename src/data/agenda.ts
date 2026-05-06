@@ -51,7 +51,7 @@ export const upcomingEvents: AgendaEvent[] = [
   },
   {
     type: "Taller",
-    name: "Eneagrama y Vínculos · $1200",
+    name: "Eneagrama y Vínculos",
     icon: Users,
     location: "San Luis Potosí",
     date: "Mayo 2026",
