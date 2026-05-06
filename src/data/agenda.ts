@@ -55,7 +55,7 @@ export const upcomingEvents: AgendaEvent[] = [
     icon: Users,
     location: "San Luis Potosí",
     date: "Mayo 2026",
-    dateDetail: "Jueves 14 de Mayo",
+    dateDetail: "Jueves 14 de Mayo · $1200",
     link: "/agenda",
     highlighted: false,
     slug: "san-luis-potosi",
