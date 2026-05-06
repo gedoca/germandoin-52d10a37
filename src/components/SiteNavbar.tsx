@@ -10,7 +10,6 @@ const mainLinks = [
 const agendaLinks = [
   { label: "Estado de México", to: "/estado-de-mexico" },
   { label: "Guadalajara", to: "/guadalajara" },
-  { label: "Monterrey", to: "/monterrey" },
   { label: "San Miguel de Allende", to: "/san-miguel-de-allende" },
 ];
 
