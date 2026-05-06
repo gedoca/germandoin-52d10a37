@@ -6,7 +6,6 @@ import Retiros from "./pages/Retiros";
 import Agenda from "./pages/Agenda";
 import Contacto from "./pages/Contacto";
 import Guadalajara from "./pages/Guadalajara";
-import Monterrey from "./pages/Monterrey";
 import EstadoDeMexico from "./pages/EstadoDeMexico";
 import Desaprender from "./pages/Desaprender";
 import ViajeSanador from "./pages/ViajeSanador";
@@ -29,7 +28,6 @@ const App = () => (
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/guadalajara" element={<Guadalajara />} />
-        <Route path="/monterrey" element={<Monterrey />} />
         <Route path="/estado-de-mexico" element={<EstadoDeMexico />} />
         <Route path="/desaprender" element={<Desaprender />} />
         <Route path="/viaje-sanador" element={<ViajeSanador />} />

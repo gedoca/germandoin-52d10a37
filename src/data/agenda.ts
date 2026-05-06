@@ -10,7 +10,7 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "monterrey" | "san-miguel-de-allende";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "san-miguel-de-allende" | "san-luis-potosi";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
@@ -49,27 +49,16 @@ export const upcomingEvents: AgendaEvent[] = [
     highlighted: false,
     slug: "guadalajara",
   },
-    {
-    type: "Conferencia Taller",
-    name: "Pedagogía del Vínculo",
-    icon: Mic,
-    location: "Monterrey",
-    date: "Mayo 2026",
-    dateDetail: "21 de Mayo",
-    link: "/monterrey",
-    highlighted: false,
-    slug: "monterrey",
-  },
   {
-    type: "Taller Vivencial",
-    name: "DesAprender",
-    icon: Sparkles,
-    location: "Monterrey, México",
+    type: "Taller",
+    name: "Eneagrama y Vínculos",
+    icon: Users,
+    location: "San Luis Potosí",
     date: "Mayo 2026",
-    dateDetail: "23 y 24 de Mayo",
-    link: "/monterrey",
+    dateDetail: "Jueves 14 de Mayo · $1200",
+    link: "/agenda",
     highlighted: false,
-    slug: "monterrey",
+    slug: "san-luis-potosi",
   },
     {
     type: "Retiro",
@@ -91,7 +80,7 @@ export const upcomingEvents: AgendaEvent[] = [
     dateDetail: "6 y 7 de Junio",
     link: "/desaprender",
     highlighted: false,
-    slug: "monterrey",
+    slug: "desaprender",
   },
     {
     type: "Retiro Vivencial",

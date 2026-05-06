@@ -44,13 +44,6 @@ const HeroSection = () => {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
-            <Link
-              to="/monterrey"
-              className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
-            >
-              Monterrey
-            </Link>
-            <br />
                         <Link
               to="/san-miguel-de-allende"
               className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
