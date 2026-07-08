@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Cammino del Legame</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tierra: #8B6B47;
+    --arena: #E8D9C4;
+    --verde-sage: #7A8C6E;
+    --verde-oscuro: #3D5240;
+    --crema: #F5EFE4;
+    --hueso: #FAF6F0;
+    --texto: #2C2416;
+    --texto-suave: #6B5C48;
+    --acento: #C4713A;
+    --acento-suave: #E8A87C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--hueso);
+    color: var(--texto);
+    font-family: 'Lora', Georgia, serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease;
+  }
+  .slide.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .bg-texture {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 10% 20%, rgba(196,113,58,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(122,140,110,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(139,107,71,0.04) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .bg-grain {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--acento);
+    transition: width 0.5s ease;
+    z-index: 100;
+  }
+  .counter {
+    position: fixed;
+    bottom: 24px;
+    right: 36px;
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    color: var(--texto-suave);
+    opacity: 0.6;
+    z-index: 100;
+    letter-spacing: 0.1em;
+  }
+  .nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 100;
+  }
+  .nav button {
+    background: none;
+    border: 1.5px solid var(--tierra);
+    color: var(--tierra);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav button:hover { background: var(--tierra); color: var(--hueso); }
+  .nav button:disabled { opacity: 0.3; cursor: default; }
+  .nav button:disabled:hover { background: none; color: var(--tierra); }
+  /* PORTADA */
+  #slide-0 {
+    background: var(--verde-oscuro);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #slide-0::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(232,217,196,0.12);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #slide-0::after {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    border-radius: 50%;
+    border: 1px solid rgba(232,217,196,0.06);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .portada-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--acento-suave);
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .portada-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(40px, 6vw, 72px);
+    color: var(--crema);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 16px;
+  }
+  .portada-title em { color: var(--acento-suave); display: block; }
+  .portada-sub {
+    font-size: clamp(14px, 1.8vw, 18px);
+    color: rgba(232,217,196,0.65);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    margin-top: 24px;
+    max-width: 500px;
+  }
+  .portada-line {
+    width: 60px;
+    height: 2px;
+    background: var(--acento);
+    margin: 28px auto;
+    position: relative;
+    z-index: 1;
+  }
+  /* SLIDES CONCEPTO */
+  .slide-inner {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+  }
+  .slide-number {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--acento);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .slide-number::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--acento);
+    opacity: 0.4;
+  }
+  .slide-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.15;
+    color: var(--texto);
+    margin-bottom: 32px;
+  }
+  .slide-headline em {
+    color: var(--acento);
+    font-style: italic;
+    display: block;
+  }
+  .slide-quote {
+    background: var(--arena);
+    border-left: 3px solid var(--acento);
+    padding: 24px 32px;
+    border-radius: 0 8px 8px 0;
+    font-size: clamp(16px, 2vw, 22px);
+    font-style: italic;
+    color: var(--texto-suave);
+    line-height: 1.7;
+  }
+  /* VARIANTE OSCURA */
+  .slide-dark { background: var(--verde-oscuro); }
+  .slide-dark .slide-headline { color: var(--crema); }
+  .slide-dark .slide-quote {
+    background: rgba(255,255,255,0.07);
+    border-left-color: var(--acento-suave);
+    color: var(--arena);
+  }
+  .slide-dark .slide-number { color: var(--acento-suave); }
+  .slide-dark .slide-number::after { background: var(--acento-suave); }
+  /* VARIANTE TIERRA */
+  .slide-tierra { background: var(--tierra); }
+  .slide-tierra .slide-headline { color: var(--hueso); }
+  .slide-tierra .slide-quote {
+    background: rgba(0,0,0,0.15);
+    border-left-color: var(--arena);
+    color: var(--arena);
+  }
+  .slide-tierra .slide-number { color: var(--arena); }
+  .slide-tierra .slide-number::after { background: var(--arena); }
+  /* SLIDE FINAL */
+  #slide-10 {
+    background: var(--crema);
+    text-align: center;
+  }
+  .final-ornament { font-size: 32px; margin-bottom: 28px; opacity: 0.4; }
+  .final-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    color: var(--verde-oscuro);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .final-title em { color: var(--acento); font-style: italic; display: block; }
+  .final-body {
+    font-size: clamp(14px, 1.6vw, 17px);
+    color: var(--texto-suave);
+    line-height: 1.8;
+    max-width: 580px;
+    font-style: italic;
+  }
+  .final-line {
+    width: 80px;
+    height: 1px;
+    background: var(--acento);
+    margin: 32px auto;
+    opacity: 0.5;
+  }
+  /* ANIMACIONES */
+  .slide.active .slide-inner,
+  .slide.active .portada-label,
+  .slide.active .portada-title,
+  .slide.active .portada-sub,
+  .slide.active .portada-line,
+  .slide.active .final-ornament,
+  .slide.active .final-title,
+  .slide.active .final-body,
+  .slide.active .final-line {
+    animation: fadeUp 0.6s ease both;
+  }
+  .slide.active .slide-number  { animation: fadeUp 0.5s ease 0.1s both; }
+  .slide.active .slide-headline { animation: fadeUp 0.5s ease 0.2s both; }
+  .slide.active .slide-quote   { animation: fadeUp 0.5s ease 0.3s both; }
+  .slide.active .portada-title { animation: fadeUp 0.7s ease 0.1s both; }
+  .slide.active .portada-sub   { animation: fadeUp 0.6s ease 0.3s both; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hint {
+    position: fixed;
+    top: 24px;
+    right: 36px;
+    font-size: 11px;
+    color: var(--texto-suave);
+    opacity: 0.35;
+    letter-spacing: 0.08em;
+    z-index: 100;
+  }
+  @media (max-width: 640px) {
+    .slide { padding: 40px 28px; }
+    .nav { bottom: 16px; }
+    .hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-texture"></div>
+<div class="bg-grain"></div>
+<div class="progress-bar" id="progressBar"></div>
+<div class="counter" id="counter">1 / 11</div>
+<div class="hint">← → per navigare</div>
+<!-- SLIDE 0: PORTADA -->
+<div class="slide active" id="slide-0">
+  <div class="portada-label">German Doin</div>
+  <div class="portada-title">Pedagogia del <em>legame</em></div>
+  <div class="portada-line"></div>
+  <div class="portada-sub">Lasciare andare le mappe e camminare a piedi nudi nel territorio dell'educazione reale</div>
+</div>
+<!-- SLIDE 1 -->
+<div class="slide" id="slide-1">
+  <div class="slide-inner">
+    <div class="slide-number">01 — Il momento</div>
+    <h2 class="slide-headline">Dalla mappa<em>al territorio</em></h2>
+    <div class="slide-quote">
+      "Educare non significa provare la mappa; significa camminare a piedi nudi nel territorio."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 2 -->
+<div class="slide slide-dark" id="slide-2">
+  <div class="slide-inner">
+    <div class="slide-number">02 — La svolta</div>
+    <h2 class="slide-headline">Dall'"io"<em>al "noi"</em></h2>
+    <div class="slide-quote">
+      "Il passaggio dalla mente patriarcale-tecnologica alla mente relazionale-matricistica."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 3 -->
+<div class="slide" id="slide-3">
+  <div class="slide-inner">
+    <div class="slide-number">03 — La percezione</div>
+    <h2 class="slide-headline">La relazione come fondamento<em>della percezione.</em></h2>
+    <div class="slide-quote">
+      "La nostra capacità di educare è condizionata dalla nostra capacità di percepire."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 4 -->
+<div class="slide slide-tierra" id="slide-4">
+  <div class="slide-inner">
+    <div class="slide-number">04 — La disponibilità</div>
+    <h2 class="slide-headline">Sentire non significa <em>reagire</em></h2>
+    <div class="slide-quote">
+      "L'arte di dire ciò che sento e lasciare entrare le informazioni dell'altro."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 5 -->
+<div class="slide" id="slide-5">
+  <div class="slide-inner">
+    <div class="slide-number">05 — L'amore</div>
+    <h2 class="slide-headline">L'importanza della <em>circolazione</em></h2>
+    <div class="slide-quote">
+      "L'amore è informazione che circola senza aspettative né controllo."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 6 -->
+<div class="slide slide-dark" id="slide-6">
+  <div class="slide-inner">
+    <div class="slide-number">06 — Il disagio</div>
+    <h2 class="slide-headline">Il disagio<em>come bussola</em></h2>
+    <div class="slide-quote">
+      "L'irruzione della differenza che mette a disagio rivela un territorio ancora inesplorato."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 7 -->
+<div class="slide" id="slide-7">
+  <div class="slide-inner">
+    <div class="slide-number">07 — La parità</div>
+    <h2 class="slide-headline">Dalla relazione <em>al legame</em></h2>
+    <div class="slide-quote">
+      "Sedersi alla pari: la sfida di abbandonare la logica del vincere o perdere."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 8 -->
+<div class="slide slide-tierra" id="slide-8">
+  <div class="slide-inner">
+    <div class="slide-number">08 — La sfida</div>
+    <h2 class="slide-headline">La trappola della <em>dualità</em></h2>
+    <div class="slide-quote">
+      "Sostenere la differenza per andare oltre la dualità."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 9 -->
+<div class="slide slide-dark" id="slide-9">
+  <div class="slide-inner">
+    <div class="slide-number">09 — Il campo</div>
+    <h2 class="slide-headline">Leggere il modello, <em>sentire la trama</em></h2>
+    <div class="slide-quote">
+      "Tessere reti di interazioni possibili, non prestabilite."
+    </div>
+  </div>
+</div>
+<!-- SLIDE 10: CIERRE -->
+<div class="slide" id="slide-10">
+  <div class="final-ornament">✦</div>
+  <h2 class="final-title">Il territorio vivo <em>è sempre più vasto</em></h2>
+  <div class="final-line"></div>
+  <p class="final-body">
+    Imparare a camminare senza il GPS costante del discorso prestabilito.<br>
+    Fidarsi dell'incontro.<br>
+    Fidarsi di ciò che siamo.<br><br>
+    Il legame non si insegna —<br>
+    <strong>si vive.</strong>
+  </p>
+</div>
+<!-- NAVEGACIÓN -->
+<nav class="nav">
+  <button id="prevBtn" onclick="navigate(-1)" disabled>←</button>
+  <button id="nextBtn" onclick="navigate(1)">→</button>
+</nav>
+<script>
+  const total = 11;
+  let current = 0;
+  function updateUI() {
+    document.querySelectorAll('.slide').forEach((s, i) => {
+      s.classList.toggle('active', i === current);
+    });
+    document.getElementById('counter').textContent = `${current + 1} / ${total}`;
+    document.getElementById('progressBar').style.width = `${((current + 1) / total) * 100}%`;
+    document.getElementById('prevBtn').disabled = current === 0;
+    document.getElementById('nextBtn').disabled = current === total - 1;
+  }
+  function navigate(dir) {
+    current = Math.max(0, Math.min(total - 1, current + dir));
+    updateUI();
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') navigate(1);
+    if (e.key === 'ArrowLeft') navigate(-1);
+  });
+  let touchX = 0;
+  document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const diff = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+  });
+  updateUI();
+</script>
+</body>
+</html>
