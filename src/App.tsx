@@ -14,6 +14,7 @@ import Cursos from "./pages/Cursos";
 import TravesiaVincular from "./pages/TravesiaVincular";
 import SesionesTerapia from "./pages/SesionesTerapia";
 import SanMiguelDeAllende from "./pages/SanMiguelDeAllende";
+import Barcelona from "./pages/Barcelona";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
         <Route path="/travesia-vincular" element={<TravesiaVincular />} />
         <Route path="/sesiones-terapia" element={<SesionesTerapia />} />
         <Route path="/san-miguel-de-allende" element={<SanMiguelDeAllende />} />
+        <Route path="/barcelona" element={<Barcelona />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
