@@ -8,6 +8,7 @@ const mainLinks = [
 ];
 
 const agendaLinks = [
+  { label: "Barcelona", to: "/barcelona" },
   { label: "Estado de México", to: "/estado-de-mexico" },
   { label: "Guadalajara", to: "/guadalajara" },
   { label: "San Miguel de Allende", to: "/san-miguel-de-allende" },
