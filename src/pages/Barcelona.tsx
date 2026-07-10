@@ -9,6 +9,9 @@ import germanPortrait from "@/assets/german-portrait.jpg";
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSc2ps_LMxdNSFZjxhIzIopaaRDSoHViPKV4E8FshO9U2Qmrvg/viewform?usp=publish-editor";
 
+const PAY_URL =
+  "https://www.paypal.com/ncp/payment/JWGDYNXDTK94W";
+
 const FadeIn = ({
   children,
   delay = 0,
@@ -36,6 +39,18 @@ const FadeIn = ({
 const CTAButton = ({ label = "Inscribirme" }: { label?: string }) => (
   <a
     href={FORM_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
+  >
+    {label}
+    <ArrowRight className="w-4 h-4" />
+  </a>
+);
+
+const PayButton = ({ label = "Pagar" }: { label?: string }) => (
+  <a
+    href={PAY_URL}
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
@@ -113,7 +128,7 @@ const Barcelona = () => {
                 ))}
               </ul>
               <div className="mt-8 pt-8 border-t border-border flex justify-center sm:justify-start">
-                <CTAButton />
+                <CTAButton /> <PayButton />
               </div>
             </div>
           </FadeIn>
@@ -280,7 +295,7 @@ const Barcelona = () => {
             <p className="font-body text-muted-foreground mb-8">
               Miércoles 22 de julio · 18:30hs · Institut Integratiu
             </p>
-            <CTAButton />
+            <CTAButton />             <PayButton />
           </FadeIn>
         </div>
       </section>
