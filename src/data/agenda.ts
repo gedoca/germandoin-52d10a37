@@ -10,12 +10,23 @@ export interface AgendaEvent {
   dateDetail: string;
   link: string;
   highlighted: boolean;
-  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "san-miguel-de-allende" | "san-luis-potosi";
+  slug: "viaje-sanador" | "desaprender" | "vinculos-autenticos" | "fiesta-pedagogia" | "guadalajara" | "estado-de-mexico" | "san-miguel-de-allende" | "san-luis-potosi" | "barcelona";
 }
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
 export const upcomingEvents: AgendaEvent[] = [
+  {
+    type: "Taller Vivencial",
+    name: "El Camino del Vínculo",
+    icon: HeartHandshake,
+    location: "Institut Integratiu, Barcelona",
+    date: "Julio 2026",
+    dateDetail: "Miércoles 22 de Julio · 18:30hs · 20€",
+    link: "/barcelona",
+    highlighted: true,
+    slug: "barcelona",
+  },
   {
     type: "Conferencia",
     name: "Pedagogía del Vínculo",
