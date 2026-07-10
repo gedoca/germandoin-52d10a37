@@ -2,6 +2,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Calendar, MapPin, Clock, Tag, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import heroImg from "@/assets/desaprender-grupo-1.jpg";
+import ivImg from "@/assets/retiro-grupo-circulo.jpg";
+import germanPortrait from "@/assets/german-portrait.jpg";
 
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSc2ps_LMxdNSFZjxhIzIopaaRDSoHViPKV4E8FshO9U2Qmrvg/viewform?usp=publish-editor";
@@ -73,6 +76,22 @@ const Barcelona = () => {
         </div>
       </section>
 
+      {/* Portada image */}
+      <section className="px-6 sm:px-12 lg:px-16 pb-16">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="aspect-[16/9] overflow-hidden rounded-sm">
+              <img
+                src={heroImg}
+                alt="Trabajo grupal en un laboratorio vivencial de Inteligencia Vincular"
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Ficha del evento */}
       <section className="px-6 sm:px-12 lg:px-16 pb-16">
         <div className="max-w-3xl mx-auto">
@@ -95,6 +114,56 @@ const Barcelona = () => {
               </ul>
               <div className="mt-8 pt-8 border-t border-border flex justify-center sm:justify-start">
                 <CTAButton />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ¿Qué es la Inteligencia Vincular? */}
+      <section className="px-6 sm:px-12 lg:px-16 pb-20">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <FadeIn>
+            <div className="aspect-[4/5] overflow-hidden rounded-sm">
+              <img
+                src={ivImg}
+                alt="Círculo grupal en un encuentro vivencial"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div>
+              <p className="font-body text-xs tracking-[0.2em] uppercase text-accent mb-4">
+                Marco conceptual
+              </p>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground leading-snug mb-6">
+                ¿Qué es la <span className="italic text-accent">Inteligencia Vincular</span>?
+              </h2>
+              <div className="space-y-5 font-body text-base leading-[1.8] text-foreground/85">
+                <p>
+                  La Inteligencia Vincular es un campo de investigación transdisciplinario que
+                  explora cómo los vínculos participan activamente en la construcción de la
+                  experiencia humana. Surge del diálogo entre distintas corrientes y disciplinas
+                  —como la psicología, la psicoterapia, la Gestalt, la biología, la teoría de
+                  sistemas, la psicología transpersonal, la astrología psicológica y otras
+                  perspectivas sobre la conciencia y la complejidad— para comprender aquello que
+                  sucede entre las personas. En lugar de explicar la experiencia desde un único
+                  marco teórico, busca integrar saberes que permitan observar el vínculo como un
+                  fenómeno vivo, dinámico y generador de información.
+                </p>
+                <p>
+                  Este enfoque rompe con el paradigma individualista que entiende a las personas
+                  como entidades separadas que luego se relacionan. Propone, en cambio, que somos
+                  seres constituidos en relación y que gran parte de la información necesaria para
+                  nuestro desarrollo no se encuentra únicamente en la introspección, sino en la
+                  calidad de los encuentros que somos capaces de sostener. La Inteligencia Vincular
+                  desplaza el foco desde el control, la adaptación o la resolución de conflictos
+                  hacia el aprendizaje que emerge cuando dos o más personas pueden encontrarse con
+                  autenticidad, sostener la diferencia y permitir que el vínculo revele aspectos de
+                  sí mismos que, en soledad, permanecerían invisibles.
+                </p>
               </div>
             </div>
           </FadeIn>
@@ -156,6 +225,46 @@ const Barcelona = () => {
                 la cercanía, entendiendo que el vínculo no es un lugar donde aplicar lo que sabemos
                 sobre nosotros mismos, sino el espacio donde seguimos descubriéndonos.
               </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Sobre el facilitador */}
+      <section className="px-6 sm:px-12 lg:px-16 pb-20">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="font-body text-xs tracking-[0.2em] uppercase text-accent mb-4 text-center">
+              Quién facilita
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl text-foreground text-center mb-12">
+              Sobre el <span className="italic text-accent">facilitador</span>
+            </h2>
+            <div className="grid sm:grid-cols-[220px_1fr] gap-8 sm:gap-12 items-start">
+              <div className="aspect-square overflow-hidden rounded-sm mx-auto sm:mx-0 w-full max-w-[220px]">
+                <img
+                  src={germanPortrait}
+                  alt="Retrato de Germán Doin"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="font-body text-base leading-[1.8] text-foreground/85 space-y-4">
+                <h3 className="font-display text-2xl text-foreground">Germán Doin</h3>
+                <p>
+                  Profesional argentino, padre de dos hijos, técnico en Comunicación Social y
+                  Producción Audiovisual. Desde 2009 investiga y difunde modelos educativos
+                  alternativos, trabajo que lo llevó a dirigir y producir <em>La Educación
+                  Prohibida</em> (2012), uno de los documentales educativos más vistos en habla
+                  hispana.
+                </p>
+                <p>
+                  Especializado en psicoterapia gestalt-transpersonal a través del Programa SAT y
+                  Aramí, con formación en Eneagrama desde la perspectiva de Claudio Naranjo. Su
+                  trabajo integra comunicación, educación y terapia en una visión que busca
+                  transformar los vínculos humanos desde la conciencia.
+                </p>
+              </div>
             </div>
           </FadeIn>
         </div>
