@@ -22,7 +22,7 @@ export const upcomingEvents: AgendaEvent[] = [
     icon: HeartHandshake,
     location: "Institut Integratiu, Barcelona",
     date: "Julio - Agosto 2026",
-    dateDetail: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 18:30hs · 15€",
+    dateDetail: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 7 a 9pm · 15€",
     link: "/barcelona",
     highlighted: true,
     slug: "barcelona",

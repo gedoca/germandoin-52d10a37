@@ -81,7 +81,7 @@ const encounters = [
 
 const eventDetails = [
   { icon: Calendar, label: "Fechas", value: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto" },
-  { icon: Clock, label: "Duración", value: "2 horas por encuentro" },
+  { icon: Clock, label: "Horario", value: "7 a 9pm" },
   { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661 - 1° piso, El Clot, Barcelona" },
   { icon: Tag, label: "Aporte", value: "15€ por encuentro" },
 ];
