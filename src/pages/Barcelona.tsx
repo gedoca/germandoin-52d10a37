@@ -80,10 +80,10 @@ const encounters = [
 ];
 
 const eventDetails = [
-  { icon: Calendar, label: "Fecha", value: "Miércoles 22 de julio · 18:30hs" },
-  { icon: Clock, label: "Duración", value: "3 horas" },
-  { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661, 08027 Barcelona" },
-  { icon: Tag, label: "Aporte", value: "20€" },
+  { icon: Calendar, label: "Fechas", value: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto" },
+  { icon: Clock, label: "Duración", value: "2 horas por encuentro" },
+  { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661 - 1° piso, El Clot, Barcelona" },
+  { icon: Tag, label: "Aporte", value: "15€ por encuentro" },
 ];
 
 const Barcelona = () => {
