@@ -344,9 +344,13 @@ const Barcelona = () => {
               Te espero en Barcelona
             </h3>
             <p className="font-body text-muted-foreground mb-8">
-              Miércoles 22 de julio · 18:30hs · Institut Integratiu
+              Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 18:30hs · Institut Integratiu
             </p>
-            <CTAButton />             <PayButton />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton />
+              <PayButton />
+              <WhatsAppButton />
+            </div>
           </FadeIn>
         </div>
       </section>
