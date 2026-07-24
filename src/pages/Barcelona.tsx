@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Calendar, MapPin, Clock, Tag, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Clock, Tag, ArrowRight, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/desaprender-grupo-1.jpg";
 import ivImg from "@/assets/retiro-grupo-circulo.jpg";
