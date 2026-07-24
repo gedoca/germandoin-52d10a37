@@ -98,7 +98,7 @@ const eventDetails = [
   { icon: Calendar, label: "Fechas", value: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto" },
   { icon: Clock, label: "Horario", value: "7 a 9pm" },
   { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661 - 1° piso, El Clot, Barcelona" },
-  { icon: Tag, label: "Aporte", value: "15€ por encuentro" },
+  { icon: Tag, label: "Aporte", value: "15€ por encuentro · 50€ por los 4 encuentros (pago anticipado)" },
 ];
 
 const Barcelona = () => {
@@ -164,9 +164,10 @@ const Barcelona = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row flex-wrap gap-4 justify-center sm:justify-start">
                 <CTAButton />
-                <PayButton />
+                <PaySingleButton />
+                <PayFullButton />
                 <WhatsAppButton />
               </div>
             </div>
@@ -361,9 +362,10 @@ const Barcelona = () => {
             <p className="font-body text-muted-foreground mb-8">
               Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 7 a 9pm · Institut Integratiu
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <CTAButton />
-              <PayButton />
+              <PaySingleButton />
+              <PayFullButton />
               <WhatsAppButton />
             </div>
           </FadeIn>
