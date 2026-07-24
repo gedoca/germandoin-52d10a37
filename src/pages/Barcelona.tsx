@@ -60,6 +60,25 @@ const PayButton = ({ label = "Pagar" }: { label?: string }) => (
   </a>
 );
 
+const WhatsAppButton = ({ label = "Consultar por WhatsApp" }: { label?: string }) => (
+  <a
+    href="https://wa.me/5491162720879"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-accent text-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
+  >
+    {label}
+    <MessageCircle className="w-4 h-4" />
+  </a>
+);
+
+const encounters = [
+  { date: "Miércoles 29 de Julio", theme: "Espejo" },
+  { date: "Miércoles 5 de Agosto", theme: "Diferencia" },
+  { date: "Miércoles 12 de Agosto", theme: "Incomodidad" },
+  { date: "Miércoles 19 de Agosto", theme: "Resonancia" },
+];
+
 const eventDetails = [
   { icon: Calendar, label: "Fecha", value: "Miércoles 22 de julio · 18:30hs" },
   { icon: Clock, label: "Duración", value: "3 horas" },
