@@ -94,12 +94,15 @@ const Barcelona = () => {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <p className="font-body text-xs tracking-[0.2em] uppercase text-accent mb-6">
-              Barcelona · Julio 2026
+              Barcelona · Julio - Agosto 2026
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight text-foreground tracking-tight">
               El Camino <span className="italic text-accent">del Vínculo</span>
             </h1>
             <p className="mt-5 font-display text-xl sm:text-2xl italic text-muted-foreground">
+              4 Miércoles de encuentros de 2 horas
+            </p>
+            <p className="mt-3 font-display text-lg sm:text-xl italic text-muted-foreground/80">
               Laboratorio vivencial de Inteligencia Vincular
             </p>
             <p className="mt-6 font-body text-sm sm:text-base text-muted-foreground leading-relaxed">
