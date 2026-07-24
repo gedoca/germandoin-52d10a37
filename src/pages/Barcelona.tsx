@@ -159,6 +159,33 @@ const Barcelona = () => {
         </div>
       </section>
 
+      {/* Los 4 encuentros */}
+      <section className="px-6 sm:px-12 lg:px-16 pb-20">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn delay={0.1}>
+            <p className="font-body text-xs tracking-[0.2em] uppercase text-accent mb-4">
+              Temáticas
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl text-foreground leading-snug mb-6">
+              4 encuentros, <span className="italic text-accent">4 temas</span>
+            </h2>
+            <p className="font-body text-base text-muted-foreground mb-8">
+              Podés asistir a encuentros aislados o a los 4 encuentros.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {encounters.map((e, i) => (
+                <div key={i} className="border border-border rounded-sm bg-muted/30 p-5">
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                    {e.date}
+                  </p>
+                  <h3 className="font-display text-xl text-foreground">{e.theme}</h3>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ¿Qué es la Inteligencia Vincular? */}
       <section className="px-6 sm:px-12 lg:px-16 pb-20">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
