@@ -9,8 +9,11 @@ import germanPortrait from "@/assets/german-portrait.jpg";
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSc2ps_LMxdNSFZjxhIzIopaaRDSoHViPKV4E8FshO9U2Qmrvg/viewform?usp=publish-editor";
 
-const PAY_URL =
+const PAY_SINGLE_URL =
   "https://www.paypal.com/ncp/payment/JWGDYNXDTK94W";
+
+const PAY_FULL_URL =
+  "https://www.paypal.com/ncp/payment/XJBCRV8ZZVC7W";
 
 const FadeIn = ({
   children,
@@ -48,9 +51,21 @@ const CTAButton = ({ label = "Inscribirme" }: { label?: string }) => (
   </a>
 );
 
-const PayButton = ({ label = "Pagar" }: { label?: string }) => (
+const PaySingleButton = ({ label = "Pagar 1 encuentro" }: { label?: string }) => (
   <a
-    href={PAY_URL}
+    href={PAY_SINGLE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
+  >
+    {label}
+    <ArrowRight className="w-4 h-4" />
+  </a>
+);
+
+const PayFullButton = ({ label = "Pagar taller completo" }: { label?: string }) => (
+  <a
+    href={PAY_FULL_URL}
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
@@ -83,7 +98,7 @@ const eventDetails = [
   { icon: Calendar, label: "Fechas", value: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto" },
   { icon: Clock, label: "Horario", value: "7 a 9pm" },
   { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661 - 1° piso, El Clot, Barcelona" },
-  { icon: Tag, label: "Aporte", value: "15€ por encuentro" },
+  { icon: Tag, label: "Aporte", value: "15€ por encuentro · 50€ por los 4 encuentros (pago anticipado)" },
 ];
 
 const Barcelona = () => {
@@ -149,9 +164,10 @@ const Barcelona = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row flex-wrap gap-4 justify-center sm:justify-start">
                 <CTAButton />
-                <PayButton />
+                <PaySingleButton />
+                <PayFullButton />
                 <WhatsAppButton />
               </div>
             </div>
@@ -346,9 +362,10 @@ const Barcelona = () => {
             <p className="font-body text-muted-foreground mb-8">
               Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 7 a 9pm · Institut Integratiu
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <CTAButton />
-              <PayButton />
+              <PaySingleButton />
+              <PayFullButton />
               <WhatsAppButton />
             </div>
           </FadeIn>
