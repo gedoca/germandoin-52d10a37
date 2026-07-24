@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Calendar, MapPin, Clock, Tag, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Clock, Tag, ArrowRight, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/desaprender-grupo-1.jpg";
 import ivImg from "@/assets/retiro-grupo-circulo.jpg";
@@ -60,11 +60,30 @@ const PayButton = ({ label = "Pagar" }: { label?: string }) => (
   </a>
 );
 
+const WhatsAppButton = ({ label = "Consultar por WhatsApp" }: { label?: string }) => (
+  <a
+    href="https://wa.me/5491162720879"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-accent text-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
+  >
+    {label}
+    <MessageCircle className="w-4 h-4" />
+  </a>
+);
+
+const encounters = [
+  { date: "Miércoles 29 de Julio", theme: "Espejo" },
+  { date: "Miércoles 5 de Agosto", theme: "Diferencia" },
+  { date: "Miércoles 12 de Agosto", theme: "Incomodidad" },
+  { date: "Miércoles 19 de Agosto", theme: "Resonancia" },
+];
+
 const eventDetails = [
-  { icon: Calendar, label: "Fecha", value: "Miércoles 22 de julio · 18:30hs" },
-  { icon: Clock, label: "Duración", value: "3 horas" },
-  { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661, 08027 Barcelona" },
-  { icon: Tag, label: "Aporte", value: "20€" },
+  { icon: Calendar, label: "Fechas", value: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto" },
+  { icon: Clock, label: "Duración", value: "2 horas por encuentro" },
+  { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661 - 1° piso, El Clot, Barcelona" },
+  { icon: Tag, label: "Aporte", value: "15€ por encuentro" },
 ];
 
 const Barcelona = () => {
@@ -75,12 +94,15 @@ const Barcelona = () => {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <p className="font-body text-xs tracking-[0.2em] uppercase text-accent mb-6">
-              Barcelona · Julio 2026
+              Barcelona · Julio - Agosto 2026
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight text-foreground tracking-tight">
               El Camino <span className="italic text-accent">del Vínculo</span>
             </h1>
             <p className="mt-5 font-display text-xl sm:text-2xl italic text-muted-foreground">
+              4 Miércoles de encuentros de 2 horas
+            </p>
+            <p className="mt-3 font-display text-lg sm:text-xl italic text-muted-foreground/80">
               Laboratorio vivencial de Inteligencia Vincular
             </p>
             <p className="mt-6 font-body text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -127,9 +149,38 @@ const Barcelona = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-8 border-t border-border flex justify-center sm:justify-start">
-                <CTAButton /> <PayButton />
+              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+                <CTAButton />
+                <PayButton />
+                <WhatsAppButton />
               </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Los 4 encuentros */}
+      <section className="px-6 sm:px-12 lg:px-16 pb-20">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn delay={0.1}>
+            <p className="font-body text-xs tracking-[0.2em] uppercase text-accent mb-4">
+              Temáticas
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl text-foreground leading-snug mb-6">
+              4 encuentros, <span className="italic text-accent">4 temas</span>
+            </h2>
+            <p className="font-body text-base text-muted-foreground mb-8">
+              Podés asistir a encuentros aislados o a los 4 encuentros.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {encounters.map((e, i) => (
+                <div key={i} className="border border-border rounded-sm bg-muted/30 p-5">
+                  <p className="font-body text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                    {e.date}
+                  </p>
+                  <h3 className="font-display text-xl text-foreground">{e.theme}</h3>
+                </div>
+              ))}
             </div>
           </FadeIn>
         </div>
@@ -293,9 +344,13 @@ const Barcelona = () => {
               Te espero en Barcelona
             </h3>
             <p className="font-body text-muted-foreground mb-8">
-              Miércoles 22 de julio · 18:30hs · Institut Integratiu
+              Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 18:30hs · Institut Integratiu
             </p>
-            <CTAButton />             <PayButton />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton />
+              <PayButton />
+              <WhatsAppButton />
+            </div>
           </FadeIn>
         </div>
       </section>
