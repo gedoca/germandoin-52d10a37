@@ -149,8 +149,10 @@ const Barcelona = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-8 border-t border-border flex justify-center sm:justify-start">
-                <CTAButton /> <PayButton />
+              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+                <CTAButton />
+                <PayButton />
+                <WhatsAppButton />
               </div>
             </div>
           </FadeIn>
