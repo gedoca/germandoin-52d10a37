@@ -43,28 +43,13 @@ const HeroSection = () => {
             Latina.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-
-                        <Link
-              to="/san-miguel-de-allende"
-              className="inline-flex items-center justify-center px-8 py-3.5 border border-accent text-accent lg:text-accent-foreground lg:border-accent font-body font-medium text-sm tracking-wide rounded-sm hover:bg-accent/10 transition-colors"
-            >
-              San Miguel de Allende
-            </Link>
-                        <Link
-              to="/estado-de-mexico"
+            <Link
+              to="/barcelona"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
             >
-              Estado de México
+              Encuentros en Barcelona
             </Link>
           </div>
-
-          <Link
-            to="/barcelona"
-            className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 border border-accent/60 bg-accent/10 text-primary-foreground lg:text-foreground rounded-sm font-body text-xs sm:text-sm tracking-wide hover:bg-accent/20 transition-colors"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Próxima actividad en Barcelona · 22 de Julio →
-          </Link>
         </motion.div>
       </div>
 
