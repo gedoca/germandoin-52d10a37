@@ -81,7 +81,7 @@ const encounters = [
 
 const eventDetails = [
   { icon: Calendar, label: "Fechas", value: "Miércoles 29 de Julio, 05, 12 y 19 de Agosto" },
-  { icon: Clock, label: "Duración", value: "2 horas por encuentro" },
+  { icon: Clock, label: "Horario", value: "7 a 9pm" },
   { icon: MapPin, label: "Lugar", value: "Institut Integratiu · Carrer València 661 - 1° piso, El Clot, Barcelona" },
   { icon: Tag, label: "Aporte", value: "15€ por encuentro" },
 ];
@@ -344,7 +344,7 @@ const Barcelona = () => {
               Te espero en Barcelona
             </h3>
             <p className="font-body text-muted-foreground mb-8">
-              Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 18:30hs · Institut Integratiu
+              Miércoles 29 de Julio, 05, 12 y 19 de Agosto · 7 a 9pm · Institut Integratiu
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CTAButton />
