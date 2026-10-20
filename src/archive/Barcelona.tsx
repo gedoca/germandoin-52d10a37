@@ -121,8 +121,7 @@ const Barcelona = () => {
               Laboratorio vivencial de Inteligencia Vincular
             </p>
             <p className="mt-6 font-body text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Facilita <span className="text-foreground font-medium">Germán Doin</span> — Counsellor en
-              Gestalt-Transpersonal, Director de <em>La Educación Prohibida</em>.
+              Facilita <span className="text-foreground font-medium">Germán Doin</span> — Counsellor Gestalt-Transpersonal, Director de <em>La Educación Prohibida</em>.
             </p>
           </FadeIn>
         </div>
@@ -341,9 +340,9 @@ const Barcelona = () => {
                   hispana.
                 </p>
                 <p>
-                  Especializado en psicoterapia gestalt-transpersonal a través del Programa SAT y
+                  Formado en el enfoque gestalt-transpersonal a través del Programa SAT y
                   Aramí, con formación en Eneagrama desde la perspectiva de Claudio Naranjo. Su
-                  trabajo integra comunicación, educación y terapia en una visión que busca
+                  trabajo integra comunicación, educación y acompañamiento en una visión que busca
                   transformar los vínculos humanos desde la conciencia.
                 </p>
               </div>

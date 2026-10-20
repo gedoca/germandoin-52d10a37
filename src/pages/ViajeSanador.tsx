@@ -33,13 +33,13 @@ const steps = [
     icon: MessageCircle,
     number: "01",
     title: "Sesiones de Preparación",
-    description: "Antes del retiro realizamos al menos 1 sesión individual de preparación para conocernos, conversar sobre la propuesta e indagar en tu intención, experiencia previa y cultivo de tus recursos de cara al viaje.",
+    description: "Antes del retiro realizamos al menos 1 sesión individual de preparación para conocernos, conversar sobre la propuesta e indagar en tu intención, experiencia previa y cultivo de tus recursos de cara al viaje. En esta entrevista también revisamos tu estado de salud general y tu historia, para evaluar si la experiencia es adecuada para vos en este momento. Se firma un consentimiento informado.",
   },
   {
     icon: Brain,
     number: "02",
-    title: "Trabajo Terapéutico Grupal",
-    description: "Trabajaremos con encuadre terapéutico en la búsqueda de la intención a partir de nuestras historias personales, cultivando la presencia, ensayando la toma de conciencia y promoviendo un encuentro responsable y transformador.",
+    title: "Trabajo Grupal de Autoconocimiento",
+    description: "Trabajaremos con un encuadre de cuidado en la búsqueda de la intención a partir de nuestras historias personales, cultivando la presencia, ensayando la toma de conciencia y promoviendo un encuentro responsable y transformador.",
   },
   {
     icon: Flower2,
@@ -50,8 +50,8 @@ const steps = [
   {
     icon: Moon,
     number: "04",
-    title: "Estados Ampliados de Consciencia",
-    description: "Exploración guiada de estados ampliados de consciencia en un espacio preparado con música seleccionada, buscando conectar con nuestra esencia en un contexto grupal de ritual transformador. Siempre sosteniendo el encuadre terapéutico de cuidado.",
+    title: "Experiencia de Presencia y Música",
+    description: "[TEXTO A REDACTAR POR GERMÁN]",
   },
   {
     icon: Sunrise,
@@ -103,8 +103,7 @@ const ViajeSanador = () => {
               Un retiro vivencial donde nos sumergimos en una experiencia de trabajo personal profundo.
               En un contexto grupal de buscadores de conciencia y bienestar, proponemos actividades
               de introspección inspiradas en la gestalt, el mindfulness y el movimiento psicocorporal,
-              con la intención de profundizar en quiénes somos y potenciar la oportunidad de
-              autoconocimiento y sanación.
+              con la intención de profundizar en quiénes somos y profundizar en el autoconocimiento y la integración.
             </p>
           </FadeIn>
         </div>
@@ -146,9 +145,7 @@ const ViajeSanador = () => {
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
                 <p className="font-body text-muted-foreground leading-relaxed mb-6">
-                  El Viaje Sanador está inspirado en el libro del mismo nombre del psicoterapeuta chileno
-                  Claudio Naranjo, y en su propuesta de que los estados ampliados de consciencia podrían
-                  ser la puerta para que los procesos terapéuticos se potencien.
+                  El Viaje Sanador toma como inspiración la obra de Claudio Naranjo y su mirada sobre la consciencia como camino de autoconocimiento.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
                   Tomamos el hilo conductor del viaje del héroe, el encuentro con los propios demonios y sombras,
@@ -218,8 +215,7 @@ const ViajeSanador = () => {
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   Educador, comunicador y acompañante en procesos de autoconocimiento. Cofundador y mentor
                   en Arka – Escuela de Formación Transpersonal. Con más de 15 años de experiencia coordinando
-                  grupos en el ámbito educativo, artístico y psicoterapéutico. Formado en Gestalt y
-                  psicoterapias integrativas.
+                  grupos en el ámbito educativo, artístico y psicoterapéutico. Formado en Gestalt y enfoques integrativos.
                 </p>
               </div>
               <div className="p-8 border border-border rounded-sm bg-card">
@@ -229,7 +225,7 @@ const ViajeSanador = () => {
                   </a>
                 </h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  Música, cantautora y terapeuta vocal. Formada en Psicología Social y especializada en
+                  Música, cantautora y facilitadora en exploración vocal. Formada en Psicología Social y especializada en
                   exploración de la voz como herramienta de autoconocimiento y transformación. Ha acompañado
                   grupos por más de 10 años en espacios de música, canto y procesos expresivos.
                 </p>

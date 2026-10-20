@@ -23,7 +23,7 @@ const timelineEvents = [
   { year: "2013", text: "Funda Reevo – Red de Educación Alternativa, plataforma colaborativa internacional" },
   { year: "2015", text: "Diseña la Semana de las Educaciones Alternativas en Bogotá" },
   { year: "2019", text: "Funda Proyecto C – laboratorio de transformación educativa (2019–2023)" },
-  { year: "2022", text: "Especialización en psicoterapia gestalt-transpersonal (Programa SAT & Aramí)" },
+  { year: "2022", text: "Formación en el enfoque gestalt-transpersonal (Programa SAT & Aramí)" },
   { year: "2025", text: "Inicia Travesía Vincular junto a Cintia Alegre" },
   { year: "2026", text: "Mentor en ARKA – Escuela de Formación Transpersonal de Colombia" },
   { year: "2026", text: "Crea El Año del Salto – programa de transformación personal" },
@@ -128,9 +128,8 @@ const Perfil = () => {
                     habla hispana.
                   </p>
                   <p>
-                    Especializado en psicoterapia gestalt-transpersonal a través del Programa SAT y Aramí, con formación
-                    en Eneagrama desde la perspectiva de Claudio Naranjo. Su trabajo integra comunicación, educación y
-                    terapia en una visión que busca transformar los vínculos humanos desde la conciencia.
+                    Formado en el enfoque gestalt-transpersonal a través del Programa SAT y Aramí, con formación
+                    en Eneagrama desde la perspectiva de Claudio Naranjo. Su trabajo integra comunicación, educación y acompañamiento en una visión que busca transformar los vínculos humanos desde la conciencia.
                   </p>
                 </div>
               </div>

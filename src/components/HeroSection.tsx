@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 lg:relative lg:w-1/2 lg:min-h-screen">
         <img
           src={germanPortrait}
-          alt="Germán Doin Campos - Comunicador, educador y terapeuta"
+          alt="Germán Doin Campos - Comunicador, educador y counsellor"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-foreground/80 lg:from-transparent lg:via-transparent lg:to-foreground/30" />

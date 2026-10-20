@@ -475,7 +475,7 @@ const Guadalajara = () => {
                   </div>
                   <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground mb-6">
                     Comunicador, educador y{" "}
-                    <span className="italic text-accent">terapeuta</span>
+                    <span className="italic text-accent">counsellor</span>
                   </h2>
                   <div className="font-body text-muted-foreground leading-relaxed space-y-4">
                     <p>
@@ -486,8 +486,8 @@ const Guadalajara = () => {
                       vistos en habla hispana.
                     </p>
                     <p>
-                      Especializado en psicoterapia gestalt-transpersonal,
-                      integra comunicación, educación y terapia en una visión que
+                      Formado en el enfoque gestalt-transpersonal,
+                      integra comunicación, educación y acompañamiento en una visión que
                       busca transformar los vínculos humanos desde la conciencia.
                     </p>
                   </div>
