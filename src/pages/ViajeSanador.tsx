@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Compass, ArrowLeft, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
+import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
 import NextEditionSection from "@/components/NextEditionSection";
 import viajeHero from "@/assets/viaje-sanador-hero.jpg";
 import viajeFuego from "@/assets/viaje-sanador-fuego.jpg";
