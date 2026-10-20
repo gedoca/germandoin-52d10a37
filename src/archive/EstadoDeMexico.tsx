@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music, Home, UtensilsCrossed, AlertCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/data/agenda";
+import Aviso from "@/components/Aviso";
 import NextEditionSection from "@/components/NextEditionSection";
 import avandaro1 from "@/assets/avandaro-1.png";
 import avandaro2 from "@/assets/avandaro-2.png";
@@ -171,17 +172,6 @@ const EstadoDeMexico = () => {
           </div>
         </div>
       </section>
-      {/* Naranjo Quote */}
-      <section className="py-16 px-6 sm:px-12 lg:px-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <p className="font-display text-lg sm:text-xl italic text-foreground/80 leading-relaxed text-balance mb-4">
-              "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que antes había sido una mera sombra."
-            </p>
-            <p className="font-body text-sm text-accent font-medium">Claudio Naranjo — "El Viaje Sanador"</p>
-          </FadeIn>
-        </div>
-      </section>
 
       
       {/* Facilitadores */}
@@ -317,6 +307,7 @@ const EstadoDeMexico = () => {
                   </tbody>
                 </table>
               </div>
+              <Aviso className="mt-8" />
             </FadeIn>
             </div>
       </section>

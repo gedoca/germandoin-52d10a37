@@ -21,9 +21,9 @@ const retreats = [
   {
     icon: Compass,
     name: "Viaje Sanador",
-    subtitle: "Retiro de autoconocimiento y estados ampliados de consciencia",
+    subtitle: "Retiro vivencial de autoconocimiento",
     description:
-      "Exploración emocional profunda e integración consciente. Un viaje hacia lo esencial a través del cuerpo, la emoción y la presencia.",
+      "Un viaje hacia lo esencial a través del cuerpo, la emoción y la presencia.",
     link: "/viaje-sanador",
     image: viajeSanadorHero,
   },

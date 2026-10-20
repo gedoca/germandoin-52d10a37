@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import retreatLandscape from "@/assets/retiro-paisaje-verde.jpg";
 
@@ -42,14 +41,6 @@ const HeroSection = () => {
             Acompaño procesos de transformación personal, educativa y vincular desde hace más de 15 años en América
             Latina.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
-              to="/barcelona"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
-            >
-              Encuentros en Barcelona
-            </Link>
-          </div>
         </motion.div>
       </div>
 

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Aviso from "@/components/Aviso";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -284,8 +285,7 @@ const Perfil = () => {
                   Sesiones <span className="italic text-accent">Individuales</span>
                 </h2>
                 <p className="font-body text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
-                  Ofrezco acompañamiento en procesos de terapia individual, tanto en modalidad virtual como presencial.
-                  Un espacio seguro para explorar tu mundo interno, tus vínculos y tu camino de transformación personal.
+                  Ofrezco sesiones individuales de counselling y acompañamiento, en modalidad virtual y presencial. Un espacio para explorar tu mundo interno, tus vínculos y tu camino de crecimiento personal.
                 </p>
                 <a
                   href="https://wa.me/5491162720879"
@@ -296,6 +296,7 @@ const Perfil = () => {
                   <MessageSquare className="w-4 h-4" />
                   Consultar por sesiones
                 </a>
+                <Aviso className="mt-8" />
               </div>
             </div>
           </FadeIn>

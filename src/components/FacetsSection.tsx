@@ -28,14 +28,14 @@ const facets = [
   },
   {
     icon: Heart,
-    title: "Psicoterapeuta Gestalt-Transpersonal",
+    title: "Counsellor Gestalt-Transpersonal",
     lines: [
-      "Trabajo terapéutico individual y grupal.",
+      "Acompañamiento individual y grupal en procesos de autoconocimiento.",
       "Investigación vincular e inteligencia vincular.",
-      "Exploración de estados ampliados de consciencia.",
+      "Exploración de la consciencia a través del cuerpo, el movimiento y la presencia.",
       "Integración cuerpo–emoción–conciencia.",
     ],
-    cta: "Conocer el enfoque terapéutico",
+    cta: "Conocer mi enfoque",
     link: "/contacto",
   },
 ];

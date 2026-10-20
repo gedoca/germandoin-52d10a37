@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Compass, ArrowLeft, Quote, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
+import { Compass, ArrowLeft, MessageCircle, Flower2, Brain, Sunrise, Moon } from "lucide-react";
 import NextEditionSection from "@/components/NextEditionSection";
 import viajeHero from "@/assets/viaje-sanador-hero.jpg";
 import viajeFuego from "@/assets/viaje-sanador-fuego.jpg";
@@ -152,17 +152,6 @@ const ViajeSanador = () => {
                   el descenso a las oscuridades de la historia personal, pero también el registro de recursos
                   luminosos, de herramientas de nuestra biografía y la conexión con la vida para lograr la
                   integración.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-sm p-8">
-                <Quote className="w-8 h-8 text-accent/30 mb-4" strokeWidth={1} />
-                <p className="font-display text-lg italic text-foreground leading-relaxed mb-4">
-                  "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte
-                  en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que
-                  antes había sido una mera sombra."
-                </p>
-                <p className="font-body text-sm text-accent font-medium">
-                  Claudio Naranjo · <span className="text-muted-foreground italic">"El Viaje Sanador"</span>
                 </p>
               </div>
             </div>
