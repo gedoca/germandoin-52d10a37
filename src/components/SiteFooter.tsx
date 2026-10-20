@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MessageSquare } from "lucide-react";
+import { AVISO_CORTO } from "@/components/Aviso";
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
@@ -64,7 +65,8 @@ const SiteFooter = () => {
           <p className="font-display text-base italic text-muted-foreground text-center text-balance">
             "Transformar la educación, el vínculo y la conciencia es una tarea colectiva."
           </p>
-          <p className="font-body text-xs text-muted-foreground/60 mt-4 text-center">
+          <p className="font-body text-xs text-muted-foreground mt-4 text-center">{AVISO_CORTO}</p>
+          <p className="font-body text-xs text-muted-foreground/60 mt-2 text-center">
             © {new Date().getFullYear()} Germán Doin Campos. Todos los derechos reservados.
           </p>
         </div>

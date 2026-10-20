@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import germanPortrait from "@/assets/german-portrait.jpg";
 import retreatLandscape from "@/assets/retiro-paisaje-verde.jpg";
 
@@ -10,7 +9,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 lg:relative lg:w-1/2 lg:min-h-screen">
         <img
           src={germanPortrait}
-          alt="Germán Doin Campos - Comunicador, educador y terapeuta"
+          alt="Germán Doin Campos - Comunicador, educador y counsellor"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-foreground/80 lg:from-transparent lg:via-transparent lg:to-foreground/30" />
@@ -42,14 +41,6 @@ const HeroSection = () => {
             Acompaño procesos de transformación personal, educativa y vincular desde hace más de 15 años en América
             Latina.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
-              to="/barcelona"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide rounded-sm hover:opacity-90 transition-opacity"
-            >
-              Encuentros en Barcelona
-            </Link>
-          </div>
         </motion.div>
       </div>
 

@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Compass, MapPin, Clock, MessageSquare, Quote, Users, Heart, Brain, Flower2, Music, Home, UtensilsCrossed, AlertCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/data/agenda";
+import Aviso from "@/components/Aviso";
 import NextEditionSection from "@/components/NextEditionSection";
 import avandaro1 from "@/assets/avandaro-1.png";
 import avandaro2 from "@/assets/avandaro-2.png";
@@ -31,12 +32,12 @@ const phases = [
   {
     number: "1",
     title: "Sesiones de Preparación",
-    description: "Antes del retiro realizamos al menos una sesión individual para conocernos, conversar sobre la propuesta e indagar en tu intención, experiencia previa y recursos de cara al viaje.",
+    description: "Antes del retiro realizamos al menos una sesión individual para conocernos, conversar sobre la propuesta e indagar en tu intención, experiencia previa y recursos de cara al viaje. En esta entrevista también revisamos tu estado de salud general y tu historia, para evaluar si la experiencia es adecuada para ti en este momento. Se firma un consentimiento informado.",
   },
   {
     number: "2",
-    title: "Trabajo Terapéutico Grupal",
-    description: "Trabajamos con encuadre terapéutico en la búsqueda de la intención a partir de nuestras historias personales, cultivando la presencia y promoviendo que el encuentro sea desde un lugar responsable y transformador.",
+    title: "Trabajo Grupal de Autoconocimiento",
+    description: "Trabajamos con un encuadre de cuidado en la búsqueda de la intención a partir de nuestras historias personales, cultivando la presencia y promoviendo que el encuentro sea desde un lugar responsable y transformador.",
   },
   {
     number: "3",
@@ -45,8 +46,8 @@ const phases = [
   },
   {
     number: "4",
-    title: "Estados Ampliados de Consciencia",
-    description: "Realizamos la exploración en un espacio preparado y con música especialmente seleccionada, buscando conectar con nuestra esencia en un contexto grupal de ritual con un impacto transformador, sosteniendo siempre el encuadre terapéutico de cuidado.",
+    title: "Experiencia de Presencia y Música",
+    description: "[TEXTO A REDACTAR POR GERMÁN]",
   },
   {
     number: "5",
@@ -59,12 +60,12 @@ const facilitators = [
   {
     name: "Germán Doin",
     role: "Facilitador principal",
-    bio: "Educador, comunicador y acompañante en procesos de autoconocimiento. Cofundador y mentor en Arka – Escuela de Formación Transpersonal. Con más de 15 años de experiencia coordinando grupos. Formado en Gestalt y psicoterapias integrativas.",
+    bio: "Educador, comunicador y acompañante en procesos de autoconocimiento. Cofundador y mentor en Arka – Escuela de Formación Transpersonal. Con más de 15 años de experiencia coordinando grupos. Formado en Gestalt y enfoques integrativos.",
   },
   {
     name: "Cintia Alegre",
     role: "Co-facilitadora",
-    bio: "Música, cantautora y terapeuta vocal. Formada en Psicología Social y especializada en exploración de la voz como herramienta de autoconocimiento y transformación. Su presencia aporta sensibilidad, contención y apertura creativa al proceso grupal.",
+    bio: "Música, cantautora y facilitadora en exploración vocal. Formada en Psicología Social y especializada en exploración de la voz como herramienta de autoconocimiento y transformación. Su presencia aporta sensibilidad, contención y apertura creativa al proceso grupal.",
   },
 ];
 
@@ -129,13 +130,13 @@ const EstadoDeMexico = () => {
             </h2>
             <div className="font-body text-muted-foreground leading-relaxed space-y-4">
               <p>
-                El Viaje Sanador está inspirado en el libro del mismo nombre del psicoterapeuta chileno Claudio Naranjo, y en su propuesta de que los estados ampliados de consciencia podrían ser la puerta para que los procesos terapéuticos se potencien.
+                El Viaje Sanador toma como inspiración la obra de Claudio Naranjo y su mirada sobre la consciencia como camino de autoconocimiento.
               </p>
               <p>
                 Tomamos el hilo conductor del viaje del héroe: el encuentro con los propios demonios y sombras, el descenso a las oscuridades de la historia personal, pero también el registro de recursos luminosos y herramientas de nuestra biografía, y eventualmente la conexión con la vida para lograr la integración.
               </p>
               <p>
-                Te propondremos actividades y ejercicios de introspección inspirados en la gestalt, el mindfulness y el movimiento psicocorporal con la intención de profundizar en quiénes somos y potenciar la oportunidad de autoconocimiento y sanación.
+                Te propondremos actividades y ejercicios de introspección inspirados en la gestalt, el mindfulness y el movimiento psicocorporal con la intención de profundizar en quiénes somos y profundizar en el autoconocimiento y la integración.
               </p>
             </div>
           </FadeIn>
@@ -169,17 +170,6 @@ const EstadoDeMexico = () => {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-      {/* Naranjo Quote */}
-      <section className="py-16 px-6 sm:px-12 lg:px-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <p className="font-display text-lg sm:text-xl italic text-foreground/80 leading-relaxed text-balance mb-4">
-              "Cuando cada parte del hombre recuerda lo que realmente quiere, la enfermedad se convierte en salud, y lo que una vez fue una parodia de la vida se convierte en una cualidad que antes había sido una mera sombra."
-            </p>
-            <p className="font-body text-sm text-accent font-medium">Claudio Naranjo — "El Viaje Sanador"</p>
-          </FadeIn>
         </div>
       </section>
 
@@ -317,6 +307,7 @@ const EstadoDeMexico = () => {
                   </tbody>
                 </table>
               </div>
+              <Aviso className="mt-8" />
             </FadeIn>
             </div>
       </section>

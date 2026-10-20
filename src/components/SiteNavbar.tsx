@@ -7,12 +7,7 @@ const mainLinks = [
   { label: "Perfil", to: "/perfil" },
 ];
 
-const agendaLinks = [
-  { label: "Barcelona", to: "/barcelona" },
-  { label: "Estado de México", to: "/estado-de-mexico" },
-  { label: "Guadalajara", to: "/guadalajara" },
-  { label: "San Miguel de Allende", to: "/san-miguel-de-allende" },
-];
+const agendaLinks: { label: string; to: string }[] = [];
 
 const retreatLinks = [
   { label: "Viaje Sanador", to: "/viaje-sanador" },
@@ -117,7 +112,7 @@ const SiteNavbar = () => {
                 >
                   Ver agenda completa
                 </Link>
-                <div className="h-px bg-border my-1" />
+                {agendaLinks.length > 0 && <div className="h-px bg-border my-1" />}
                 {agendaLinks.map((link) => (
                   <Link
                     key={link.to}
