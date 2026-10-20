@@ -32,7 +32,7 @@ const phases = [
   {
     number: "1",
     title: "Sesiones de Preparación",
-    description: "Antes del retiro realizamos al menos una sesión individual para conocernos, conversar sobre la propuesta e indagar en tu intención, experiencia previa y recursos de cara al viaje. En esta entrevista también revisamos tu estado de salud general y tu historia, para evaluar si la experiencia es adecuada para vos en este momento. Se firma un consentimiento informado.",
+    description: "Antes del retiro realizamos al menos una sesión individual para conocernos, conversar sobre la propuesta e indagar en tu intención, experiencia previa y recursos de cara al viaje. En esta entrevista también revisamos tu estado de salud general y tu historia, para evaluar si la experiencia es adecuada para ti en este momento. Se firma un consentimiento informado.",
   },
   {
     number: "2",

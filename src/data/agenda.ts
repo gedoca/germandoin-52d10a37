@@ -15,7 +15,10 @@ export interface AgendaEvent {
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
-export const upcomingEvents: AgendaEvent[] = [
+/** Actividades confirmadas a futuro. Las pasadas se guardan en src/archive/pastEvents.ts. */
+export const upcomingEvents: AgendaEvent[] = [];
+
+export const pastEvents: AgendaEvent[] = [
   {
     type: "Taller Vivencial",
     name: "El Camino del Vínculo",
