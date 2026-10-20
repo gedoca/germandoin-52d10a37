@@ -15,7 +15,7 @@ export interface AgendaEvent {
 
 const WHATSAPP_URL = "https://wa.me/5491162720879";
 
-/** Actividades confirmadas a futuro. Las pasadas se guardan en src/archive/pastEvents.ts. */
+/** Actividades confirmadas a futuro. Las ya realizadas quedan en pastEvents como archivo. */
 export const upcomingEvents: AgendaEvent[] = [];
 
 export const pastEvents: AgendaEvent[] = [
