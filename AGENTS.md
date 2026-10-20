@@ -1,0 +1,2 @@
+- Past event landing pages live in src/archive/ (not routed); their old URLs redirect to /agenda in App.tsx. Why: keep content reusable for future editions without publishing outdated events.
+- Legal disclaimer text lives only in src/components/Aviso.tsx (full + short export). Why: one source for sessions, contact, retreat pricing and footer.
